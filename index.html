@@ -4,209 +4,133 @@
     <title>Tergel Otgonbaatar | Data Analytics Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
 
     <style>
         body {
-    background: linear-gradient(135deg, #eef2ff, #f8fafc);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    margin: 0;
-}
+            margin: 0;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #111827;
+        }
 
-#wrapper {
-    max-width: 1100px;
-    margin: 4em auto;
-    padding: 3em;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.08);
-}
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+        }
 
-#main {
-    text-align: center;
-}
+        h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-h1 {
-    font-size: 3em;
-    font-weight: 800;
-    margin-bottom: 0.3em;
-}
+        .subtitle {
+            text-align: center;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
 
-.highlight {
-    color: #2563eb;
-    font-weight: 600;
-    font-size: 1.2em;
-    margin-bottom: 1.5em;
-}
+        .intro {
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
 
-p {
-    font-size: 1.15em;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 2em auto;
-}
+        .buttons {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-.button-group {
-    margin-top: 2em;
-}
+        .buttons a {
+            display: inline-block;
+            margin: 8px;
+            padding: 14px 28px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
 
-.button-group a {
-    display: inline-block;
-    margin: 0.5em;
-    padding: 0.9em 1.8em;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
+        .buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37,99,235,0.3);
+        }
 
-.button-group a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(37,99,235,0.3);
-}
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-.section-spacing {
-    margin-top: 5em;
-    text-align: left;
-}
+        .skills {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
 
-.skills-box {
-    background: #f9fafb;
-    padding: 2em;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-article {
-    background: #f9fafb;
-    padding: 2em;
-    border-radius: 16px;
-    margin-bottom: 2em;
-    transition: 0.25s ease;
-}
+        .project-card {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.25s ease;
+        }
 
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
 
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.95em;
+            color: #6b7280;
+        }
 
+        @media (max-width: 900px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 30px;
+            }
+        }
     </style>
 </head>
 
-<body class="is-preload">
+<body>
 
-<div id="wrapper">
+<div class="container">
 
-    <header id="header">
-        <a href="index.html" class="logo">Tergel O.</a>
-    </header>
-
-    <div id="main">
-
-        <!-- HERO SECTION -->
-        <section class="post">
-            <header class="major">
-                <h1>Tergel Otgonbaatar</h1>
-                <p class="highlight">Data Analytics • Operational Intelligence • Process Optimization</p>
-            </header>
-
-            <p style="font-size:1.15em; max-width:750px; margin:0 auto; text-align:center;">
-                I transform operational data into measurable business insights.
-                Specializing in dashboards, KPI monitoring, and Lean-driven performance analysis,
-                I help organizations improve efficiency and make data-backed decisions.
-            </p>
-
-            <ul class="actions special" style="margin-top:2em;">
-                <li>
-                    <a href="resume.pdf" class="button primary large">
-                        Download Resume
-                    </a>
-                </li>
-                <li>
-                    <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="button">
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/TergelO" target="_blank" class="button">
-                        GitHub
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <!-- SKILLS -->
-        <section class="section-spacing">
-            <header class="major">
-                <h2>Technical Skills</h2>
-            </header>
-
-            <article>
-                <p>
-                    <strong>Programming:</strong> Python (pandas, matplotlib), SQL<br>
-                    <strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)<br>
-                    <strong>Methodologies:</strong> Lean Process Improvement, Data Validation, KPI Monitoring<br>
-                    <strong>Tools:</strong> GitHub, Google Workspace
-                </p>
-            </article>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="section-spacing">
-            <header class="major">
-                <h2>Selected Projects</h2>
-            </header>
-
-            <article>
-                <h3>Engine Performance Analytics Dashboard</h3>
-                <p>
-                    Developed interactive Power BI dashboards analyzing 50,000+ engine performance records.
-                    Established performance baselines and visualized anomaly detection patterns to support executive-level decision-making.
-                </p>
-            </article>
-
-            <article>
-                <h3>Operational Process Improvement Study</h3>
-                <p>
-                    Applied Lean methodology to evaluate workflow inefficiencies.
-                    Identified value-added vs non-value-added activities and simulated measurable cycle-time reductions.
-                </p>
-            </article>
-
-            <article>
-                <h3>Python Data Grouping & Visualization</h3>
-                <p>
-                    Utilized pandas and matplotlib to group, analyze, and visualize structured datasets,
-                    transforming raw operational data into actionable performance insights.
-                </p>
-            </article>
-
-        </section>
-
+    <!-- HERO -->
+    <h1>Tergel Otgonbaatar</h1>
+    <div class="subtitle">
+        Data Analytics • Operational Intelligence • Process Optimization
     </div>
 
-    <!-- CONTACT -->
-    <footer id="footer" class="contact-section">
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> ttergel717@gmail.com</p>
-        <p><strong>Location:</strong> West Lafayette, IN</p>
-    </footer>
+    <div class="intro">
+        I transform operational data into measurable business insights. 
+        Specializing in dashboards, KPI monitoring, and Lean-driven performance analysis, 
+        I help organizations improve efficiency and make data-backed decisions.
+    </div>
 
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
-
-
-
+    <div class="buttons">
