@@ -43,6 +43,11 @@
             color: #cbd5e1;
         }
 
+        .intro {
+            font-size: 1.15rem;
+            max-width: 800px;
+        }
+
         .buttons a {
             display: inline-block;
             margin-right: 15px;
@@ -73,11 +78,45 @@
             color: white;
         }
 
-        .project {
-            margin-bottom: 40px;
-            padding: 20px;
+        .divider {
+            margin: 80px 0;
+            border: none;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
             background: rgba(255,255,255,0.05);
+            padding: 20px;
             border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+        }
+
+        .skill-card strong {
+            color: #60a5fa;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(255,255,255,0.08);
         }
 
         footer {
@@ -95,10 +134,10 @@
     <!-- HERO -->
     <h1>Tergel Otgonbaatar</h1>
 
-    <p>
-        Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics. 
-        Experienced in analyzing structured datasets, validating data integrity, and building standardized reporting 
-        systems to support performance monitoring and data-driven decision-making.
+    <p class="intro">
+        Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics.
+        Experienced in structured data validation, KPI monitoring, and building Power BI dashboards 
+        to support performance monitoring and data-driven decision-making.
     </p>
 
     <div class="buttons">
@@ -107,64 +146,69 @@
         <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
     </div>
 
+    <hr class="divider">
+
     <!-- SKILLS -->
     <h2>Technical Skills</h2>
 
-    <p><strong>Programming:</strong> Python (Pandas, Matplotlib), SQL</p>
-    <p><strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)</p>
-    <p><strong>Methods:</strong> Data Validation, KPI Monitoring, Statistical Trend Analysis</p>
-    <p><strong>Focus Areas:</strong> Manufacturing Analytics, Operations Monitoring, Continuous Improvement</p>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <strong>Programming</strong>
+            <p>Python (Pandas, Matplotlib)<br>SQL</p>
+        </div>
+
+        <div class="skill-card">
+            <strong>Analytics & BI</strong>
+            <p>Power BI<br>Excel (Pivot Tables, Data Modeling)</p>
+        </div>
+
+        <div class="skill-card">
+            <strong>Methods</strong>
+            <p>Data Validation<br>KPI Monitoring<br>Statistical Trend Analysis</p>
+        </div>
+
+        <div class="skill-card">
+            <strong>Focus Areas</strong>
+            <p>Manufacturing Analytics<br>Operations Monitoring<br>Continuous Improvement</p>
+        </div>
+    </div>
 
     <!-- PROJECTS -->
     <h2>Selected Projects</h2>
 
-    <div class="project">
+    <div class="project-card">
         <h3>Engine Performance Monitoring Dashboard</h3>
         <p><strong>Tools:</strong> Python, Pandas, Power BI</p>
         <p>
-            Analyzed structured engine performance datasets to establish statistical baselines and monitor performance trends. 
-            Built interactive dashboards to visualize deviations and support early issue detection for operational teams.
+            Analyzed 10,000+ structured engine performance records to establish statistical baselines 
+            and detect performance deviations. Developed interactive dashboards to support operational 
+            monitoring and early issue detection.
         </p>
     </div>
 
-    <div class="project">
-        <h3>Operational Reporting & KPI Tracking</h3>
-        <p><strong>Tools:</strong> Excel, SQL</p>
+    <div class="project-card">
+        <h3>Operational KPI Reporting System</h3>
+        <p><strong>Tools:</strong> SQL, Excel</p>
         <p>
-            Developed standardized reporting processes to track key performance indicators and improve visibility 
-            into workflow efficiency. Focused on data validation and clear communication of performance metrics.
+            Built standardized KPI tracking reports to improve workflow visibility and support 
+            data-driven operational decisions.
         </p>
     </div>
 
-    <div class="project">
+    <div class="project-card">
         <h3>System Performance Analysis</h3>
         <p><strong>Tools:</strong> Python, Data Analysis</p>
         <p>
-            Analyzed system performance data and user feedback to identify workflow bottlenecks and recommend 
-            process improvements that enhanced operational efficiency.
+            Evaluated system performance metrics and user feedback to identify workflow bottlenecks 
+            and recommend process improvements.
         </p>
     </div>
 
-    <!-- EXPERIENCE -->
-    <h2>Experience</h2>
-
-    <h3>Undergraduate Research – Purdue Data Mine</h3>
+    <!-- INTERNSHIP -->
+    <h2>Seeking Internship</h2>
     <p>
-        Designed analytical tools to monitor engine performance data, applied statistical trend analysis, 
-        and developed dashboards to communicate findings to stakeholders.
-    </p>
-
-    <h3>Instructional Systems Engineer Intern – KeelWorks</h3>
-    <p>
-        Analyzed system performance metrics and built reporting tools to support operational decision-making 
-        and workflow improvements.
-    </p>
-
-    <!-- INTERNSHIP FOCUS -->
-    <h2>Current Focus</h2>
-    <p>
-        Seeking Summer 2026 internship opportunities in manufacturing and operations analytics, 
-        with emphasis on data validation, process monitoring, and continuous improvement.
+        Actively seeking Summer 2026 internship opportunities in manufacturing and operations analytics.
+        Open to relocation and eager to contribute to data-driven continuous improvement initiatives.
     </p>
 
 </div>
@@ -175,3 +219,5 @@
 
 </body>
 </html>
+
+
