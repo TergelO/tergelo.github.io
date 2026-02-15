@@ -5,20 +5,80 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
+
         body {
             background: #f7f9fc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-        h1, h2, h3 {
+
+        #main {
+            padding-top: 3em;
+        }
+
+        h1 {
+            font-weight: 700;
             letter-spacing: 1px;
         }
+
+        h2 {
+            margin-bottom: 1.5em;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin-bottom: 0.5em;
+        }
+
         .highlight {
             color: #2e6cff;
             font-weight: 600;
+            font-size: 1.1em;
         }
+
         .section-spacing {
             margin-top: 4em;
         }
+
+        article {
+            background: white;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 2em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        article:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+        }
+
+        .button.primary {
+            background: #2e6cff;
+            border-radius: 8px;
+        }
+
+        .button {
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        hr {
+            margin: 4em 0;
+            opacity: 0.15;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 3em 0;
+        }
+
     </style>
 </head>
 
@@ -32,26 +92,39 @@
 
     <div id="main">
 
-        <!-- HERO -->
+        <!-- HERO SECTION -->
         <section class="post">
             <header class="major">
                 <h1>Tergel Otgonbaatar</h1>
                 <p class="highlight">Data Analytics • Operational Intelligence • Process Optimization</p>
             </header>
 
-            <p>
-                Data Analytics student at Purdue University focused on transforming structured data 
-                into measurable operational improvements. Experienced in dashboard development, 
-                data validation, performance monitoring, and Lean-driven process analysis.
+            <p style="font-size:1.15em; max-width:750px; margin:0 auto; text-align:center;">
+                I transform operational data into measurable business insights.
+                Specializing in dashboards, KPI monitoring, and Lean-driven performance analysis,
+                I help organizations improve efficiency and make data-backed decisions.
             </p>
 
-            <ul class="actions special">
-                <li><a href="resume.pdf" class="button primary large">Download Resume</a></li>
-                <li><a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="button">LinkedIn</a></li>
-                <li><a href="https://github.com/TergelO" target="_blank" class="button">GitHub</a></li>
+            <ul class="actions special" style="margin-top:2em;">
+                <li>
+                    <a href="resume.pdf" class="button primary large">
+                        Download Resume
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="button">
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/TergelO" target="_blank" class="button">
+                        GitHub
+                    </a>
+                </li>
             </ul>
-
         </section>
+
+        <hr>
 
         <!-- SKILLS -->
         <section class="section-spacing">
@@ -59,12 +132,14 @@
                 <h2>Technical Skills</h2>
             </header>
 
-            <p>
-                <strong>Programming:</strong> Python (pandas, matplotlib), SQL<br>
-                <strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)<br>
-                <strong>Methodologies:</strong> Lean Process Improvement, Data Validation, KPI Monitoring<br>
-                <strong>Tools:</strong> GitHub, Google Workspace
-            </p>
+            <article>
+                <p>
+                    <strong>Programming:</strong> Python (pandas, matplotlib), SQL<br>
+                    <strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)<br>
+                    <strong>Methodologies:</strong> Lean Process Improvement, Data Validation, KPI Monitoring<br>
+                    <strong>Tools:</strong> GitHub, Google Workspace
+                </p>
+            </article>
         </section>
 
         <!-- PROJECTS -->
@@ -76,24 +151,24 @@
             <article>
                 <h3>Engine Performance Analytics Dashboard</h3>
                 <p>
-                    Developed interactive Power BI dashboards analyzing 50,000+ engine performance records. 
-                    Established performance baselines and visualized anomaly patterns to support operational decisions.
+                    Developed interactive Power BI dashboards analyzing 50,000+ engine performance records.
+                    Established performance baselines and visualized anomaly detection patterns to support executive-level decision-making.
                 </p>
             </article>
 
             <article>
                 <h3>Operational Process Improvement Study</h3>
                 <p>
-                    Applied Lean methodology to analyze workflow inefficiencies and simulate measurable improvements 
-                    in cycle time and value-added activities.
+                    Applied Lean methodology to evaluate workflow inefficiencies.
+                    Identified value-added vs non-value-added activities and simulated measurable cycle-time reductions.
                 </p>
             </article>
 
             <article>
                 <h3>Python Data Grouping & Visualization</h3>
                 <p>
-                    Utilized pandas and matplotlib to group, sort, and visualize structured datasets, 
-                    transforming raw operational data into actionable insights.
+                    Utilized pandas and matplotlib to group, analyze, and visualize structured datasets,
+                    transforming raw operational data into actionable performance insights.
                 </p>
             </article>
 
@@ -101,12 +176,11 @@
 
     </div>
 
-    <footer id="footer">
-        <section>
-            <h3>Contact</h3>
-            <p>Email: ttergel717@gmail.com</p>
-            <p>Location: West Lafayette, IN</p>
-        </section>
+    <!-- CONTACT -->
+    <footer id="footer" class="contact-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> ttergel717@gmail.com</p>
+        <p><strong>Location:</strong> West Lafayette, IN</p>
     </footer>
 
 </div>
@@ -119,8 +193,4 @@
 
 </body>
 </html>
-
-
-
-
 
