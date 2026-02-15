@@ -1,48 +1,48 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Tergel Otgonbaatar | Data Analytics Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tergel Otgonbaatar | Data Analytics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         body {
             margin: 0;
-            background: linear-gradient(135deg, #eef2ff, #f8fafc);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #f8fafc);
             color: #111827;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 60px auto;
-            padding: 50px;
+            padding: 60px;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.08);
         }
 
         h1 {
-            font-size: 3em;
-            font-weight: 800;
-            margin-bottom: 10px;
             text-align: center;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 800;
         }
 
         .subtitle {
             text-align: center;
             color: #2563eb;
-            font-weight: 600;
             font-size: 1.2em;
-            margin-bottom: 25px;
+            font-weight: 600;
+            margin-bottom: 30px;
         }
 
         .intro {
             text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
             font-size: 1.15em;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
         }
 
         .buttons {
@@ -53,11 +53,11 @@
         .buttons a {
             display: inline-block;
             margin: 8px;
-            padding: 14px 28px;
+            padding: 14px 30px;
             background: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 600;
             transition: 0.2s ease;
         }
@@ -72,12 +72,17 @@
             margin-bottom: 20px;
         }
 
-        .skills {
+        .card {
             background: #f9fafb;
             padding: 30px;
             border-radius: 16px;
-            margin-bottom: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
 
         .projects {
@@ -86,22 +91,9 @@
             gap: 30px;
         }
 
-        .project-card {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 16px;
-            transition: 0.25s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-        }
-
         footer {
             margin-top: 60px;
             text-align: center;
-            font-size: 0.95em;
             color: #6b7280;
         }
 
@@ -123,14 +115,73 @@
 
     <!-- HERO -->
     <h1>Tergel Otgonbaatar</h1>
-    <div class="subtitle">
-        Data Analytics • Operational Intelligence • Process Optimization
-    </div>
+    <div class="subtitle">Data Analytics</div>
 
     <div class="intro">
-        I transform operational data into measurable business insights. 
-        Specializing in dashboards, KPI monitoring, and Lean-driven performance analysis, 
-        I help organizations improve efficiency and make data-backed decisions.
+        Data Analytics student at Purdue University with experience in Python, SQL,
+        Power BI, and Excel. I build dashboards, analyze performance metrics,
+        and apply structured data analysis to support operational and business decisions.
     </div>
 
     <div class="buttons">
+        <a href="resume.pdf" target="_blank">Download Resume</a>
+        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/TergelO" target="_blank">GitHub</a>
+    </div>
+
+    <!-- SKILLS -->
+    <h2>Technical Skills</h2>
+    <div class="card">
+        <strong>Programming:</strong> Python (Pandas), SQL<br><br>
+        <strong>Analytics & BI:</strong> Power BI, Tableau, Excel<br><br>
+        <strong>Methods:</strong> KPI Monitoring, Data Validation, Process Improvement<br><br>
+        <strong>Tools:</strong> GitHub, Google Workspace
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Selected Projects</h2>
+
+    <div class="projects">
+
+        <div class="card">
+            <h3>Engine Performance Analytics Dashboard</h3>
+            <p>
+                Built Power BI dashboards analyzing 50,000+ engine performance records,
+                identifying trends and supporting data-driven operational decisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Operational Process Improvement Study</h3>
+            <p>
+                Applied Lean methodology to evaluate workflow inefficiencies and
+                simulate measurable cycle-time improvements.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Python Data Grouping & Visualization</h3>
+            <p>
+                Used pandas and matplotlib to group and analyze structured datasets,
+                converting raw data into actionable insights.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Data Validation & KPI Monitoring Framework</h3>
+            <p>
+                Designed structured KPI tracking systems to ensure reporting accuracy
+                and consistent performance measurement.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        Contact: ttergel717@gmail.com • West Lafayette, IN
+    </footer>
+
+</div>
+
+</body>
+</html>
