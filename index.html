@@ -2,108 +2,102 @@
 <html>
 <head>
     <title>Tergel Otgonbaatar | Data Analytics</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #f8fafc);
-            color: #111827;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 60px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
         }
 
         h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
             font-weight: 800;
         }
 
         .subtitle {
-            text-align: center;
-            color: #2563eb;
-            font-size: 1.2em;
-            font-weight: 600;
+            font-size: 1.2rem;
+            color: #60a5fa;
             margin-bottom: 30px;
         }
 
         .intro {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 40px auto;
-            font-size: 1.15em;
+            max-width: 700px;
+            font-size: 1.1rem;
             line-height: 1.6;
-        }
-
-        .buttons {
-            text-align: center;
-            margin-bottom: 60px;
+            color: #cbd5e1;
+            margin-bottom: 40px;
         }
 
         .buttons a {
             display: inline-block;
-            margin: 8px;
-            padding: 14px 30px;
+            margin: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .primary {
             background: #2563eb;
             color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: 0.2s ease;
+        }
+
+        .secondary {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            background: transparent;
         }
 
         .buttons a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37,99,235,0.3);
         }
 
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
+        .section {
+            padding: 80px 20px;
+            background: #f8fafc;
+            color: #111827;
+            text-align: center;
         }
 
-        .card {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 16px;
+        .section h2 {
+            font-size: 2rem;
             margin-bottom: 30px;
-            transition: 0.25s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+        .skills {
+            max-width: 900px;
+            margin: auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         footer {
-            margin-top: 60px;
+            padding: 40px;
             text-align: center;
-            color: #6b7280;
+            font-size: 0.9rem;
+            background: #0f172a;
+            color: #94a3b8;
         }
 
-        @media (max-width: 900px) {
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 30px;
+        @media(max-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
             }
         }
     </style>
@@ -111,77 +105,38 @@
 
 <body>
 
-<div class="container">
+    <div class="hero">
+        <h1>Tergel Otgonbaatar</h1>
+        <div class="subtitle">Data Analytics</div>
 
-    <!-- HERO -->
-    <h1>Tergel Otgonbaatar</h1>
-    <div class="subtitle">Data Analytics</div>
+        <div class="intro">
+            Data Analytics student at Purdue University focused on building dashboards, 
+            analyzing performance metrics, and turning structured data into measurable 
+            business insights.
+        </div>
 
-    <div class="intro">
-        Data Analytics student at Purdue University with experience in Python, SQL,
-        Power BI, and Excel. I build dashboards, analyze performance metrics,
-        and apply structured data analysis to support operational and business decisions.
+        <div class="buttons">
+            <a href="resume.pdf" class="primary">Download Resume</a>
+            <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
+            <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
+        </div>
     </div>
 
-    <div class="buttons">
-        <a href="resume.pdf" target="_blank">Download Resume</a>
-        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/TergelO" target="_blank">GitHub</a>
-    </div>
-
-    <!-- SKILLS -->
-    <h2>Technical Skills</h2>
-    <div class="card">
-        <strong>Programming:</strong> Python (Pandas), SQL<br><br>
-        <strong>Analytics & BI:</strong> Power BI, Tableau, Excel<br><br>
-        <strong>Methods:</strong> KPI Monitoring, Data Validation, Process Improvement<br><br>
-        <strong>Tools:</strong> GitHub, Google Workspace
-    </div>
-
-    <!-- PROJECTS -->
-    <h2>Selected Projects</h2>
-
-    <div class="projects">
-
-        <div class="card">
-            <h3>Engine Performance Analytics Dashboard</h3>
-            <p>
-                Built Power BI dashboards analyzing 50,000+ engine performance records,
-                identifying trends and supporting data-driven operational decisions.
-            </p>
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <strong>Programming:</strong> Python (pandas, matplotlib), SQL<br>
+            <strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)<br>
+            <strong>Methodologies:</strong> Lean Process Improvement, Data Validation, KPI Monitoring<br>
+            <strong>Tools:</strong> GitHub, Google Workspace
         </div>
-
-        <div class="card">
-            <h3>Operational Process Improvement Study</h3>
-            <p>
-                Applied Lean methodology to evaluate workflow inefficiencies and
-                simulate measurable cycle-time improvements.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Python Data Grouping & Visualization</h3>
-            <p>
-                Used pandas and matplotlib to group and analyze structured datasets,
-                converting raw data into actionable insights.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Data Validation & KPI Monitoring Framework</h3>
-            <p>
-                Designed structured KPI tracking systems to ensure reporting accuracy
-                and consistent performance measurement.
-            </p>
-        </div>
-
     </div>
 
     <footer>
-        Contact: ttergel717@gmail.com • West Lafayette, IN
+        West Lafayette, IN • ttergel717@gmail.com
     </footer>
-
-</div>
 
 </body>
 </html>
+
+
