@@ -6,88 +6,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
-    body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: linear-gradient(135deg, #0b1220, #14213d);
-        color: #e2e8f0;
-        padding: 60px 20px;
-    }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #0b1220, #14213d);
+            color: #e2e8f0;
+        }
 
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 30px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 20px;
+        }
 
-    p {
-        max-width: 850px;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #cbd5e1;
-    }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
 
-    a {
-        display: inline-block;
-        margin-right: 20px;
-        margin-top: 30px;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s ease;
-    }
+        h2 {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: white;
+        }
 
-    a:first-of-type {
-        background: #2563eb;
-        color: white;
-    }
+        h3 {
+            margin-bottom: 10px;
+            color: #60a5fa;
+        }
 
-    a:first-of-type:hover {
-        background: #1d4ed8;
-    }
+        p {
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
 
-    a:not(:first-of-type) {
-        border: 2px solid #3b82f6;
-        color: #3b82f6;
-    }
+        .buttons a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 30px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
 
-    a:not(:first-of-type):hover {
-        background: #3b82f6;
-        color: white;
-    }
-</style>
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
 
+        .primary:hover {
+            background: #1d4ed8;
+        }
+
+        .secondary {
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+
+        .secondary:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .project {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="hero">
+<div class="container">
+
+    <!-- HERO -->
     <h1>Tergel Otgonbaatar</h1>
 
-    <div class="intro">
-        <p>
-            I am a Data Analytics undergraduate at Purdue University pursuing a Bachelor of Science in Data Analytics, Technologies, and Applications. My work focuses on using structured data to support operational and manufacturing decision-making.
-        </p>
-
-        <p>
-            Through applied research with Purdue’s Data Mine and professional experience, I have analyzed performance datasets, validated data accuracy, established statistical baselines, and developed interactive Power BI dashboards to communicate insights effectively to stakeholders.
-        </p>
-
-        <p>
-            I am particularly interested in manufacturing and operations analytics, where data quality, process monitoring, and clear reporting drive measurable improvements. I am seeking internship opportunities where I can apply my analytical skills in real-world environments while continuing to grow in collaboration and continuous improvement.
-        </p>
-    </div>
+    <p>
+        Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics. 
+        Experienced in analyzing structured datasets, validating data integrity, and building standardized reporting 
+        systems to support performance monitoring and data-driven decision-making.
+    </p>
 
     <div class="buttons">
         <a href="resume.pdf" class="primary">Download Resume</a>
         <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
         <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
     </div>
+
+    <!-- SKILLS -->
+    <h2>Technical Skills</h2>
+
+    <p><strong>Programming:</strong> Python (Pandas, Matplotlib), SQL</p>
+    <p><strong>Analytics & BI:</strong> Power BI, Excel (Pivot Tables, Data Modeling)</p>
+    <p><strong>Methods:</strong> Data Validation, KPI Monitoring, Statistical Trend Analysis</p>
+    <p><strong>Focus Areas:</strong> Manufacturing Analytics, Operations Monitoring, Continuous Improvement</p>
+
+    <!-- PROJECTS -->
+    <h2>Selected Projects</h2>
+
+    <div class="project">
+        <h3>Engine Performance Monitoring Dashboard</h3>
+        <p><strong>Tools:</strong> Python, Pandas, Power BI</p>
+        <p>
+            Analyzed structured engine performance datasets to establish statistical baselines and monitor performance trends. 
+            Built interactive dashboards to visualize deviations and support early issue detection for operational teams.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Operational Reporting & KPI Tracking</h3>
+        <p><strong>Tools:</strong> Excel, SQL</p>
+        <p>
+            Developed standardized reporting processes to track key performance indicators and improve visibility 
+            into workflow efficiency. Focused on data validation and clear communication of performance metrics.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>System Performance Analysis</h3>
+        <p><strong>Tools:</strong> Python, Data Analysis</p>
+        <p>
+            Analyzed system performance data and user feedback to identify workflow bottlenecks and recommend 
+            process improvements that enhanced operational efficiency.
+        </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <h2>Experience</h2>
+
+    <h3>Undergraduate Research – Purdue Data Mine</h3>
+    <p>
+        Designed analytical tools to monitor engine performance data, applied statistical trend analysis, 
+        and developed dashboards to communicate findings to stakeholders.
+    </p>
+
+    <h3>Instructional Systems Engineer Intern – KeelWorks</h3>
+    <p>
+        Analyzed system performance metrics and built reporting tools to support operational decision-making 
+        and workflow improvements.
+    </p>
+
+    <!-- INTERNSHIP FOCUS -->
+    <h2>Current Focus</h2>
+    <p>
+        Seeking Summer 2026 internship opportunities in manufacturing and operations analytics, 
+        with emphasis on data validation, process monitoring, and continuous improvement.
+    </p>
+
 </div>
+
+<footer>
+    West Lafayette, IN • ttergel717@gmail.com
+</footer>
 
 </body>
 </html>
-
-
