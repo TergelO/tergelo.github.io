@@ -45,7 +45,27 @@
 
         .intro {
             font-size: 1.15rem;
-            max-width: 800px;
+            max-width: 600px;
+        }
+
+        /* HERO LAYOUT */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-photo img {
+            width: 240px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .buttons a {
@@ -85,6 +105,7 @@
             background: rgba(255,255,255,0.1);
         }
 
+        /* SKILLS GRID */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -107,6 +128,7 @@
             color: #60a5fa;
         }
 
+        /* PROJECTS */
         .project-card {
             background: rgba(255,255,255,0.05);
             padding: 25px;
@@ -119,10 +141,27 @@
             background: rgba(255,255,255,0.08);
         }
 
+        ul {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
         footer {
             text-align: center;
             padding: 40px;
             color: #94a3b8;
+        }
+
+        /* MOBILE */
+        @media(max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-photo img {
+                width: 200px;
+            }
         }
     </style>
 </head>
@@ -132,25 +171,31 @@
 <div class="container">
 
     <!-- HERO -->
-    <h1>Tergel Otgonbaatar</h1>
+    <div class="hero-section">
 
-    <p class="intro">
-        Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics.
-        Experienced in structured data validation, KPI monitoring, and building Power BI dashboards 
-        to support performance monitoring and data-driven decision-making.
-    </p>
+        <div class="hero-text">
+            <h1>Tergel Otgonbaatar</h1>
 
-    <div class="buttons">
-        <a href="resume.pdf" class="primary">Download Resume</a>
-        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
-        <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
+            <p class="intro">
+                Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics.
+                Experienced in structured data validation, KPI monitoring, and developing Power BI dashboards 
+                to support performance tracking and data-driven decision-making.
+            </p>
+
+            <div class="buttons">
+                <a href="resume.pdf" class="primary">Download Resume</a>
+                <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
+                <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
+            </div>
+        </div>
+
+        <div class="hero-photo">
+            <img src="headshot.png" alt="Tergel Otgonbaatar">
+        </div>
+
     </div>
 
     <hr class="divider">
-    
-    <div class="hero-photo">
-        <img src="headshot.png" alt="Tergel Otgonbaatar">
-    </div>
 
     <!-- SKILLS -->
     <h2>Technical Skills</h2>
@@ -177,37 +222,24 @@
         </div>
     </div>
 
+    <!-- LANGUAGES -->
     <h2>Languages</h2>
 
-<div class="skills-grid">
-    <div class="skill-card">
-        <strong>Mongolian</strong>
-        <p>Native</p>
+    <div class="skills-grid">
+        <div class="skill-card"><strong>Mongolian</strong><p>Native</p></div>
+        <div class="skill-card"><strong>English</strong><p>Fluent</p></div>
+        <div class="skill-card"><strong>Russian</strong><p>Professional Proficiency</p></div>
+        <div class="skill-card"><strong>German</strong><p>Conversational Proficiency</p></div>
     </div>
 
-    <div class="skill-card">
-        <strong>English</strong>
-        <p>Fluent</p>
-    </div>
-
-    <div class="skill-card">
-        <strong>Russian</strong>
-        <p>Professional Proficiency</p>
-    </div>
-
-    <div class="skill-card">
-        <strong>German</strong>
-        <p>Conversational Proficiency</p>
-    </div>
-</div>
-<h2>What I Bring</h2>
-<ul>
-<li>Strong attention to data integrity and validation</li>
-<li>Ability to translate raw data into clear operational insights</li>
-<li>Experience working with structured performance datasets</li>
-<li>Clear communication with technical and non-technical stakeholders</li>
-</ul>
-
+    <!-- WHAT I BRING -->
+    <h2>What I Bring</h2>
+    <ul>
+        <li>Strong attention to data integrity and validation</li>
+        <li>Ability to translate raw data into actionable operational insights</li>
+        <li>Experience working with structured performance datasets</li>
+        <li>Clear communication with technical and non-technical stakeholders</li>
+    </ul>
 
     <!-- PROJECTS -->
     <h2>Selected Projects</h2>
@@ -217,8 +249,7 @@
         <p><strong>Tools:</strong> Python, Pandas, Power BI</p>
         <p>
             Analyzed 10,000+ structured engine performance records to establish statistical baselines 
-            and detect performance deviations. Developed interactive dashboards to support operational 
-            monitoring and early issue detection.
+            and identify performance deviations. Developed interactive dashboards to support operational monitoring.
         </p>
     </div>
 
@@ -226,8 +257,8 @@
         <h3>Operational KPI Reporting System</h3>
         <p><strong>Tools:</strong> SQL, Excel</p>
         <p>
-            Built standardized KPI tracking reports to improve workflow visibility and support 
-            data-driven operational decisions.
+            Designed standardized KPI tracking reports to improve workflow visibility 
+            and support data-driven operational decisions.
         </p>
     </div>
 
@@ -235,7 +266,7 @@
         <h3>System Performance Analysis</h3>
         <p><strong>Tools:</strong> Python, Data Analysis</p>
         <p>
-            Evaluated system performance metrics and user feedback to identify workflow bottlenecks 
+            Evaluated system performance metrics and user feedback to identify bottlenecks 
             and recommend process improvements.
         </p>
     </div>
@@ -255,8 +286,4 @@
 
 </body>
 </html>
-
-
-
-
 
