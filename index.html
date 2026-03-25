@@ -1,250 +1,275 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tergel Otgonbaatar</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tergel Otgonbaatar</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #fdf2f8, #e0f2fe, #f0fdf4);
-            color: #1e293b;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(-45deg, #fdf2f8, #e0f2fe, #f0fdf4, #ede9fe);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    color: #1e293b;
+}
 
-        .container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 100px 20px;
-        }
+/* animated background */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        /* HERO */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 80px;
-            flex-wrap: wrap;
-            animation: fadeUp 1s ease forwards;
-            opacity: 0;
-        }
+/* NAVBAR */
+.nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.5);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #ec4899, #6366f1, #22c55e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #334155;
+    font-weight: 500;
+}
 
-        .hero h2 {
-            color: #64748b;
-            margin-top: 10px;
-        }
+/* container */
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 80px 20px;
+}
 
-        .hero p {
-            margin-top: 20px;
-            line-height: 1.8;
-            color: #475569;
-            max-width: 550px;
-        }
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        .hero-photo img {
-            width: 300px;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            animation: float 6s ease-in-out infinite;
-        }
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ec4899, #6366f1, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        /* BUTTONS */
-        .buttons {
-            margin-top: 30px;
-        }
+/* typing cursor */
+.cursor {
+    border-right: 3px solid #6366f1;
+    padding-right: 5px;
+    animation: blink 1s infinite;
+}
 
-        .buttons a {
-            text-decoration: none;
-            padding: 14px 28px;
-            margin-right: 15px;
-            border-radius: 999px;
-            font-weight: 600;
-        }
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
-        .primary {
-            background: linear-gradient(135deg, #a5b4fc, #f9a8d4);
-            color: white;
-        }
+.hero p {
+    margin-top: 20px;
+    max-width: 500px;
+    color: #475569;
+}
 
-        .primary:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
+/* image */
+.hero img {
+    width: 300px;
+    border-radius: 24px;
+    animation: float 6s ease-in-out infinite;
+}
 
-        .secondary {
-            background: rgba(255,255,255,0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.6);
-            color: #334155;
-        }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
 
-        .secondary:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.7);
-        }
+/* buttons */
+.buttons {
+    margin-top: 25px;
+}
 
-        .buttons a:active {
-            transform: scale(0.95);
-        }
+.buttons a {
+    padding: 12px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 10px;
+}
 
-        /* SECTIONS */
-        section {
-            margin-top: 120px;
-            opacity: 0;
-            transform: translateY(40px);
-        }
+.primary {
+    background: linear-gradient(135deg, #a5b4fc, #f9a8d4);
+    color: white;
+}
 
-        section h3 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
+.secondary {
+    background: rgba(255,255,255,0.6);
+}
 
-        /* GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
+/* sections */
+section {
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(40px);
+}
 
-        /* CARDS */
-        .card {
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(14px);
-            padding: 30px;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.6);
-            opacity: 0;
-            transform: translateY(30px);
-        }
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
+/* grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
 
-        .card strong {
-            color: #6366f1;
-        }
+/* cards */
+.card {
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(14px);
+    padding: 25px;
+    border-radius: 20px;
+}
 
-        /* SHOW ON SCROLL */
-        .show {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-            transition: all 0.8s ease;
-        }
+.card:hover {
+    transform: translateY(-8px);
+}
 
-        /* ANIMATIONS */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 120px;
-            padding: 40px;
-            text-align: center;
-            color: #64748b;
-        }
-
-        /* MOBILE */
-        @media(max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-photo img {
-                width: 240px;
-            }
-        }
-    </style>
+/* footer */
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding: 40px;
+    color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<div class="nav">
+    <div><strong>Tergel</strong></div>
+    <div>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+    </div>
+</div>
+
 <div class="container">
 
-    <div class="hero">
-        <div>
-            <h1>Tergel Otgonbaatar</h1>
-            <h2>Operations & Manufacturing Analytics</h2>
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1 id="typing"></h1>
 
-            <p>
-                Data Analytics student at Purdue University focused on performance analytics,
-                KPI monitoring, and process improvement.
-            </p>
+        <p>
+            I turn operational data into decisions.
+            Focused on performance analytics, KPI systems, and real-world impact.
+        </p>
 
-            <div class="buttons">
-                <a href="resume.pdf" class="primary">Download Resume</a>
-                <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
-                <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
-            </div>
-        </div>
-
-        <div class="hero-photo">
-            <img src="headshot.png">
+        <div class="buttons">
+            <a href="Tergel Otgonbaatar Resume..pdf" class="primary">Resume</a>
+            <a href="https://github.com/TergelO" class="secondary">GitHub</a>
         </div>
     </div>
 
-    <section>
-        <h3>Experience</h3>
-        <div class="grid">
-            <div class="card">
-                <strong>Data Science Researcher – The Data Mine</strong>
-                <p>Built dashboards and cleaned 54+ datasets for performance analytics.</p>
-            </div>
+    <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png">
+</div>
 
-            <div class="card">
-                <strong>Instructional Systems Engineer Intern – KeelWorks</strong>
-                <p>Analyzed system performance and created KPI tracking tools.</p>
-            </div>
-        </div>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
 
-    <section>
-        <h3>Technical Skills</h3>
-        <div class="grid">
-            <div class="card"><strong>Programming</strong><p>Python • SQL • Java</p></div>
-            <div class="card"><strong>Analytics</strong><p>Power BI • Tableau • Excel</p></div>
-            <div class="card"><strong>Data</strong><p>Cleaning • Validation • Analysis</p></div>
-            <div class="card"><strong>Process</strong><p>Lean Six Sigma • KPI Monitoring</p></div>
+        <div class="card">
+            <strong>Engine Analytics Dashboard</strong>
+            <p>
+                Built Power BI dashboards analyzing engine performance across ships.
+                Cleaned 50+ datasets and identified baseline trends.
+            </p>
         </div>
-    </section>
+
+        <div class="card">
+            <strong>Active Directory Infrastructure</strong>
+            <p>
+                Designed multi-site AD system with replication, WSUS, and automation.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+
+        <div class="card">
+            <strong>Data Mine – Researcher</strong>
+            <p>Operational analytics with Carnival Cruise Line.</p>
+        </div>
+
+        <div class="card">
+            <strong>KeelWorks Intern</strong>
+            <p>Built KPI dashboards and improved workflows.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+        <div class="card">Python • SQL • Java</div>
+        <div class="card">Power BI • Excel • Tableau</div>
+        <div class="card">Data Cleaning • Validation</div>
+        <div class="card">Lean Six Sigma</div>
+    </div>
+</section>
 
 </div>
 
 <footer>
-    Available for Summer 2026 Internship • West Lafayette, IN
+    Summer 2026 Internship Ready • West Lafayette
 </footer>
 
+<!-- JS -->
 <script>
+/* typing effect */
+const text = "Tergel Otgonbaatar";
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 70);
+    }
+}
+type();
+
+/* scroll animation */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -253,9 +278,7 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 
-document.querySelectorAll('.card, section').forEach(el => {
-    observer.observe(el);
-});
+document.querySelectorAll('section').forEach(el => observer.observe(el));
 </script>
 
 </body>
