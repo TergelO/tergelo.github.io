@@ -14,15 +14,21 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
             padding: 80px 20px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             color: white;
+            margin-bottom: 10px;
+        }
+
+        .headline {
+            color: #60a5fa;
+            font-weight: 600;
             margin-bottom: 20px;
         }
 
@@ -39,16 +45,10 @@
         }
 
         p {
-            line-height: 1.8;
+            line-height: 1.7;
             color: #cbd5e1;
         }
 
-        .intro {
-            font-size: 1.15rem;
-            max-width: 600px;
-        }
-
-        /* HERO SECTION */
         .hero-section {
             display: flex;
             align-items: center;
@@ -63,16 +63,16 @@
         }
 
         .hero-photo img {
-            width: 240px;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         .buttons a {
             display: inline-block;
             margin-right: 15px;
             margin-top: 30px;
-            padding: 12px 24px;
+            padding: 12px 26px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
@@ -105,45 +105,22 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* SKILLS GRID */
-        .skills-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
         }
 
-        .skill-card {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s ease;
-        }
-
-        .skill-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-5px);
-        }
-
-        .skill-card strong {
-            color: #60a5fa;
-        }
-
-        /* PROJECTS */
-        .project-card {
+        .card {
             background: rgba(255,255,255,0.05);
             padding: 25px;
             border-radius: 12px;
-            margin-bottom: 25px;
             transition: 0.3s ease;
         }
 
-        .project-card:hover {
+        .card:hover {
             background: rgba(255,255,255,0.08);
-        }
-
-        ul {
-            line-height: 1.8;
-            color: #cbd5e1;
+            transform: translateY(-5px);
         }
 
         footer {
@@ -152,15 +129,10 @@
             color: #94a3b8;
         }
 
-        /* MOBILE */
         @media(max-width: 768px) {
             .hero-section {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            .hero-photo img {
-                width: 200px;
             }
         }
     </style>
@@ -175,108 +147,120 @@
 
         <div class="hero-text">
             <h1>Tergel Otgonbaatar</h1>
+            <p class="headline">Operations & Manufacturing Analytics</p>
 
-            <p class="intro">
-                Data Analytics undergraduate at Purdue University specializing in operational and manufacturing analytics.
-                Experienced in structured data validation, KPI monitoring, and developing Power BI dashboards 
-                to support performance tracking and data-driven decision-making.
+            <p>
+                Data Analytics undergraduate at Purdue University focused on operational and manufacturing analytics.
+                Experienced in processing large structured datasets, building KPI dashboards,
+                and applying statistical and process improvement methods to support data-driven decisions.
             </p>
 
             <div class="buttons">
-                <a href="Tergel Otgonbaatar Resume..pdf" class="primary">Download Resume</a>
+                <a href="resume.pdf" class="primary">Download Resume</a>
                 <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="secondary">LinkedIn</a>
                 <a href="https://github.com/TergelO" target="_blank" class="secondary">GitHub</a>
             </div>
+
+            <p style="margin-top:20px; color:#94a3b8;">
+                Available for Summer 2026 Internship • Open to Relocation
+            </p>
         </div>
 
         <div class="hero-photo">
-            <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel Otgonbaatar">
+            <img src="headshot.png" alt="Tergel Otgonbaatar">
         </div>
 
     </div>
 
     <hr class="divider">
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- EXPERIENCE -->
+    <h2>Experience</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Undergraduate Data Science Researcher</h3>
+            <p><strong>The Data Mine – Purdue University</strong></p>
+            <p>
+                Collaborated with Carnival Cruise Line to analyze operational datasets.
+                Processed and cleaned 54 Excel files and developed Power BI dashboards
+                to support performance monitoring and baseline analysis.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Instructional Systems Engineer Intern</h3>
+            <p><strong>KeelWorks</strong></p>
+            <p>
+                Analyzed system performance data and user feedback to identify bottlenecks.
+                Built KPI dashboards and reporting tools supporting operational decisions.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+    <h2>Technical Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Virtualized Active Directory Infrastructure</h3>
+            <p>
+                Designed and deployed a multi-site virtualized Active Directory environment
+                using Windows Server 2022/2025 to simulate enterprise IT infrastructure.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Lean Six Sigma (DMAIC) Analysis</h3>
+            <p>
+                Applied DMAIC methodology to analyze multi-year ticket sales data,
+                identifying demand trends and operational improvement opportunities.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SKILLS -->
     <h2>Technical Skills</h2>
 
-    <div class="skills-grid">
-        <div class="skill-card">
+    <div class="grid">
+
+        <div class="card">
             <strong>Programming</strong>
-            <p>Python (Pandas, Matplotlib)<br>SQL</p>
+            <p>Python (Pandas, NumPy)<br>Java<br>SQL</p>
         </div>
 
-        <div class="skill-card">
+        <div class="card">
             <strong>Analytics & BI</strong>
-            <p>Power BI<br>Excel (Pivot Tables, Data Modeling)</p>
+            <p>Power BI<br>Tableau<br>Excel</p>
         </div>
 
-        <div class="skill-card">
-            <strong>Methods</strong>
-            <p>Data Validation<br>KPI Monitoring<br>Statistical Trend Analysis</p>
+        <div class="card">
+            <strong>Data Practices</strong>
+            <p>Data Cleaning<br>Validation<br>Deduplication<br>Trend Analysis</p>
         </div>
 
-        <div class="skill-card">
-            <strong>Focus Areas</strong>
-            <p>Manufacturing Analytics<br>Operations Monitoring<br>Continuous Improvement</p>
+        <div class="card">
+            <strong>Process & Operations</strong>
+            <p>Lean Six Sigma Fundamentals<br>KPI Tracking<br>Process Improvement</p>
         </div>
+
     </div>
 
     <!-- LANGUAGES -->
     <h2>Languages</h2>
 
-    <div class="skills-grid">
-        <div class="skill-card"><strong>Mongolian</strong><p>Native</p></div>
-        <div class="skill-card"><strong>English</strong><p>Fluent</p></div>
-        <div class="skill-card"><strong>Russian</strong><p>Professional Proficiency</p></div>
-        <div class="skill-card"><strong>German</strong><p>Conversational Proficiency</p></div>
+    <div class="grid">
+
+        <div class="card"><strong>Mongolian</strong><p>Native</p></div>
+        <div class="card"><strong>English</strong><p>Fluent</p></div>
+        <div class="card"><strong>Russian</strong><p>Professional Proficiency</p></div>
+        <div class="card"><strong>German</strong><p>Conversational Proficiency</p></div>
+
     </div>
-
-    <!-- WHAT I BRING -->
-    <h2>What I Bring</h2>
-    <ul>
-        <li>Strong attention to data integrity and validation</li>
-        <li>Ability to translate raw data into actionable operational insights</li>
-        <li>Experience working with structured performance datasets</li>
-        <li>Clear communication with technical and non-technical stakeholders</li>
-    </ul>
-
-    <!-- PROJECTS -->
-    <h2>Selected Projects</h2>
-
-    <div class="project-card">
-        <h3>Engine Performance Monitoring Dashboard</h3>
-        <p><strong>Tools:</strong> Python, Pandas, Power BI</p>
-        <p>
-            Analyzed 10,000+ structured engine performance records to establish statistical baselines 
-            and identify performance deviations. Developed interactive dashboards to support operational monitoring.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>Operational KPI Reporting System</h3>
-        <p><strong>Tools:</strong> SQL, Excel</p>
-        <p>
-            Designed standardized KPI tracking reports to improve workflow visibility 
-            and support data-driven operational decisions.
-        </p>
-    </div>
-
-    <div class="project-card">
-        <h3>System Performance Analysis</h3>
-        <p><strong>Tools:</strong> Python, Data Analysis</p>
-        <p>
-            Evaluated system performance metrics and user feedback to identify bottlenecks 
-            and recommend process improvements.
-        </p>
-    </div>
-
-    <!-- INTERNSHIP -->
-    <h2>Seeking Internship</h2>
-    <p>
-        Actively seeking Summer 2026 internship opportunities in manufacturing and operations analytics.
-        Open to relocation and eager to contribute to data-driven continuous improvement initiatives.
-    </p>
 
 </div>
 
@@ -286,5 +270,4 @@
 
 </body>
 </html>
-
 
