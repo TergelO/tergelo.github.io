@@ -12,7 +12,7 @@
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
-    html {
+html {
     scroll-behavior: smooth;
 }
 
@@ -24,14 +24,12 @@ body {
     color: #1e293b;
 }
 
-/* animated background */
 @keyframes gradientFlow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* NAVBAR */
 .nav {
     position: sticky;
     top: 0;
@@ -50,14 +48,12 @@ body {
     font-weight: 500;
 }
 
-/* container */
 .container {
     max-width: 1150px;
     margin: auto;
     padding: 80px 20px;
 }
 
-/* HERO */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -73,7 +69,6 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* typing cursor */
 .cursor {
     border-right: 3px solid #6366f1;
     padding-right: 5px;
@@ -90,7 +85,6 @@ body {
     color: #475569;
 }
 
-/* image */
 .hero img {
     width: 300px;
     border-radius: 24px;
@@ -103,7 +97,6 @@ body {
     100% { transform: translateY(0px); }
 }
 
-/* buttons */
 .buttons {
     margin-top: 25px;
 }
@@ -125,26 +118,16 @@ body {
     background: rgba(255,255,255,0.6);
 }
 
-/* sections */
 section {
     margin-top: 100px;
-    opacity: 0;
-    transform: translateY(40px);
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
-/* cards */
 .card {
     background: rgba(255,255,255,0.55);
     backdrop-filter: blur(14px);
@@ -157,7 +140,7 @@ section {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
-    /* MBTI SECTION */
+
 #core-identity {
     margin-top: 120px;
 }
@@ -217,7 +200,6 @@ section {
     transition: width 1.5s ease;
 }
 
-/* footer */
 footer {
     text-align: center;
     margin-top: 100px;
@@ -229,7 +211,6 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
     <div><strong>Tergel</strong></div>
     <div>
@@ -241,10 +222,8 @@ footer {
 
 <div class="container">
 
-<!-- HERO -->
 <section class="hero-editorial">
   <div class="hero-grid">
-
     <div class="hero-photo">
       <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel">
       <div class="academic-card">
@@ -254,44 +233,37 @@ footer {
         <div><strong>Expected</strong> Dec 2026</div>
       </div>
     </div>
-
     <div class="hero-text">
       <h1>I build systems that move forward.</h1>
-
       <p>
-        I’m Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University.
-        I’m drawn to operational clarity, measurable improvement, and building
+        I'm Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University.
+        I'm drawn to operational clarity, measurable improvement, and building
         structured systems that scale.
       </p>
       <p>
-        I didn’t follow a traditional academic path. After leaving high school at 16,
+        I didn't follow a traditional academic path. After leaving high school at 16,
         I rebuilt my education in a new country and language. That shift shaped
         my discipline, independence, and long-term drive.
       </p>
-
       <div class="editorial-buttons">
         <a href="Tergel Otgonbaatar Resume..pdf">View Resume →</a>
         <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
       </div>
     </div>
-
   </div>
 </section>
-    <section id="core-identity">
+
+<section id="core-identity">
     <div class="identity-wrapper">
-        
         <div class="identity-left">
             <h1 class="mbti-title">ESFP<span>/</span> ENTERTAINER</h1>
             <p class="mbti-sub">Entertainer profile + professional lens →</p>
-
             <h3>Dynamic, observant, and people-driven</h3>
-
             <p>
                 I thrive in fast-moving environments that require adaptability,
                 awareness, and strong communication. I naturally read situations
                 quickly and turn momentum into action.
             </p>
-
             <div class="identity-tags">
                 <span>High-energy collaborator</span>
                 <span>Quick to adapt</span>
@@ -299,133 +271,87 @@ footer {
                 <span>Growth-driven mindset</span>
             </div>
         </div>
-
         <div class="identity-right">
             <h4>TRAIT READ</h4>
-
             <div class="trait">
                 <label>Energy</label>
                 <div class="bar"><div class="fill" data-width="60%"></div></div>
                 <small>60% Extraverted</small>
             </div>
-
             <div class="trait">
                 <label>Information</label>
                 <div class="bar"><div class="fill" data-width="54%"></div></div>
                 <small>54% Observant</small>
             </div>
-
             <div class="trait">
                 <label>Decision Style</label>
                 <div class="bar"><div class="fill" data-width="58%"></div></div>
                 <small>58% Feeling</small>
             </div>
-
             <div class="trait">
                 <label>Approach</label>
                 <div class="bar"><div class="fill" data-width="63%"></div></div>
                 <small>63% Prospecting</small>
             </div>
-
             <div class="trait">
                 <label>Growth Lens</label>
                 <div class="bar"><div class="fill" data-width="72%"></div></div>
                 <small>72% Turbulent</small>
             </div>
-
         </div>
     </div>
 </section>
+
 <section id="education">
     <h2>Education</h2>
     <div class="grid">
-
         <div class="card">
             <strong>Purdue University – West Lafayette, IN</strong>
-            <p>
-                Bachelor of Science, Data Analytics, Technologies & Applications  
-                <br>Aug 2024 – Dec 2026  
-                <br>GPA: 3.48 / 4.00
-                <br>Dean's List
-            </p>
+            <p>Bachelor of Science, Data Analytics, Technologies & Applications<br>Aug 2024 – Dec 2026<br>GPA: 3.48 / 4.00<br>Dean's List</p>
         </div>
-
         <div class="card">
             <strong>Seattle Central Community College – Seattle, WA</strong>
-            <p>
-                Associate of Applied Science, Computer & Information Sciences  
-                <br>Sep 2021 – Dec 2023  
-                <br>GPA: 3.69 / 4.00
-                <br>Dean's List
-                <br>Activities and societies: Phi Theta Kappa
-            </p>
+            <p>Associate of Applied Science, Computer & Information Sciences<br>Sep 2021 – Dec 2023<br>GPA: 3.69 / 4.00<br>Dean's List<br>Phi Theta Kappa</p>
         </div>
-
     </div>
 </section>
-<!-- PROJECTS -->
+
 <section id="projects">
     <h2>Projects</h2>
     <div class="grid">
-
         <div class="card">
             <strong>Engine Analytics Dashboard</strong>
-            <p>
-                Built Power BI dashboards to monitor engine performance across multiple ships.
-                Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling
-                accurate baseline analysis for operational decision-making.
-            </p>
+            <p>Built Power BI dashboards to monitor engine performance across multiple ships. Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling accurate baseline analysis for operational decision-making.</p>
         </div>
-
         <div class="card">
             <strong>Virtualized Active Directory Infrastructure</strong>
-            <p>
-                Designed and deployed a multi-site Active Directory environment using Windows Server.
-                Implemented replication, domain services, and system automation to simulate
-                enterprise-scale IT infrastructure.
-            </p>
+            <p>Designed and deployed a multi-site Active Directory environment using Windows Server. Implemented replication, domain services, and system automation to simulate enterprise-scale IT infrastructure.</p>
         </div>
         <div class="card">
             <strong>Lean Six Sigma Process Optimization</strong>
-            <p>
-                Applied DMAIC methodology to analyze multi-year ticket sales data and customer trends,
-                identifying patterns and opportunities for demand optimization.
-            </p>
+            <p>Applied DMAIC methodology to analyze multi-year ticket sales data and customer trends, identifying patterns and opportunities for demand optimization.</p>
         </div>
-
     </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
     <h2>Experience</h2>
     <div class="grid">
-
         <div class="card">
             <strong>Data Science Researcher – The Data Mine</strong>
-            <p>
-                Analyze operational datasets for Carnival Cruise Line, focusing on performance trends,
-                baseline analysis, and KPI monitoring. Built dashboards and cleaned 50+ datasets
-                to support data-driven decisions.
-            </p>
+            <p>Analyze operational datasets for Carnival Cruise Line, focusing on performance trends, baseline analysis, and KPI monitoring. Built dashboards and cleaned 50+ datasets to support data-driven decisions.</p>
         </div>
-
         <div class="card">
             <strong>Instructional Systems Engineer Intern – KeelWorks</strong>
-            <p> Analyzed system performance data and user feedback to identify workflow inefficiencies.
-                Developed KPI dashboards to improve operational visibility and decision-making.
-            </p>
+            <p>Analyzed system performance data and user feedback to identify workflow inefficiencies. Developed KPI dashboards to improve operational visibility and decision-making.</p>
         </div>
         <div class="card">
             <strong>Student Office Staff – Purdue University</strong>
-            <p>
-                Managed front-line operations including access control, logistics, and issue tracking
-                in a high-traffic residential environment.
-            </p>
+            <p>Managed front-line operations including access control, logistics, and issue tracking in a high-traffic residential environment.</p>
         </div>
-
     </div>
 </section>
+
 <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
@@ -433,16 +359,17 @@ footer {
         <div class="card"><strong>Analytics</strong><p>Power BI • Tableau • Excel</p></div>
         <div class="card"><strong>Data Engineering</strong><p>Cleaning • Validation • Deduplication</p></div>
         <div class="card"><strong>Operations</strong><p>KPI Systems • Lean Six Sigma</p></div>
-        <div class="card"><strong>Languages</strong><p>Languages: English, Russian, Mongolian, German</p></div>
+        <div class="card"><strong>Languages</strong><p>English, Russian, Mongolian, German</p></div>
     </div>
 </section>
+
 </div>
 
 <footer>
     Summer 2026 Internship Ready • West Lafayette
 </footer>
 
-<!-- JS -->
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
     // Section fade-in
@@ -459,6 +386,14 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
         section.style.opacity = 0;
         section.style.transform = "translateY(40px)";
+
+        // If already visible on load, show immediately
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+        }
+
         observer.observe(section);
     });
 
@@ -467,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.querySelectorAll('.fill').forEach(bar => {
-                    bar.style.transition = "width 0.8s ease";
+                    bar.style.transition = "width 1.5s ease";
                     bar.style.width = bar.dataset.width;
                 });
             }
@@ -478,7 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (coreIdentity) mbtiObserver.observe(coreIdentity);
 
 });
-
 </script>
 </body>
 </html>
