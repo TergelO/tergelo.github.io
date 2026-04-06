@@ -10,8 +10,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -38,14 +38,28 @@ body {
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
-.nav a {
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.nav-links a {
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
     color: #334155;
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #6366f1;
 }
 
 .container {
@@ -54,78 +68,170 @@ body {
     padding: 80px 20px;
 }
 
-.hero {
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: start;
+    margin-top: 60px;
+}
+
+.hero-left {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+}
+
+.hero-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #6366f1;
+    margin-bottom: 22px;
+    width: fit-content;
+}
+
+.hero-left h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1e293b;
+    margin-bottom: 28px;
+}
+
+.hero-left p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    max-width: 560px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
     flex-wrap: wrap;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, #ec4899, #6366f1, #22c55e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.cursor {
-    border-right: 3px solid #6366f1;
-    padding-right: 5px;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-.hero p {
-    margin-top: 20px;
-    max-width: 500px;
-    color: #475569;
-}
-
-.hero-photo img {
-    width: 200px;
-    border-radius: 24px;
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0px); }
-}
-
-.buttons {
-    margin-top: 25px;
-}
-
-.buttons a {
-    padding: 12px 24px;
+.hero-buttons a {
+    padding: 12px 26px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    margin-right: 10px;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
 }
 
-.primary {
+.btn-primary {
     background: linear-gradient(135deg, #a5b4fc, #f9a8d4);
     color: white;
 }
 
-.secondary {
+.btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.65);
+    color: #334155;
+    border: 1px solid rgba(255,255,255,0.7);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+}
+
+.hero-photo-card {
     background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(14px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.7);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
+
+.hero-photo-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.academic-snapshot {
+    padding: 24px;
+}
+
+.academic-snapshot h4 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.academic-snapshot > p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.snapshot-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 4px 0 8px;
+}
+
+.snapshot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.snapshot-row:last-child {
+    border-bottom: none;
+}
+
+.snapshot-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+}
+
+.snapshot-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: right;
 }
 
 section {
     margin-top: 100px;
 }
 
+section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    gap: 24px;
 }
 
 .card {
@@ -134,61 +240,97 @@ section {
     padding: 25px;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #475569;
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-#core-identity {
-    margin-top: 120px;
-}
+#core-identity { margin-top: 120px; }
 
 .identity-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     background: rgba(255,255,255,0.55);
     backdrop-filter: blur(14px);
     padding: 60px;
     border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.6);
 }
 
 .mbti-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    font-family: "Playfair Display", serif;
+    margin-bottom: 6px;
 }
 
-.mbti-title span {
-    color: #94a3b8;
-}
+.mbti-title span { color: #94a3b8; }
 
 .mbti-sub {
     margin-bottom: 20px;
     color: #64748b;
+    font-size: 0.9rem;
 }
+
+.identity-left h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.identity-left p {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.identity-tags { margin-top: 20px; }
 
 .identity-tags span {
     display: inline-block;
-    padding: 8px 16px;
-    margin: 10px 10px 0 0;
+    padding: 7px 15px;
+    margin: 8px 8px 0 0;
     border-radius: 999px;
-    background: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
+    background: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.8);
 }
 
-.trait {
-    margin-bottom: 25px;
+.identity-right h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 24px;
+}
+
+.trait { margin-bottom: 22px; }
+
+.trait label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #334155;
 }
 
 .bar {
     height: 6px;
     background: #e2e8f0;
     border-radius: 6px;
-    margin: 8px 0;
+    margin: 8px 0 4px;
     overflow: hidden;
 }
 
@@ -200,11 +342,23 @@ section {
     transition: width 1.5s ease;
 }
 
+.trait small {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
 footer {
     text-align: center;
     margin-top: 100px;
     padding: 40px;
     color: #64748b;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section { grid-template-columns: 1fr; }
+    .hero-right { order: -1; }
+    .identity-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
 }
 </style>
 </head>
@@ -212,45 +366,54 @@ footer {
 <body>
 
 <div class="nav">
-    <div><strong>Tergel</strong></div>
-    <div>
-        <a href="#projects">Projects</a>
+    <div class="nav-brand">Tergel</div>
+    <div class="nav-links">
+        <a href="#core-identity">About</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
     </div>
 </div>
 
 <div class="container">
 
-<section class="hero-editorial">
-  <div class="hero-grid">
-    <div class="hero-photo">
-      <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel">
-      <div class="academic-card">
-        <div><strong>Major</strong> Data Analytics</div>
-        <div><strong>Focus</strong> Operations & Systems</div>
-        <div><strong>GPA</strong> 3.48</div>
-        <div><strong>Expected</strong> Dec 2026</div>
-      </div>
+<section class="hero-section">
+    <div class="hero-left">
+        <span class="hero-label">About Me</span>
+        <h1>I build systems that move forward.</h1>
+        <p>I'm Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University. I'm drawn to operational clarity, measurable improvement, and building structured systems that scale.</p>
+        <p>I didn't follow a traditional academic path. After leaving high school at 16, I rebuilt my education in a new country and language. That shift shaped my discipline, independence, and long-term drive.</p>
+        <p>I'm drawn to challenge especially when it asks me to think clearly, move fast, and turn complexity into something useful. I improve through iteration, not comfort.</p>
+        <div class="hero-buttons">
+            <a href="Tergel Otgonbaatar Resume..pdf" class="btn-primary">View Resume →</a>
+            <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="btn-secondary">LinkedIn</a>
+        </div>
     </div>
-    <div class="hero-text">
-      <h1>I build systems that move forward.</h1>
-      <p>
-        I'm Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University.
-        I'm drawn to operational clarity, measurable improvement, and building
-        structured systems that scale.
-      </p>
-      <p>
-        I didn't follow a traditional academic path. After leaving high school at 16,
-        I rebuilt my education in a new country and language. That shift shaped
-        my discipline, independence, and long-term drive.
-      </p>
-      <div class="editorial-buttons">
-        <a href="Tergel Otgonbaatar Resume..pdf">View Resume →</a>
-        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
-      </div>
+
+    <div class="hero-right">
+        <div class="hero-photo-card">
+            <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel">
+            <div class="academic-snapshot">
+                <hr class="snapshot-divider">
+                <div class="snapshot-row">
+                    <span class="snapshot-label">Major</span>
+                    <span class="snapshot-value">Data Analytics</span>
+                </div>
+                <div class="snapshot-row">
+                    <span class="snapshot-label">Focus</span>
+                    <span class="snapshot-value">Operations & Systems</span>
+                </div>
+                <div class="snapshot-row">
+                    <span class="snapshot-label">GPA</span>
+                    <span class="snapshot-value">3.48</span>
+                </div>
+                <div class="snapshot-row">
+                    <span class="snapshot-label">Expected</span>
+                    <span class="snapshot-value">Dec 2026</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section id="core-identity">
@@ -259,11 +422,7 @@ footer {
             <h1 class="mbti-title">ESFP<span>/</span> ENTERTAINER</h1>
             <p class="mbti-sub">Entertainer profile + professional lens →</p>
             <h3>Dynamic, observant, and people-driven</h3>
-            <p>
-                I thrive in fast-moving environments that require adaptability,
-                awareness, and strong communication. I naturally read situations
-                quickly and turn momentum into action.
-            </p>
+            <p>I thrive in fast-moving environments that require adaptability, awareness, and strong communication. I naturally read situations quickly and turn momentum into action.</p>
             <div class="identity-tags">
                 <span>High-energy collaborator</span>
                 <span>Quick to adapt</span>
@@ -272,7 +431,7 @@ footer {
             </div>
         </div>
         <div class="identity-right">
-            <h4>TRAIT READ</h4>
+            <h4>Trait Read</h4>
             <div class="trait">
                 <label>Energy</label>
                 <div class="bar"><div class="fill" data-width="60%"></div></div>
@@ -311,7 +470,7 @@ footer {
         </div>
         <div class="card">
             <strong>Seattle Central Community College – Seattle, WA</strong>
-            <p>Associate of Applied Science, Computer & Information Sciences<br>Sep 2021 – Dec 2023<br>GPA: 3.69 / 4.00<br>Dean's List<br>Phi Theta Kappa</p>
+            <p>Associate of Applied Science, Computer & Information Sciences<br>Sep 2021 – Dec 2023<br>GPA: 3.69 / 4.00<br>Dean's List · Phi Theta Kappa</p>
         </div>
     </div>
 </section>
@@ -321,7 +480,7 @@ footer {
     <div class="grid">
         <div class="card">
             <strong>Engine Analytics Dashboard</strong>
-            <p>Built Power BI dashboards to monitor engine performance across multiple ships. Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling accurate baseline analysis for operational decision-making.</p>
+            <p>Built Power BI dashboards to monitor engine performance across multiple ships. Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling accurate baseline analysis.</p>
         </div>
         <div class="card">
             <strong>Virtualized Active Directory Infrastructure</strong>
@@ -339,7 +498,7 @@ footer {
     <div class="grid">
         <div class="card">
             <strong>Data Science Researcher – The Data Mine</strong>
-            <p>Analyze operational datasets for Carnival Cruise Line, focusing on performance trends, baseline analysis, and KPI monitoring. Built dashboards and cleaned 50+ datasets to support data-driven decisions.</p>
+            <p>Analyze operational datasets for Carnival Cruise Line, focusing on performance trends, baseline analysis, and KPI monitoring. Built dashboards and cleaned 50+ datasets.</p>
         </div>
         <div class="card">
             <strong>Instructional Systems Engineer Intern – KeelWorks</strong>
@@ -365,14 +524,11 @@ footer {
 
 </div>
 
-<footer>
-    Summer 2026 Internship Ready • West Lafayette
-</footer>
+<footer>Summer 2026 Internship Ready · West Lafayette</footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Section fade-in
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -387,7 +543,6 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.opacity = 0;
         section.style.transform = "translateY(40px)";
 
-        // If already visible on load, show immediately
         const rect = section.getBoundingClientRect();
         if (rect.top < window.innerHeight) {
             section.style.opacity = 1;
@@ -397,12 +552,10 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // MBTI Bars Animation
     const mbtiObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.querySelectorAll('.fill').forEach(bar => {
-                    bar.style.transition = "width 1.5s ease";
                     bar.style.width = bar.dataset.width;
                 });
             }
@@ -411,7 +564,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const coreIdentity = document.querySelector('#core-identity');
     if (coreIdentity) mbtiObserver.observe(coreIdentity);
-
 });
 </script>
 </body>
