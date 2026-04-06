@@ -5,13 +5,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 html {
@@ -19,130 +18,164 @@ html {
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background: #f5f1ec;
-    color: #2b2b2b;
-    line-height: 1.7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(-45deg, #fdf2f8, #e0f2fe, #f0fdf4, #ede9fe);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    color: #1e293b;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* NAV */
 .nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.5);
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
-    padding: 30px 60px;
-    font-weight: 500;
+    z-index: 1000;
 }
 
 .nav a {
     text-decoration: none;
-    margin-left: 30px;
-    color: #444;
-}
-
-.nav a:hover {
-    opacity: 0.6;
+    margin-left: 20px;
+    color: #334155;
+    font-weight: 500;
 }
 
 /* CONTAINER */
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
-    padding: 60px 40px;
+    padding: 80px 20px;
 }
 
-/* HERO */
-.hero {
-    padding: 60px 0 120px 0;
+/* HERO EDITORIAL FIX */
+.hero-editorial {
+    margin-top: 40px;
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 90px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
 }
 
-.hero-text h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
+.hero-photo img {
+    width: 320px;
+    border-radius: 24px;
+    animation: float 6s ease-in-out infinite;
 }
 
-.hero-text p {
-    margin-bottom: 20px;
-    max-width: 550px;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
 
-.hero-links a {
-    margin-right: 25px;
+.academic-card {
+    margin-top: 20px;
+}
+
+.editorial-buttons {
+    margin-top: 25px;
+}
+
+.editorial-buttons a {
+    padding: 12px 24px;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    color: #5b5bd6;
-}
-
-.hero-links a:hover {
-    opacity: 0.6;
-}
-
-.hero-side img {
-    width: 100%;
-    border-radius: 24px;
-    margin-bottom: 25px;
-}
-
-.academic-box {
-    font-size: 0.95rem;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.academic-box div {
-    margin-bottom: 8px;
+    margin-right: 10px;
+    background: rgba(255,255,255,0.6);
 }
 
 /* SECTIONS */
 section {
-    margin-top: 120px;
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
-h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
+/* CARDS */
 .card {
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.6);
 }
 
-.card strong {
-    display: block;
-    margin-bottom: 10px;
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* MBTI */
+.identity-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    padding: 60px;
+    border-radius: 28px;
+}
+
+.mbti-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    transition: width 1.5s ease;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    margin-top: 120px;
+    margin-top: 100px;
     padding: 40px;
-    color: #777;
-    font-size: 0.9rem;
+    color: #64748b;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
     <div><strong>Tergel</strong></div>
     <div>
@@ -154,139 +187,87 @@ footer {
 
 <div class="container">
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-grid">
+<section class="hero-editorial">
+  <div class="hero-grid">
 
-        <div class="hero-text">
-            <h1>
-                I build structured systems<br>
-                that create measurable progress.
-            </h1>
+    <div class="hero-photo">
+      <img src="headshot.png" alt="Tergel">
+      <div class="academic-card">
+        <div><strong>Major</strong> Data Analytics</div>
+        <div><strong>GPA</strong> 3.48</div>
+        <div><strong>Expected</strong> Dec 2026</div>
+      </div>
+    </div>
 
-            <p>
-                I’m Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University.
-                I focus on operational clarity, structured problem-solving, and building
-                systems that scale.
-            </p>
+    <div class="hero-text">
+      <h1>I build systems that move forward.</h1>
 
-            <p>
-                After leaving high school at 16 and rebuilding my education in a new country,
-                I developed discipline, independence, and long-term focus — shaping how I approach analytics today.
-            </p>
+      <p>
+        I’m Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University.
+      </p>
 
-            <div class="hero-links">
-                <a href="Tergel Otgonbaatar Resume..pdf">Resume →</a>
-                <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/tergelo" target="_blank">GitHub</a>
+      <div class="editorial-buttons">
+        <a href="Tergel Otgonbaatar Resume..pdf">Resume</a>
+        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="core-identity">
+    <div class="identity-wrapper">
+        <div>
+            <h1 class="mbti-title">ESFP / ENTERTAINER</h1>
+            <p>Dynamic, observant, and people-driven.</p>
+        </div>
+
+        <div>
+            <div class="trait">
+                <label>Energy</label>
+                <div class="bar"><div class="fill" data-width="60%"></div></div>
+            </div>
+            <div class="trait">
+                <label>Information</label>
+                <div class="bar"><div class="fill" data-width="54%"></div></div>
             </div>
         </div>
-
-        <div class="hero-side">
-            <img src="headshot.png" alt="Tergel">
-            <div class="academic-box">
-                <div><strong>Major</strong> Data Analytics</div>
-                <div><strong>GPA</strong> 3.48</div>
-                <div><strong>Expected</strong> Dec 2026</div>
-                <div><strong>AAS</strong> Computer & Information Sciences</div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section>
-    <h2>Education</h2>
-    <div class="grid">
-
-        <div class="card">
-            <strong>Purdue University – West Lafayette, IN</strong>
-            Bachelor of Science, Data Analytics  
-            <br>Aug 2024 – Dec 2026  
-            <br>GPA: 3.48
-        </div>
-
-        <div class="card">
-            <strong>Seattle Central Community College – Seattle, WA</strong>
-            Associate of Applied Science  
-            <br>Sep 2021 – Dec 2023  
-            <br>GPA: 3.69
-        </div>
-
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-
-        <div class="card">
-            <strong>Engine Analytics Dashboard</strong>
-            Built Power BI dashboards and processed 54+ Excel datasets
-            to support baseline analysis and operational decisions.
-        </div>
-
-        <div class="card">
-            <strong>Active Directory Infrastructure</strong>
-            Designed and deployed a multi-site Windows Server environment
-            simulating enterprise-scale infrastructure.
-        </div>
-
-        <div class="card">
-            <strong>Lean Six Sigma Optimization</strong>
-            Applied DMAIC methodology to analyze multi-year sales data
-            and identify demand optimization opportunities.
-        </div>
-
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-    <h2>Experience</h2>
-    <div class="grid">
-
-        <div class="card">
-            <strong>Data Science Researcher – The Data Mine</strong>
-            Analyzed operational datasets for Carnival Cruise Line,
-            focusing on KPI monitoring and performance baselines.
-        </div>
-
-        <div class="card">
-            <strong>Instructional Systems Engineer Intern – KeelWorks</strong>
-            Built KPI dashboards and analyzed workflow inefficiencies
-            to improve operational visibility.
-        </div>
-
-        <div class="card">
-            <strong>Student Office Staff – Purdue</strong>
-            Managed high-traffic residential operations and logistics.
-        </div>
-
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-
-        <div class="card"><strong>Programming</strong> Python • SQL • Java</div>
-        <div class="card"><strong>Analytics</strong> Power BI • Tableau • Excel</div>
-        <div class="card"><strong>Data Engineering</strong> Cleaning • Validation • Deduplication</div>
-        <div class="card"><strong>Operations</strong> KPI Systems • Lean Six Sigma</div>
-        <div class="card"><strong>Languages</strong> English • Russian • Mongolian • German</div>
-
     </div>
 </section>
 
 </div>
 
 <footer>
-    Internship Ready – Summer 2026
+Summer 2026 Internship Ready
 </footer>
+
+<script>
+// Fade in sections
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+// MBTI animation
+const mbtiObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.fill').forEach(bar => {
+                bar.style.width = bar.dataset.width;
+            });
+        }
+    });
+}, { threshold: 0.3 });
+
+mbtiObserver.observe(document.querySelector('#core-identity'));
+</script>
 
 </body>
 </html>
