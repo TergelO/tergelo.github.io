@@ -452,6 +452,19 @@ const observer = new IntersectionObserver(entries => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         }
+// Animate MBTI bars
+const mbtiObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.fill').forEach(bar => {
+                bar.style.width = bar.dataset.width;
+            });
+        }
+    });
+});
+
+mbtiObserver.observe(document.querySelector('#core-identity'));
+
     });
 });
 document.querySelectorAll('section').forEach(el => observer.observe(el));
