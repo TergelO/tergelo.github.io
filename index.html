@@ -157,6 +157,65 @@ section {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
+    /* MBTI SECTION */
+#core-identity {
+    margin-top: 120px;
+}
+
+.identity-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    padding: 60px;
+    border-radius: 28px;
+}
+
+.mbti-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+}
+
+.mbti-title span {
+    color: #94a3b8;
+}
+
+.mbti-sub {
+    margin-bottom: 20px;
+    color: #64748b;
+}
+
+.identity-tags span {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 10px 10px 0 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.trait {
+    margin-bottom: 25px;
+}
+
+.bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    transition: width 1.5s ease;
+}
 
 /* footer */
 footer {
@@ -211,6 +270,65 @@ footer {
             a deep appreciation for opportunity, structured problem-solving, and the privilege of continuous growth.
         </p>
     </section>
+    <section id="core-identity">
+    <div class="identity-wrapper">
+        
+        <div class="identity-left">
+            <h1 class="mbti-title">ESFP<span>/</span> ENTERTAINER</h1>
+            <p class="mbti-sub">Entertainer profile + professional lens →</p>
+
+            <h3>Dynamic, observant, and people-driven</h3>
+
+            <p>
+                I thrive in fast-moving environments that require adaptability,
+                awareness, and strong communication. I naturally read situations
+                quickly and turn momentum into action.
+            </p>
+
+            <div class="identity-tags">
+                <span>High-energy collaborator</span>
+                <span>Quick to adapt</span>
+                <span>Observant & responsive</span>
+                <span>Growth-driven mindset</span>
+            </div>
+        </div>
+
+        <div class="identity-right">
+            <h4>TRAIT READ</h4>
+
+            <div class="trait">
+                <label>Energy</label>
+                <div class="bar"><div class="fill" data-width="60%"></div></div>
+                <small>60% Extraverted</small>
+            </div>
+
+            <div class="trait">
+                <label>Information</label>
+                <div class="bar"><div class="fill" data-width="54%"></div></div>
+                <small>54% Observant</small>
+            </div>
+
+            <div class="trait">
+                <label>Decision Style</label>
+                <div class="bar"><div class="fill" data-width="58%"></div></div>
+                <small>58% Feeling</small>
+            </div>
+
+            <div class="trait">
+                <label>Approach</label>
+                <div class="bar"><div class="fill" data-width="63%"></div></div>
+                <small>63% Prospecting</small>
+            </div>
+
+            <div class="trait">
+                <label>Growth Lens</label>
+                <div class="bar"><div class="fill" data-width="72%"></div></div>
+                <small>72% Turbulent</small>
+            </div>
+
+        </div>
+    </div>
+</section>
 <section id="education">
     <h2>Education</h2>
     <div class="grid">
