@@ -36,183 +36,102 @@ body {
     border: 1px solid rgba(99,102,241,0.4);
     background: rgba(99,102,241,0.08);
 }
-
-/* MAP PANEL */
-.life-map {
-    margin-top: 20px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(14px);
-    border-radius: 18px;
-    padding: 16px;
-    border: 1px solid rgba(255,255,255,0.6);
+/* HEADER */
+.life-header {
+    max-width: 620px;
+    margin-bottom: 50px;
 }
 
-.life-map-header span {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+.life-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     color: #94a3b8;
 }
 
-.life-map-header h4 {
-    font-size: 0.95rem;
-    margin-top: 4px;
+.life-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 10px 0 14px;
 }
 
-.life-map-box {
-    margin-top: 12px;
+.life-header p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* GRID */
+.life-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+/* TILE */
+.life-tile {
     position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.life-map-box img {
-    width: 100%;
-    opacity: 0.9;
-    filter: grayscale(0.2);
-}
-
-/* markers */
-.marker {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #ef4444;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 4px rgba(239,68,68,0.2);
-    transition: 0.2s;
-}
-
-.marker:hover {
-    transform: translate(-50%, -50%) scale(1.4);
-}
-    /* container */
-.life-map {
-    margin-top: 22px;
+    padding: 20px;
+    border-radius: 22px;
     background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    padding: 18px;
-    border: 1px solid rgba(255,255,255,0.6);
-}
-
-/* header */
-.life-map-header span {
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    color: #94a3b8;
-}
-
-.life-map-header h4 {
-    font-size: 1rem;
-    margin-top: 4px;
-}
-
-/* map box */
-.life-map-box {
-    margin-top: 14px;
-    position: relative;
-    border-radius: 14px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
     overflow: hidden;
 }
 
-.life-map-box img {
-    width: 100%;
-    opacity: 0.85;
-    filter: grayscale(0.4) contrast(1.05);
+.life-tile:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
 }
 
-/* ✨ markers */
-.marker {
+/* glow */
+.life-tile::before {
+    content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #6366f1;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 0 rgba(99,102,241,0.5);
-    animation: pulse 2s infinite;
-    cursor: pointer;
-}
-
-/* glow animation */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(99,102,241,0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(99,102,241,0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(99,102,241,0);
-    }
-}
-
-/* tooltip */
-.marker::after {
-    content: attr(data-label);
-    position: absolute;
-    top: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1e293b;
-    color: white;
-    font-size: 0.65rem;
-    padding: 3px 8px;
-    border-radius: 6px;
+    inset: 0;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #a5b4fc, #f9a8d4, #67e8f9);
     opacity: 0;
-    transition: 0.2s;
-    white-space: nowrap;
+    transition: 0.4s;
 }
 
-.marker:hover::after {
-    opacity: 1;
+.life-tile:hover::before {
+    opacity: 0.08;
 }
 
-/* ✈️ animated path */
-.map-path {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* TOP VISUAL */
+.tile-top {
+    height: 90px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #e0f2fe, #fce7f3, #ede9fe);
 }
 
-.map-path path {
-    fill: none;
-    stroke: #6366f1;
-    stroke-width: 0.5;
-    stroke-dasharray: 4;
-    animation: dash 6s linear infinite;
-    opacity: 0.6;
+/* CATEGORY COLORS */
+.life-tile.travel .tile-top {
+    background: linear-gradient(135deg, #60a5fa, #a5b4fc);
 }
 
-@keyframes dash {
-    to {
-        stroke-dashoffset: -20;
-    }
+.life-tile.creative .tile-top {
+    background: linear-gradient(135deg, #f9a8d4, #fbcfe8);
 }
 
-/* stats */
-.map-stats {
-    margin-top: 12px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
+.life-tile.culture .tile-top {
+    background: linear-gradient(135deg, #34d399, #a7f3d0);
 }
 
-.map-stats div {
-    text-align: center;
+.life-tile.thinking .tile-top {
+    background: linear-gradient(135deg, #c4b5fd, #e9d5ff);
 }
 
-.map-stats strong {
-    display: block;
-    font-size: 1rem;
-    color: #1e293b;
+/* TEXT */
+.life-tile h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
-.map-stats span {
-    font-size: 0.65rem;
+.life-tile p {
+    font-size: 0.85rem;
     color: #64748b;
 }
 .nav-brand { font-weight: 700; font-size: 1.1rem; }
@@ -606,71 +525,57 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     </div>
 </section>
  
-<!-- LIFE -->
 <section id="life">
-    <h2>Life Beyond the Work</h2>
-    <p class="section-sub">Where I come from shapes how I think.</p>
-    <div class="life-wrapper">
-        <div class="life-left">
-            <div class="life-intro">
-                <p>I grew up in Mongolia, attended a Mongolian-Russian joint school, and left at 12 as an exchange student — first Ulan-Ude, then Saint Petersburg at 13. I've since lived in three countries and visited 17 cities across three continents.</p>
-                <p>That background gave me something most people don't have at 22: I've had to operate in environments where nothing is familiar. That's still how I approach hard problems.</p>
-            </div>
-        </div>
-        <div class="life-right">
 
-    <!-- hobbies -->
-    <div class="life-hobbies">
-        <div class="life-hobby"><span class="life-hobby-icon">🐎</span><div><div class="life-hobby-name">Horseback Riding</div><div class="life-hobby-sub">Rooted in Mongolian tradition</div></div></div>
-        <div class="life-hobby"><span class="life-hobby-icon">🎨</span><div><div class="life-hobby-name">Painting</div><div class="life-hobby-sub">How I decompress</div></div></div>
-        <div class="life-hobby"><span class="life-hobby-icon">🍳</span><div><div class="life-hobby-name">Cooking</div><div class="life-hobby-sub">Three cultures worth of recipes</div></div></div>
+    <div class="life-header">
+        <span class="life-tag">PERSONAL SIGNALS</span>
+        <h2>Pieces of how I think and live.</h2>
+        <p>
+            These aren’t hobbies for the sake of listing them — 
+            they’re patterns that shape how I reset, think, and operate.
+        </p>
+    </div>
 
-        <!-- highlight traveling -->
-        <div class="life-hobby highlight">
-            <span class="life-hobby-icon">✈️</span>
-            <div>
-                <div class="life-hobby-name">Traveling</div>
-                <div class="life-hobby-sub">20+ cities · 3+ continents</div>
-            </div>
+    <div class="life-grid">
+
+        <div class="life-tile travel">
+            <div class="tile-top"></div>
+            <h3>Global Movement</h3>
+            <p>20+ cities · adapted across cultures and environments</p>
         </div>
 
-        <div class="life-hobby"><span class="life-hobby-icon">😴</span><div><div class="life-hobby-name">Sleeping</div><div class="life-hobby-sub">Unironically a priority</div></div></div>
+        <div class="life-tile culture">
+            <div class="tile-top"></div>
+            <h3>Horseback Riding</h3>
+            <p>Rooted in Mongolian tradition</p>
+        </div>
+
+        <div class="life-tile creative">
+            <div class="tile-top"></div>
+            <h3>Painting</h3>
+            <p>How I reset mentally</p>
+        </div>
+
+        <div class="life-tile culture">
+            <div class="tile-top"></div>
+            <h3>Cooking</h3>
+            <p>Blending different cultures into something new</p>
+        </div>
+
+        <div class="life-tile thinking">
+            <div class="tile-top"></div>
+            <h3>Systems Thinking</h3>
+            <p>I naturally turn chaos into structure</p>
+        </div>
+
+        <div class="life-tile">
+            <div class="tile-top"></div>
+            <h3>Side Projects</h3>
+            <p>Always building something beyond class</p>
+        </div>
+
     </div>
 
-    <!-- 🔥 MAP PANEL -->
-    <div class="life-map">
-
-    <div class="life-map-header">
-        <span>GLOBAL PATH</span>
-        <h4>Mongolia → Europe → United States</h4>
-    </div>
-
-    <div class="life-map-box">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
-
-        <!-- markers -->
-        <div class="marker" style="top:48%; left:72%;" data-label="Ulaanbaatar"></div>
-        <div class="marker" style="top:42%; left:55%;" data-label="Istanbul"></div>
-        <div class="marker" style="top:38%; left:52%;" data-label="Athens"></div>
-        <div class="marker" style="top:40%; left:54%;" data-label="Santorini"></div>
-        <div class="marker" style="top:34%; left:50%;" data-label="Hamburg"></div>
-        <div class="marker" style="top:40%; left:30%;" data-label="USA"></div>
-
-        <!-- ✈️ path -->
-        <svg class="map-path" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M72 48 Q60 42 55 42 T52 38 T50 34 T30 40" />
-        </svg>
-
-    </div>
-
-    <div class="map-stats">
-        <div><strong>20+</strong><span>Cities</span></div>
-        <div><strong>3+</strong><span>Continents</span></div>
-        <div><strong>∞</strong><span>Adaptability</span></div>
-    </div>
-
-</div>
 </section>
  
 <!-- CONTACT -->
