@@ -86,6 +86,135 @@ body {
 .marker:hover {
     transform: translate(-50%, -50%) scale(1.4);
 }
+    /* container */
+.life-map {
+    margin-top: 22px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* header */
+.life-map-header span {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: #94a3b8;
+}
+
+.life-map-header h4 {
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
+/* map box */
+.life-map-box {
+    margin-top: 14px;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.life-map-box img {
+    width: 100%;
+    opacity: 0.85;
+    filter: grayscale(0.4) contrast(1.05);
+}
+
+/* ✨ markers */
+.marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #6366f1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 0 rgba(99,102,241,0.5);
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+/* glow animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99,102,241,0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(99,102,241,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(99,102,241,0);
+    }
+}
+
+/* tooltip */
+.marker::after {
+    content: attr(data-label);
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.marker:hover::after {
+    opacity: 1;
+}
+
+/* ✈️ animated path */
+.map-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-path path {
+    fill: none;
+    stroke: #6366f1;
+    stroke-width: 0.5;
+    stroke-dasharray: 4;
+    animation: dash 6s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+/* stats */
+.map-stats {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.map-stats div {
+    text-align: center;
+}
+
+.map-stats strong {
+    display: block;
+    font-size: 1rem;
+    color: #1e293b;
+}
+
+.map-stats span {
+    font-size: 0.65rem;
+    color: #64748b;
+}
 .nav-brand { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a { text-decoration: none; padding: 6px 14px; border-radius: 999px; color: #334155; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; }
@@ -511,19 +640,34 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     <!-- 🔥 MAP PANEL -->
     <div class="life-map">
 
-        <div class="life-map-header">
-            <span>PLACES</span>
-            <h4>From Mongolia → Europe → US</h4>
-        </div>
+    <div class="life-map-header">
+        <span>GLOBAL PATH</span>
+        <h4>Mongolia → Europe → United States</h4>
+    </div>
 
-        <div class="life-map-box">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
-            <div class="marker" style="top:42%; left:55%;" title="Istanbul"></div>
-            <div class="marker" style="top:38%; left:52%;" title="Athens"></div>
-            <div class="marker" style="top:40%; left:54%;" title="Santorini"></div>
-            <div class="marker" style="top:34%; left:50%;" title="Hamburg"></div>
-        </div>
+    <div class="life-map-box">
 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
+
+        <!-- markers -->
+        <div class="marker" style="top:48%; left:72%;" data-label="Ulaanbaatar"></div>
+        <div class="marker" style="top:42%; left:55%;" data-label="Istanbul"></div>
+        <div class="marker" style="top:38%; left:52%;" data-label="Athens"></div>
+        <div class="marker" style="top:40%; left:54%;" data-label="Santorini"></div>
+        <div class="marker" style="top:34%; left:50%;" data-label="Hamburg"></div>
+        <div class="marker" style="top:40%; left:30%;" data-label="USA"></div>
+
+        <!-- ✈️ path -->
+        <svg class="map-path" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M72 48 Q60 42 55 42 T52 38 T50 34 T30 40" />
+        </svg>
+
+    </div>
+
+    <div class="map-stats">
+        <div><strong>20+</strong><span>Cities</span></div>
+        <div><strong>3+</strong><span>Continents</span></div>
+        <div><strong>∞</strong><span>Adaptability</span></div>
     </div>
 
 </div>
