@@ -41,29 +41,20 @@ body {
 .container { max-width: 1150px; margin: auto; padding: 80px 20px; }
 
 .hero-section {
-    display: grid;
-    grid-template-columns: 1fr 340px;
+    display: grid; grid-template-columns: 1fr 340px;
     gap: 60px; align-items: start; margin-top: 60px;
 }
 .hero-left { display: flex; flex-direction: column; }
 .hero-label {
-    display: inline-block;
-    background: rgba(255,255,255,0.65);
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 999px; padding: 6px 16px;
-    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em;
-    color: #6366f1; margin-bottom: 22px; width: fit-content;
+    display: inline-block; background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.7); border-radius: 999px;
+    padding: 6px 16px; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.05em; color: #6366f1; margin-bottom: 22px; width: fit-content;
 }
-.hero-left h1 {
-    font-size: 3.2rem; font-weight: 800;
-    line-height: 1.15; color: #1e293b; margin-bottom: 28px;
-}
+.hero-left h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #1e293b; margin-bottom: 28px; }
 .hero-left p { color: #475569; font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; max-width: 560px; }
 .hero-buttons { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
-.hero-buttons a {
-    padding: 12px 26px; border-radius: 999px;
-    text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.25s ease;
-}
+.hero-buttons a { padding: 12px 26px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.25s ease; }
 .btn-primary { background: linear-gradient(135deg, #a5b4fc, #f9a8d4); color: white; }
 .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
 .btn-secondary { background: rgba(255,255,255,0.65); color: #334155; border: 1px solid rgba(255,255,255,0.7); }
@@ -125,7 +116,7 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 
 .tl-header {
     display: flex; justify-content: space-between;
-    align-items: flex-start; margin-bottom: 56px; flex-wrap: wrap; gap: 20px;
+    align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 20px;
 }
 .tl-header-left span {
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
@@ -142,100 +133,120 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 .resume-link:hover { background: white; transform: translateY(-2px); }
 
 .tl-col-labels {
-    display: grid; grid-template-columns: 1fr 80px 1fr;
-    margin-bottom: 12px; padding: 0 4px;
+    display: grid; grid-template-columns: 1fr 90px 1fr;
+    margin-bottom: 8px;
 }
 .tl-col-label {
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: #6366f1;
-    display: flex; align-items: center;
 }
-.tl-col-label.right { justify-content: flex-end; }
+.tl-col-label.right { text-align: right; }
 
 .tl-scroll {
-    max-height: 580px;
-    overflow-y: auto;
-    padding-right: 4px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(99,102,241,0.3) transparent;
+    max-height: 600px; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: rgba(99,102,241,0.25) transparent;
 }
-.tl-scroll::-webkit-scrollbar { width: 4px; }
-.tl-scroll::-webkit-scrollbar-track { background: transparent; }
-.tl-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 4px; }
+.tl-scroll::-webkit-scrollbar { width: 3px; }
+.tl-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.25); border-radius: 4px; }
 
-.tl-grid {
+.tl-body {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
-    position: relative;
+    grid-template-columns: 1fr 90px 1fr;
 }
 
-.tl-line {
-    position: absolute;
-    top: 0; bottom: 0; left: 50%;
-    width: 2px;
-    background: linear-gradient(to bottom, rgba(203,213,225,0.3), #cbd5e1 10%, #cbd5e1 90%, rgba(203,213,225,0.3));
-    transform: translateX(-50%);
-    z-index: 0;
-    grid-column: 2;
-}
-
-.tl-cell-left {
-    padding: 0 20px 40px 0;
-    display: flex; justify-content: flex-end;
-}
-.tl-cell-center {
+.tl-spine {
     display: flex; flex-direction: column; align-items: center;
     position: relative;
 }
-.tl-cell-right {
-    padding: 0 0 40px 20px;
-    display: flex; justify-content: flex-start;
+.tl-spine::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    width: 2px;
+    background: linear-gradient(to bottom,
+        rgba(203,213,225,0) 0%,
+        #cbd5e1 6%,
+        #cbd5e1 94%,
+        rgba(203,213,225,0) 100%
+    );
+    z-index: 0;
 }
 
-.tl-node {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.9);
+.spine-row {
+    display: flex; flex-direction: column;
+    align-items: center; position: relative; z-index: 1;
+    padding-bottom: 40px;
+}
+.spine-row:last-child { padding-bottom: 0; }
+
+.spine-year {
+    background: rgba(255,255,255,0.95);
+    border: 1.5px solid #e2e8f0; border-radius: 999px;
+    padding: 4px 12px; font-size: 0.66rem; font-weight: 700;
+    color: #64748b; letter-spacing: 0.08em; white-space: nowrap;
+    margin-bottom: 10px; position: relative; z-index: 2;
+}
+
+.spine-node {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,0.95);
     border: 2px solid #e2e8f0;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-    position: relative; z-index: 1;
-    margin-top: 18px;
-    flex-shrink: 0;
+    font-size: 1.3rem; cursor: pointer; position: relative; z-index: 2;
     transition: all 0.25s ease;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    flex-shrink: 0;
 }
-.tl-node:hover { border-color: #6366f1; box-shadow: 0 0 0 5px rgba(99,102,241,0.15); transform: scale(1.1); }
-.tl-node.active { border-color: #6366f1; background: white; box-shadow: 0 0 0 6px rgba(99,102,241,0.2); transform: scale(1.15); }
+.spine-node:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 5px rgba(99,102,241,0.15);
+    transform: scale(1.08);
+}
+.spine-node.active {
+    border-color: #6366f1; background: white;
+    box-shadow: 0 0 0 6px rgba(99,102,241,0.2);
+    transform: scale(1.12);
+}
 
-.tl-year-cell {
-    display: flex; align-items: flex-start; justify-content: center;
-    padding-top: 22px; position: relative; z-index: 2;
+.tl-left-col, .tl-right-col {
+    display: flex; flex-direction: column;
 }
-.tl-year {
-    background: rgba(255,255,255,0.92);
-    border: 1.5px solid #e2e8f0;
-    border-radius: 999px; padding: 3px 10px;
-    font-size: 0.66rem; font-weight: 700; color: #64748b;
-    letter-spacing: 0.08em; white-space: nowrap;
+.tl-left-col { padding-right: 18px; }
+.tl-right-col { padding-left: 18px; }
+
+.content-row {
+    padding-bottom: 40px;
+    display: flex; align-items: flex-start;
 }
+.content-row:last-child { padding-bottom: 0; }
+.tl-left-col .content-row { justify-content: flex-end; }
+.tl-right-col .content-row { justify-content: flex-start; }
 
 .tl-entry {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.62); backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255,255,255,0.75);
     border-radius: 18px; padding: 18px 20px;
-    cursor: pointer;
+    cursor: pointer; width: 100%;
     transition: all 0.25s ease;
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
-.tl-entry:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.1); }
-.tl-entry.active { border-color: rgba(99,102,241,0.45); background: rgba(255,255,255,0.88); box-shadow: 0 8px 28px rgba(99,102,241,0.15); }
+.tl-entry:hover {
+    border-color: rgba(99,102,241,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(99,102,241,0.1);
+}
+.tl-entry.active {
+    border-color: rgba(99,102,241,0.45);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 10px 32px rgba(99,102,241,0.15);
+}
 
-.entry-date { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px; }
-.entry-role { font-size: 0.92rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; line-height: 1.3; }
+.entry-date {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: #94a3b8; margin-bottom: 6px;
+}
+.entry-role { font-size: 0.93rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; line-height: 1.3; }
 .entry-org { font-size: 0.78rem; font-weight: 600; color: #6366f1; margin-bottom: 6px; }
 .entry-now {
     display: inline-block; background: #1e293b; color: white;
@@ -243,21 +254,24 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 }
 .entry-now::before { content: '● '; color: #22c55e; }
 
-.tl-empty { padding: 0 0 40px 0; }
+.tl-placeholder { width: 100%; }
 
 .detail-panel {
     margin-top: 40px;
     background: rgba(255,255,255,0.65); backdrop-filter: blur(14px);
     border-radius: 24px; border: 1px solid rgba(255,255,255,0.7);
-    padding: 40px; display: none; animation: fadeUp 0.3s ease;
+    padding: 40px; display: none;
+    animation: fadeUp 0.35s ease;
 }
 .detail-panel.visible { display: block; }
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
 }
-
-.dp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+.dp-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;
+}
 .dp-title-group h3 { font-size: 1.55rem; font-weight: 800; margin-bottom: 4px; }
 .dp-title-group p { color: #64748b; font-size: 0.95rem; }
 .dp-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -271,8 +285,8 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 .dp-nav button {
     padding: 10px 20px; border-radius: 999px;
     border: 1px solid #e2e8f0; background: rgba(255,255,255,0.7);
-    font-weight: 600; font-size: 0.88rem; cursor: pointer;
-    color: #334155; transition: all 0.2s ease;
+    font-weight: 600; font-size: 0.88rem; cursor: pointer; color: #334155;
+    transition: all 0.2s ease;
 }
 .dp-nav button:hover:not(:disabled) { background: white; transform: translateY(-1px); }
 .dp-nav button:disabled { opacity: 0.3; cursor: default; }
@@ -280,7 +294,10 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
     background: rgba(255,255,255,0.5); border-radius: 16px;
     padding: 24px; border: 1px solid rgba(255,255,255,0.6);
 }
-.dp-body-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 12px; }
+.dp-body-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #94a3b8; margin-bottom: 12px;
+}
 .dp-body p { color: #475569; line-height: 1.75; font-size: 0.97rem; }
 
 footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; font-size: 0.9rem; }
@@ -289,12 +306,33 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
     .hero-section { grid-template-columns: 1fr; }
     .hero-right { order: -1; }
     .identity-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
-    .tl-grid { grid-template-columns: 1fr 48px 1fr; }
-    .tl-node { width: 36px; height: 36px; font-size: 0.9rem; }
+    .tl-body { grid-template-columns: 1fr 56px 1fr; }
+    .tl-left-col { padding-right: 10px; }
+    .tl-right-col { padding-left: 10px; }
+    .spine-node { width: 38px; height: 38px; font-size: 1rem; }
+}
+    .card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(99,102,241,0.12);
+}
+.card-skills span {
+    background: rgba(99,102,241,0.08);
+    color: #6366f1;
+    border: 1px solid rgba(99,102,241,0.2);
+    border-radius: 999px;
+    padding: 3px 11px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
 }
 </style>
 </head>
 <body>
+
 <div class="nav">
     <div class="nav-brand">Tergel</div>
     <div class="nav-links">
@@ -377,97 +415,100 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
     </div>
 
     <div class="tl-scroll">
-        <div class="tl-grid" id="tlGrid">
-            <div class="tl-line"></div>
+        <div class="tl-body">
 
-            <!-- ROW 1 -->
-            <div class="tl-cell-left">
-                <div class="tl-entry" data-side="edu" data-index="0">
-                    <div class="entry-date">Sep 2021 – Dec 2023</div>
-                    <div class="entry-role">Associate of Applied Science</div>
-                    <div class="entry-org">Seattle Central Community College</div>
+            <div class="tl-left-col">
+                <div class="content-row">
+                    <div class="tl-entry" data-side="edu" data-index="0">
+                        <div class="entry-date">Sep 2021 – Dec 2023</div>
+                        <div class="entry-role">Associate of Applied Science</div>
+                        <div class="entry-org">Seattle Central Community College</div>
+                    </div>
                 </div>
-            </div>
-            <div class="tl-cell-center">
-                <div class="tl-year-cell"><div class="tl-year">2021</div></div>
-                <div class="tl-node" data-side="edu" data-index="0">🏫</div>
-            </div>
-            <div class="tl-cell-right">
-                <div class="tl-entry" data-side="exp" data-index="0">
-                    <div class="entry-date">2021 – 2023</div>
-                    <div class="entry-role">Restaurant Manager</div>
-                    <div class="entry-org">Seattle, WA</div>
+                <div class="content-row">
+                    <div class="tl-entry" data-side="edu" data-index="1">
+                        <div class="entry-date">2021 – 2023</div>
+                        <div class="entry-role">Phi Theta Kappa Honor Society</div>
+                        <div class="entry-org">Seattle Central · GPA 3.69</div>
+                    </div>
                 </div>
-            </div>
-            <!-- ROW 2 -->
-            <div class="tl-cell-left">
-                <div class="tl-entry" data-side="edu" data-index="1">
-                    <div class="entry-date">2021 – 2023</div>
-                    <div class="entry-role">Phi Theta Kappa Honor Society</div>
-                    <div class="entry-org">Seattle Central · GPA 3.69</div>
+                <div class="content-row">
+                    <div class="tl-placeholder"></div>
                 </div>
-            </div>
-            <div class="tl-cell-center">
-                <div class="tl-year-cell"><div class="tl-year">2022</div></div>
-                <div class="tl-node" data-side="edu" data-index="1">🏅</div>
-            </div>
-            <div class="tl-cell-right tl-empty"></div>
-
-            <!-- ROW 3 -->
-            <div class="tl-cell-left tl-empty"></div>
-            <div class="tl-cell-center">
-                <div class="tl-year-cell"><div class="tl-year">2023</div></div>
-                <div class="tl-node" data-side="exp" data-index="1">🔧</div>
-            </div>
-            <div class="tl-cell-right">
-                <div class="tl-entry" data-side="exp" data-index="1">
-                    <div class="entry-date">Feb, 2024 – Jun, 2024</div>
-                    <div class="entry-role">ISE Intern</div>
-                    <div class="entry-org">KeelWorks</div>
+                <div class="content-row">
+                    <div class="tl-entry" data-side="edu" data-index="2">
+                        <div class="entry-date">Aug 2024 – Dec 2026</div>
+                        <div class="entry-role">B.S. Data Analytics</div>
+                        <div class="entry-org">Purdue University</div>
+                        <span class="entry-now">Now</span>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="tl-entry" data-side="edu" data-index="3">
+                        <div class="entry-date">2024 – Present</div>
+                        <div class="entry-role">Dean's List</div>
+                        <div class="entry-org">Purdue University · GPA 3.48</div>
+                        <span class="entry-now">Now</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- ROW 4 -->
-            <div class="tl-cell-left">
-                <div class="tl-entry" data-side="edu" data-index="2">
-                    <div class="entry-date">Aug 2024 – Dec 2026</div>
-                    <div class="entry-role">B.S. Data Analytics</div>
-                    <div class="entry-org">Purdue University</div>
-                    <span class="entry-now">Now</span>
+            <div class="tl-spine">
+                <div class="spine-row">
+                    <div class="spine-year">2021</div>
+                    <div class="spine-node" data-side="edu" data-index="0">🏫</div>
                 </div>
-            </div>
-            <div class="tl-cell-center">
-                <div class="tl-year-cell"><div class="tl-year">2024</div></div>
-                <div class="tl-node active" data-side="exp" data-index="2">🚢</div>
-            </div>
-            <div class="tl-cell-right">
-                <div class="tl-entry active" data-side="exp" data-index="2">
-                    <div class="entry-date">Jan 2026 – Present</div>
-                    <div class="entry-role">Data Science Researcher</div>
-                    <div class="entry-org">The Data Mine · Purdue</div>
-                    <span class="entry-now">Now</span>
+                <div class="spine-row">
+                    <div class="spine-year">2022</div>
+                    <div class="spine-node" data-side="edu" data-index="1">🏅</div>
+                </div>
+                <div class="spine-row">
+                    <div class="spine-year">2023</div>
+                    <div class="spine-node" data-side="exp" data-index="1">🔧</div>
+                </div>
+                <div class="spine-row">
+                    <div class="spine-year">2024</div>
+                    <div class="spine-node active" data-side="exp" data-index="2">🚢</div>
+                </div>
+                <div class="spine-row">
+                    <div class="spine-year">Now</div>
+                    <div class="spine-node" data-side="exp" data-index="3">🏠</div>
                 </div>
             </div>
 
-            <!-- ROW 5 -->
-            <div class="tl-cell-left">
-                <div class="tl-entry" data-side="edu" data-index="3">
-                    <div class="entry-date">2024 – Present</div>
-                    <div class="entry-role">Dean's List</div>
-                    <div class="entry-org">Purdue University · GPA 3.48</div>
-                    <span class="entry-now">Now</span>
+            <div class="tl-right-col">
+                <div class="content-row">
+                    <div class="tl-entry" data-side="exp" data-index="0">
+                        <div class="entry-date">2021 – 2023</div>
+                        <div class="entry-role">Restaurant Manager</div>
+                        <div class="entry-org">Annapurna Restaurant · Seattle, WA</div>
+                    </div>
                 </div>
-            </div>
-            <div class="tl-cell-center">
-                <div class="tl-year-cell"><div class="tl-year">Now</div></div>
-                <div class="tl-node" data-side="exp" data-index="3">🏠</div>
-            </div>
-            <div class="tl-cell-right">
-                <div class="tl-entry" data-side="exp" data-index="3">
-                    <div class="entry-date">Sep 2025 – Present</div>
-                    <div class="entry-role">Student Office Staff</div>
-                    <div class="entry-org">Purdue Housing & Residential Life</div>
-                    <span class="entry-now">Now</span>
+                <div class="content-row">
+                    <div class="tl-placeholder"></div>
+                </div>
+                <div class="content-row">
+                    <div class="tl-entry" data-side="exp" data-index="1">
+                        <div class="entry-date">Feb 2024 – Jun 2024</div>
+                        <div class="entry-role">ISE Intern</div>
+                        <div class="entry-org">KeelWorks</div>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="tl-entry active" data-side="exp" data-index="2">
+                        <div class="entry-date">Jan 2024 – Present</div>
+                        <div class="entry-role">Data Science Researcher</div>
+                        <div class="entry-org">The Data Mine · Purdue</div>
+                        <span class="entry-now">Now</span>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="tl-entry" data-side="exp" data-index="3">
+                        <div class="entry-date">Sep 2025 – Present</div>
+                        <div class="entry-role">Student Office Staff</div>
+                        <div class="entry-org">Purdue Housing & Residential Life</div>
+                        <span class="entry-now">Now</span>
+                    </div>
                 </div>
             </div>
 
@@ -489,30 +530,50 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
             </div>
         </div>
         <div class="dp-body">
-            <div class="dp-body-label" id="dpLabel">Experience</div>
+            <div class="dp-body-label" id="dpLabel">💼 Experience</div>
             <p id="dpDesc">Analyzed operational datasets for Carnival Cruise Line, focusing on engine performance trends, baseline analysis, and KPI monitoring. Built Power BI dashboards and cleaned 54+ Excel datasets to support data-driven decisions across the fleet.</p>
         </div>
     </div>
 </section>
-
 <section id="projects">
     <h2>Projects</h2>
     <div class="grid">
+
         <div class="card">
             <strong>Engine Analytics Dashboard</strong>
             <p>Built Power BI dashboards to monitor engine performance across multiple ships. Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling accurate baseline analysis.</p>
+            <div class="card-skills">
+                <span>Power BI</span>
+                <span>Excel</span>
+                <span>Data Cleaning</span>
+                <span>KPI Design</span>
+            </div>
         </div>
+
         <div class="card">
             <strong>Virtualized Active Directory Infrastructure</strong>
             <p>Designed and deployed a multi-site Active Directory environment using Windows Server. Implemented replication, domain services, and system automation to simulate enterprise-scale IT infrastructure.</p>
+            <div class="card-skills">
+                <span>Windows Server</span>
+                <span>Networking</span>
+                <span>Systems Admin</span>
+                <span>Automation</span>
+            </div>
         </div>
+
         <div class="card">
             <strong>Lean Six Sigma Process Optimization</strong>
             <p>Applied DMAIC methodology to analyze multi-year ticket sales data and customer trends, identifying patterns and opportunities for demand optimization.</p>
+            <div class="card-skills">
+                <span>Lean Six Sigma</span>
+                <span>DMAIC</span>
+                <span>SQL</span>
+                <span>Data Analysis</span>
+            </div>
         </div>
+
     </div>
 </section>
-
 <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
@@ -558,7 +619,7 @@ const eduData = [
 const expData = [
     {
         role: "Restaurant Manager",
-        org: "Annapurna Restaurant· Seattle, WA",
+        org: "Annapurna Restaurant · Seattle, WA",
         now: false,
         desc: "Managed daily restaurant operations while attending Seattle Central full-time. Led staff, handled customer service, and maintained operational efficiency while balancing academics in a new country."
     },
@@ -609,9 +670,9 @@ function renderPanel() {
     document.getElementById('prevBtn').disabled = fi <= 0;
     document.getElementById('nextBtn').disabled = fi >= flatList.length - 1;
 
-    document.querySelectorAll('.tl-entry, .tl-node').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tl-entry, .spine-node').forEach(el => el.classList.remove('active'));
     document.querySelectorAll(`.tl-entry[data-side="${active.side}"][data-index="${active.index}"]`).forEach(el => el.classList.add('active'));
-    document.querySelectorAll(`.tl-node[data-side="${active.side}"][data-index="${active.index}"]`).forEach(el => el.classList.add('active'));
+    document.querySelectorAll(`.spine-node[data-side="${active.side}"][data-index="${active.index}"]`).forEach(el => el.classList.add('active'));
 
     const panel = document.getElementById('detailPanel');
     panel.classList.remove('visible');
@@ -636,7 +697,7 @@ document.querySelectorAll('.tl-entry').forEach(el => {
     });
 });
 
-document.querySelectorAll('.tl-node').forEach(el => {
+document.querySelectorAll('.spine-node').forEach(el => {
     el.addEventListener('click', () => {
         active = { side: el.dataset.side, index: parseInt(el.dataset.index) };
         renderPanel();
