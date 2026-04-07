@@ -4,17 +4,9 @@
 <title>Tergel Otgonbaatar</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -23,353 +15,292 @@ body {
     animation: gradientFlow 12s ease infinite;
     color: #1e293b;
 }
-
 @keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
 .nav {
-    position: sticky;
-    top: 0;
+    position: sticky; top: 0;
     backdrop-filter: blur(12px);
     background: rgba(255,255,255,0.5);
     padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.4);
 }
-
-.nav-brand {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #1e293b;
-}
-
+.nav-brand { font-weight: 700; font-size: 1.1rem; }
 .nav-links a {
-    text-decoration: none;
-    margin-left: 24px;
-    color: #334155;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    text-decoration: none; margin-left: 24px;
+    color: #334155; font-weight: 500; font-size: 0.95rem;
+    transition: color 0.2s;
 }
+.nav-links a:hover { color: #6366f1; }
 
-.nav-links a:hover {
-    color: #6366f1;
-}
-
-.container {
-    max-width: 1150px;
-    margin: auto;
-    padding: 80px 20px;
-}
+.container { max-width: 1150px; margin: auto; padding: 80px 20px; }
 
 .hero-section {
     display: grid;
     grid-template-columns: 1fr 340px;
-    gap: 60px;
-    align-items: start;
-    margin-top: 60px;
+    gap: 60px; align-items: start; margin-top: 60px;
 }
-
-.hero-left {
-    display: flex;
-    flex-direction: column;
-}
-
+.hero-left { display: flex; flex-direction: column; }
 .hero-label {
     display: inline-block;
     background: rgba(255,255,255,0.65);
     border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 999px;
-    padding: 6px 16px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #6366f1;
-    margin-bottom: 22px;
-    width: fit-content;
+    border-radius: 999px; padding: 6px 16px;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em;
+    color: #6366f1; margin-bottom: 22px; width: fit-content;
 }
-
 .hero-left h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    line-height: 1.15;
-    color: #1e293b;
-    margin-bottom: 28px;
+    font-size: 3.2rem; font-weight: 800;
+    line-height: 1.15; color: #1e293b; margin-bottom: 28px;
 }
-
-.hero-left p {
-    color: #475569;
-    font-size: 1.05rem;
-    line-height: 1.75;
-    margin-bottom: 18px;
-    max-width: 560px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-}
-
+.hero-left p { color: #475569; font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; max-width: 560px; }
+.hero-buttons { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
 .hero-buttons a {
-    padding: 12px 26px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.25s ease;
+    padding: 12px 26px; border-radius: 999px;
+    text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.25s ease;
 }
-
-.btn-primary {
-    background: linear-gradient(135deg, #a5b4fc, #f9a8d4);
-    color: white;
-}
-
-.btn-primary:hover {
-    opacity: 0.85;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: rgba(255,255,255,0.65);
-    color: #334155;
-    border: 1px solid rgba(255,255,255,0.7);
-}
-
-.btn-secondary:hover {
-    background: rgba(255,255,255,0.9);
-    transform: translateY(-2px);
-}
+.btn-primary { background: linear-gradient(135deg, #a5b4fc, #f9a8d4); color: white; }
+.btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+.btn-secondary { background: rgba(255,255,255,0.65); color: #334155; border: 1px solid rgba(255,255,255,0.7); }
+.btn-secondary:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
 
 .hero-photo-card {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(14px);
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.7);
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    background: rgba(255,255,255,0.6); backdrop-filter: blur(14px);
+    border-radius: 24px; border: 1px solid rgba(255,255,255,0.7);
+    overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.07);
 }
+.hero-photo-card img { width: 100%; height: 320px; object-fit: cover; object-position: top; display: block; }
+.academic-snapshot { padding: 24px; }
+.academic-snapshot h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 4px; }
+.academic-snapshot > p { font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.5; }
+.snapshot-divider { border: none; border-top: 1px solid #e2e8f0; margin: 4px 0 8px; }
+.snapshot-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+.snapshot-row:last-child { border-bottom: none; }
+.snapshot-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; }
+.snapshot-value { font-size: 0.9rem; font-weight: 700; color: #1e293b; }
 
-.hero-photo-card img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-}
+section { margin-top: 100px; }
+section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 
-.academic-snapshot {
-    padding: 24px;
-}
-
-.academic-snapshot h4 {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #94a3b8;
-    margin-bottom: 4px;
-}
-
-.academic-snapshot > p {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 16px;
-    line-height: 1.5;
-}
-
-.snapshot-divider {
-    border: none;
-    border-top: 1px solid #e2e8f0;
-    margin: 4px 0 8px;
-}
-
-.snapshot-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.snapshot-row:last-child {
-    border-bottom: none;
-}
-
-.snapshot-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #94a3b8;
-}
-
-.snapshot-value {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #1e293b;
-    text-align: right;
-}
-
-section {
-    margin-top: 100px;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-}
-
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .card {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(14px);
-    padding: 25px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.55); backdrop-filter: blur(14px);
+    padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.card strong {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: #475569;
-    font-size: 0.92rem;
-    line-height: 1.6;
-}
-
-.card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
+.card strong { display: block; margin-bottom: 8px; }
+.card p { color: #475569; font-size: 0.92rem; line-height: 1.6; }
+.card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
 
 #core-identity { margin-top: 120px; }
-
 .identity-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(14px);
-    padding: 60px;
-    border-radius: 28px;
-    border: 1px solid rgba(255,255,255,0.6);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    background: rgba(255,255,255,0.55); backdrop-filter: blur(14px);
+    padding: 60px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.6);
 }
-
-.mbti-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
+.mbti-title { font-size: 3rem; font-weight: 700; margin-bottom: 6px; }
 .mbti-title span { color: #94a3b8; }
-
-.mbti-sub {
-    margin-bottom: 20px;
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-.identity-left h3 {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-}
-
-.identity-left p {
-    color: #475569;
-    line-height: 1.7;
-    font-size: 0.95rem;
-}
-
+.mbti-sub { margin-bottom: 20px; color: #64748b; font-size: 0.9rem; }
+.identity-left h3 { margin-bottom: 12px; font-size: 1.1rem; }
+.identity-left p { color: #475569; line-height: 1.7; font-size: 0.95rem; }
 .identity-tags { margin-top: 20px; }
-
 .identity-tags span {
-    display: inline-block;
-    padding: 7px 15px;
-    margin: 8px 8px 0 0;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.7);
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid rgba(255,255,255,0.8);
+    display: inline-block; padding: 7px 15px; margin: 8px 8px 0 0;
+    border-radius: 999px; background: rgba(255,255,255,0.7);
+    font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.8);
 }
-
-.identity-right h4 {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #94a3b8;
-    margin-bottom: 24px;
-}
-
+.identity-right h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 24px; }
 .trait { margin-bottom: 22px; }
+.trait label { font-size: 0.88rem; font-weight: 600; color: #334155; }
+.bar { height: 6px; background: #e2e8f0; border-radius: 6px; margin: 8px 0 4px; overflow: hidden; }
+.fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #ec4899); transition: width 1.5s ease; }
+.trait small { font-size: 0.8rem; color: #94a3b8; }
 
-.trait label {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #334155;
+#timeline-section { margin-top: 120px; }
+
+.tl-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 56px; flex-wrap: wrap; gap: 20px;
+}
+.tl-header-left span {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #94a3b8; display: block; margin-bottom: 8px;
+}
+.tl-header-left h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 10px; }
+.tl-header-left p { color: #64748b; font-size: 1rem; line-height: 1.65; max-width: 480px; }
+.resume-link {
+    padding: 12px 22px; border-radius: 999px;
+    background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.8);
+    text-decoration: none; font-weight: 600; font-size: 0.9rem; color: #1e293b;
+    white-space: nowrap; transition: all 0.2s ease; flex-shrink: 0; margin-top: 6px;
+}
+.resume-link:hover { background: white; transform: translateY(-2px); }
+
+.tl-col-labels {
+    display: grid; grid-template-columns: 1fr 80px 1fr;
+    margin-bottom: 12px; padding: 0 4px;
+}
+.tl-col-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #6366f1;
+    display: flex; align-items: center;
+}
+.tl-col-label.right { justify-content: flex-end; }
+
+.tl-scroll {
+    max-height: 580px;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99,102,241,0.3) transparent;
+}
+.tl-scroll::-webkit-scrollbar { width: 4px; }
+.tl-scroll::-webkit-scrollbar-track { background: transparent; }
+.tl-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 4px; }
+
+.tl-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    position: relative;
 }
 
-.bar {
-    height: 6px;
-    background: #e2e8f0;
-    border-radius: 6px;
-    margin: 8px 0 4px;
-    overflow: hidden;
+.tl-line {
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(203,213,225,0.3), #cbd5e1 10%, #cbd5e1 90%, rgba(203,213,225,0.3));
+    transform: translateX(-50%);
+    z-index: 0;
+    grid-column: 2;
 }
 
-.fill {
-    height: 100%;
-    width: 0;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #6366f1, #ec4899);
-    transition: width 1.5s ease;
+.tl-cell-left {
+    padding: 0 20px 40px 0;
+    display: flex; justify-content: flex-end;
+}
+.tl-cell-center {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+}
+.tl-cell-right {
+    padding: 0 0 40px 20px;
+    display: flex; justify-content: flex-start;
 }
 
-.trait small {
-    font-size: 0.8rem;
-    color: #94a3b8;
+.tl-node {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid #e2e8f0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    position: relative; z-index: 1;
+    margin-top: 18px;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.tl-node:hover { border-color: #6366f1; box-shadow: 0 0 0 5px rgba(99,102,241,0.15); transform: scale(1.1); }
+.tl-node.active { border-color: #6366f1; background: white; box-shadow: 0 0 0 6px rgba(99,102,241,0.2); transform: scale(1.15); }
+
+.tl-year-cell {
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 22px; position: relative; z-index: 2;
+}
+.tl-year {
+    background: rgba(255,255,255,0.92);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 999px; padding: 3px 10px;
+    font-size: 0.66rem; font-weight: 700; color: #64748b;
+    letter-spacing: 0.08em; white-space: nowrap;
 }
 
-footer {
-    text-align: center;
-    margin-top: 100px;
-    padding: 40px;
-    color: #64748b;
-    font-size: 0.9rem;
+.tl-entry {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255,255,255,0.7);
+    border-radius: 18px; padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+.tl-entry:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.1); }
+.tl-entry.active { border-color: rgba(99,102,241,0.45); background: rgba(255,255,255,0.88); box-shadow: 0 8px 28px rgba(99,102,241,0.15); }
+
+.entry-date { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px; }
+.entry-role { font-size: 0.92rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; line-height: 1.3; }
+.entry-org { font-size: 0.78rem; font-weight: 600; color: #6366f1; margin-bottom: 6px; }
+.entry-now {
+    display: inline-block; background: #1e293b; color: white;
+    border-radius: 999px; padding: 2px 9px; font-size: 0.65rem; font-weight: 700;
+}
+.entry-now::before { content: '● '; color: #22c55e; }
+
+.tl-empty { padding: 0 0 40px 0; }
+
+.detail-panel {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.65); backdrop-filter: blur(14px);
+    border-radius: 24px; border: 1px solid rgba(255,255,255,0.7);
+    padding: 40px; display: none; animation: fadeUp 0.3s ease;
+}
+.detail-panel.visible { display: block; }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.dp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+.dp-title-group h3 { font-size: 1.55rem; font-weight: 800; margin-bottom: 4px; }
+.dp-title-group p { color: #64748b; font-size: 0.95rem; }
+.dp-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.now-badge {
+    background: #1e293b; color: white; border-radius: 999px;
+    padding: 5px 14px; font-size: 0.75rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 6px;
+}
+.now-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:#22c55e; display:inline-block; }
+.dp-nav { display: flex; gap: 10px; }
+.dp-nav button {
+    padding: 10px 20px; border-radius: 999px;
+    border: 1px solid #e2e8f0; background: rgba(255,255,255,0.7);
+    font-weight: 600; font-size: 0.88rem; cursor: pointer;
+    color: #334155; transition: all 0.2s ease;
+}
+.dp-nav button:hover:not(:disabled) { background: white; transform: translateY(-1px); }
+.dp-nav button:disabled { opacity: 0.3; cursor: default; }
+.dp-body {
+    background: rgba(255,255,255,0.5); border-radius: 16px;
+    padding: 24px; border: 1px solid rgba(255,255,255,0.6);
+}
+.dp-body-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 12px; }
+.dp-body p { color: #475569; line-height: 1.75; font-size: 0.97rem; }
+
+footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; font-size: 0.9rem; }
 
 @media (max-width: 768px) {
     .hero-section { grid-template-columns: 1fr; }
     .hero-right { order: -1; }
     .identity-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
+    .tl-grid { grid-template-columns: 1fr 48px 1fr; }
+    .tl-node { width: 36px; height: 36px; font-size: 0.9rem; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="nav">
     <div class="nav-brand">Tergel</div>
     <div class="nav-links">
         <a href="#core-identity">About</a>
-        <a href="#experience">Experience</a>
+        <a href="#timeline-section">Timeline</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
     </div>
@@ -383,34 +314,23 @@ footer {
         <h1>I build systems that move forward.</h1>
         <p>I'm Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University. I'm drawn to operational clarity, measurable improvement, and building structured systems that scale.</p>
         <p>I didn't follow a traditional academic path. After leaving high school at 16, I rebuilt my education in a new country and language. That shift shaped my discipline, independence, and long-term drive.</p>
-        <p>I'm drawn to challenge especially when it asks me to think clearly, move fast, and turn complexity into something useful. I improve through iteration, not comfort.</p>
+        <p>I'm drawn to challenge — especially when it asks me to think clearly, move fast, and turn complexity into something useful. I improve through iteration, not comfort.</p>
         <div class="hero-buttons">
             <a href="Tergel Otgonbaatar Resume..pdf" class="btn-primary">View Resume →</a>
             <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="btn-secondary">LinkedIn</a>
         </div>
     </div>
-
     <div class="hero-right">
         <div class="hero-photo-card">
             <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel">
             <div class="academic-snapshot">
+                <h4>Academic Snapshot</h4>
+                <p>A quick look at my background, major, and expected graduation.</p>
                 <hr class="snapshot-divider">
-                <div class="snapshot-row">
-                    <span class="snapshot-label">Major</span>
-                    <span class="snapshot-value">Data Analytics</span>
-                </div>
-                <div class="snapshot-row">
-                    <span class="snapshot-label">Focus</span>
-                    <span class="snapshot-value">Operations & Systems</span>
-                </div>
-                <div class="snapshot-row">
-                    <span class="snapshot-label">GPA</span>
-                    <span class="snapshot-value">3.48</span>
-                </div>
-                <div class="snapshot-row">
-                    <span class="snapshot-label">Expected</span>
-                    <span class="snapshot-value">Dec 2026</span>
-                </div>
+                <div class="snapshot-row"><span class="snapshot-label">Major</span><span class="snapshot-value">Data Analytics</span></div>
+                <div class="snapshot-row"><span class="snapshot-label">Focus</span><span class="snapshot-value">Operations & Systems</span></div>
+                <div class="snapshot-row"><span class="snapshot-label">GPA</span><span class="snapshot-value">3.48</span></div>
+                <div class="snapshot-row"><span class="snapshot-label">Expected</span><span class="snapshot-value">Dec 2026</span></div>
             </div>
         </div>
     </div>
@@ -432,45 +352,147 @@ footer {
         </div>
         <div class="identity-right">
             <h4>Trait Read</h4>
-            <div class="trait">
-                <label>Energy</label>
-                <div class="bar"><div class="fill" data-width="60%"></div></div>
-                <small>60% Extraverted</small>
-            </div>
-            <div class="trait">
-                <label>Information</label>
-                <div class="bar"><div class="fill" data-width="54%"></div></div>
-                <small>54% Observant</small>
-            </div>
-            <div class="trait">
-                <label>Decision Style</label>
-                <div class="bar"><div class="fill" data-width="58%"></div></div>
-                <small>58% Feeling</small>
-            </div>
-            <div class="trait">
-                <label>Approach</label>
-                <div class="bar"><div class="fill" data-width="63%"></div></div>
-                <small>63% Prospecting</small>
-            </div>
-            <div class="trait">
-                <label>Growth Lens</label>
-                <div class="bar"><div class="fill" data-width="72%"></div></div>
-                <small>72% Turbulent</small>
-            </div>
+            <div class="trait"><label>Energy</label><div class="bar"><div class="fill" data-width="60%"></div></div><small>60% Extraverted</small></div>
+            <div class="trait"><label>Information</label><div class="bar"><div class="fill" data-width="54%"></div></div><small>54% Observant</small></div>
+            <div class="trait"><label>Decision Style</label><div class="bar"><div class="fill" data-width="58%"></div></div><small>58% Feeling</small></div>
+            <div class="trait"><label>Approach</label><div class="bar"><div class="fill" data-width="63%"></div></div><small>63% Prospecting</small></div>
+            <div class="trait"><label>Growth Lens</label><div class="bar"><div class="fill" data-width="72%"></div></div><small>72% Turbulent</small></div>
         </div>
     </div>
 </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="grid">
-        <div class="card">
-            <strong>Purdue University – West Lafayette, IN</strong>
-            <p>Bachelor of Science, Data Analytics, Technologies & Applications<br>Aug 2024 – Dec 2026<br>GPA: 3.48 / 4.00<br>Dean's List</p>
+<section id="timeline-section">
+    <div class="tl-header">
+        <div class="tl-header-left">
+            <span>My Journey</span>
+            <h2>Education & Experience</h2>
+            <p>Academic foundation on the left, professional growth on the right — two tracks, one direction.</p>
         </div>
-        <div class="card">
-            <strong>Seattle Central Community College – Seattle, WA</strong>
-            <p>Associate of Applied Science, Computer & Information Sciences<br>Sep 2021 – Dec 2023<br>GPA: 3.69 / 4.00<br>Dean's List · Phi Theta Kappa</p>
+        <a href="Tergel Otgonbaatar Resume..pdf" class="resume-link">View full resume →</a>
+    </div>
+
+    <div class="tl-col-labels">
+        <div class="tl-col-label">🎓 Education</div>
+        <div></div>
+        <div class="tl-col-label right">Experience 💼</div>
+    </div>
+
+    <div class="tl-scroll">
+        <div class="tl-grid" id="tlGrid">
+            <div class="tl-line"></div>
+
+            <!-- ROW 1 -->
+            <div class="tl-cell-left">
+                <div class="tl-entry" data-side="edu" data-index="0">
+                    <div class="entry-date">Sep 2021 – Dec 2023</div>
+                    <div class="entry-role">Associate of Applied Science</div>
+                    <div class="entry-org">Seattle Central Community College</div>
+                </div>
+            </div>
+            <div class="tl-cell-center">
+                <div class="tl-year-cell"><div class="tl-year">2021</div></div>
+                <div class="tl-node" data-side="edu" data-index="0">🏫</div>
+            </div>
+            <div class="tl-cell-right">
+                <div class="tl-entry" data-side="exp" data-index="0">
+                    <div class="entry-date">2021 – 2023</div>
+                    <div class="entry-role">Retail & Customer Service</div>
+                    <div class="entry-org">Seattle, WA</div>
+                </div>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="tl-cell-left">
+                <div class="tl-entry" data-side="edu" data-index="1">
+                    <div class="entry-date">2022 – 2023</div>
+                    <div class="entry-role">Phi Theta Kappa Honor Society</div>
+                    <div class="entry-org">Seattle Central · GPA 3.69</div>
+                </div>
+            </div>
+            <div class="tl-cell-center">
+                <div class="tl-year-cell"><div class="tl-year">2022</div></div>
+                <div class="tl-node" data-side="edu" data-index="1">🏅</div>
+            </div>
+            <div class="tl-cell-right tl-empty"></div>
+
+            <!-- ROW 3 -->
+            <div class="tl-cell-left tl-empty"></div>
+            <div class="tl-cell-center">
+                <div class="tl-year-cell"><div class="tl-year">2023</div></div>
+                <div class="tl-node" data-side="exp" data-index="1">🔧</div>
+            </div>
+            <div class="tl-cell-right">
+                <div class="tl-entry" data-side="exp" data-index="1">
+                    <div class="entry-date">2023 – 2024</div>
+                    <div class="entry-role">ISE Intern</div>
+                    <div class="entry-org">KeelWorks</div>
+                </div>
+            </div>
+
+            <!-- ROW 4 -->
+            <div class="tl-cell-left">
+                <div class="tl-entry" data-side="edu" data-index="2">
+                    <div class="entry-date">Aug 2024 – Dec 2026</div>
+                    <div class="entry-role">B.S. Data Analytics</div>
+                    <div class="entry-org">Purdue University</div>
+                    <span class="entry-now">Now</span>
+                </div>
+            </div>
+            <div class="tl-cell-center">
+                <div class="tl-year-cell"><div class="tl-year">2024</div></div>
+                <div class="tl-node active" data-side="exp" data-index="2">🚢</div>
+            </div>
+            <div class="tl-cell-right">
+                <div class="tl-entry active" data-side="exp" data-index="2">
+                    <div class="entry-date">Jan 2024 – Present</div>
+                    <div class="entry-role">Data Science Researcher</div>
+                    <div class="entry-org">The Data Mine · Purdue</div>
+                    <span class="entry-now">Now</span>
+                </div>
+            </div>
+
+            <!-- ROW 5 -->
+            <div class="tl-cell-left">
+                <div class="tl-entry" data-side="edu" data-index="3">
+                    <div class="entry-date">2024 – Present</div>
+                    <div class="entry-role">Dean's List</div>
+                    <div class="entry-org">Purdue University · GPA 3.48</div>
+                    <span class="entry-now">Now</span>
+                </div>
+            </div>
+            <div class="tl-cell-center">
+                <div class="tl-year-cell"><div class="tl-year">Now</div></div>
+                <div class="tl-node" data-side="exp" data-index="3">🏠</div>
+            </div>
+            <div class="tl-cell-right">
+                <div class="tl-entry" data-side="exp" data-index="3">
+                    <div class="entry-date">2024 – Present</div>
+                    <div class="entry-role">Student Office Staff</div>
+                    <div class="entry-org">Purdue Housing & Residential Life</div>
+                    <span class="entry-now">Now</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="detail-panel visible" id="detailPanel">
+        <div class="dp-top">
+            <div class="dp-title-group">
+                <h3 id="dpTitle">Data Science Researcher</h3>
+                <p id="dpOrg">The Data Mine · Purdue University</p>
+            </div>
+            <div class="dp-right">
+                <span class="now-badge" id="dpBadge">Now</span>
+                <div class="dp-nav">
+                    <button id="prevBtn" onclick="navigatePanel(-1)">← Previous</button>
+                    <button id="nextBtn" onclick="navigatePanel(1)">Next →</button>
+                </div>
+            </div>
+        </div>
+        <div class="dp-body">
+            <div class="dp-body-label" id="dpLabel">Experience</div>
+            <p id="dpDesc">Analyzed operational datasets for Carnival Cruise Line, focusing on engine performance trends, baseline analysis, and KPI monitoring. Built Power BI dashboards and cleaned 54+ Excel datasets to support data-driven decisions across the fleet.</p>
         </div>
     </div>
 </section>
@@ -493,24 +515,6 @@ footer {
     </div>
 </section>
 
-<section id="experience">
-    <h2>Experience</h2>
-    <div class="grid">
-        <div class="card">
-            <strong>Data Science Researcher – The Data Mine</strong>
-            <p>Analyze operational datasets for Carnival Cruise Line, focusing on performance trends, baseline analysis, and KPI monitoring. Built dashboards and cleaned 50+ datasets.</p>
-        </div>
-        <div class="card">
-            <strong>Instructional Systems Engineer Intern – KeelWorks</strong>
-            <p>Analyzed system performance data and user feedback to identify workflow inefficiencies. Developed KPI dashboards to improve operational visibility and decision-making.</p>
-        </div>
-        <div class="card">
-            <strong>Student Office Staff – Purdue University</strong>
-            <p>Managed front-line operations including access control, logistics, and issue tracking in a high-traffic residential environment.</p>
-        </div>
-    </div>
-</section>
-
 <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
@@ -523,32 +527,144 @@ footer {
 </section>
 
 </div>
-
 <footer>Summer 2026 Internship Ready · West Lafayette</footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+const eduData = [
+    {
+        role: "Associate of Applied Science",
+        org: "Seattle Central Community College · Seattle, WA",
+        now: false,
+        desc: "Completed an AAS in Computer & Information Sciences with a 3.69 GPA. Built a strong foundation in programming, systems, and data concepts while navigating a new country and language from scratch."
+    },
+    {
+        role: "Phi Theta Kappa Honor Society",
+        org: "Seattle Central Community College",
+        now: false,
+        desc: "Inducted into Phi Theta Kappa, the international honor society for two-year colleges. Participated in academic events and community initiatives while maintaining dean's list standing throughout."
+    },
+    {
+        role: "B.S. Data Analytics, Technologies & Applications",
+        org: "Purdue University · West Lafayette, IN",
+        now: true,
+        desc: "Currently pursuing a Bachelor of Science in Data Analytics at Purdue. Focus areas include operations research, systems thinking, and applied data engineering. Expected graduation: December 2026."
+    },
+    {
+        role: "Dean's List",
+        org: "Purdue University · GPA 3.48 / 4.00",
+        now: true,
+        desc: "Recognized on the Dean's List for academic excellence at Purdue University. Balancing a rigorous course load alongside active research and professional work commitments."
+    }
+];
 
+const expData = [
+    {
+        role: "Restaurant Managaer",
+        org: "Summer shift - Manager· Seattle, WA",
+        now: false,
+        desc: "Managed daily restaurant operations while attending Seattle Central full-time. Led staff, handled customer service, and maintained operational efficiency while balancing academics in a new country."
+    },
+    {
+        role: "Instructional Systems Engineer Intern",
+        org: "KeelWorks",
+        now: false,
+        desc: "Analyzed system performance data and user feedback to identify workflow inefficiencies. Developed KPI dashboards to improve operational visibility and support better decision-making across the organization."
+    },
+    {
+        role: "Data Science Researcher",
+        org: "The Data Mine · Purdue University",
+        now: true,
+        desc: "Analyzed operational datasets for Carnival Cruise Line, focusing on engine performance trends, baseline analysis, and KPI monitoring. Built Power BI dashboards and cleaned 54+ Excel datasets to support data-driven decisions across the fleet."
+    },
+    {
+        role: "Student Office Staff",
+        org: "Purdue Housing & Residential Life",
+        now: true,
+        desc: "Managed front-line operations including access control, logistics, and issue resolution in a high-traffic residential environment. Coordinated with facilities and administrative teams to maintain smooth operations."
+    }
+];
+
+const flatList = [];
+const maxLen = Math.max(eduData.length, expData.length);
+for (let i = 0; i < maxLen; i++) {
+    if (i < eduData.length) flatList.push({ side: 'edu', index: i });
+    if (i < expData.length) flatList.push({ side: 'exp', index: i });
+}
+
+let active = { side: 'exp', index: 2 };
+
+function flatIdx() {
+    return flatList.findIndex(x => x.side === active.side && x.index === active.index);
+}
+
+function renderPanel() {
+    const data = active.side === 'edu' ? eduData : expData;
+    const item = data[active.index];
+
+    document.getElementById('dpTitle').textContent = item.role;
+    document.getElementById('dpOrg').textContent = item.org;
+    document.getElementById('dpDesc').textContent = item.desc;
+    document.getElementById('dpLabel').textContent = active.side === 'edu' ? '🎓 Education' : '💼 Experience';
+    document.getElementById('dpBadge').style.display = item.now ? 'inline-flex' : 'none';
+
+    const fi = flatIdx();
+    document.getElementById('prevBtn').disabled = fi <= 0;
+    document.getElementById('nextBtn').disabled = fi >= flatList.length - 1;
+
+    document.querySelectorAll('.tl-entry, .tl-node').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll(`.tl-entry[data-side="${active.side}"][data-index="${active.index}"]`).forEach(el => el.classList.add('active'));
+    document.querySelectorAll(`.tl-node[data-side="${active.side}"][data-index="${active.index}"]`).forEach(el => el.classList.add('active'));
+
+    const panel = document.getElementById('detailPanel');
+    panel.classList.remove('visible');
+    void panel.offsetWidth;
+    panel.classList.add('visible');
+}
+
+function navigatePanel(dir) {
+    const fi = flatIdx() + dir;
+    if (fi >= 0 && fi < flatList.length) {
+        active = { ...flatList[fi] };
+        renderPanel();
+        document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+document.querySelectorAll('.tl-entry').forEach(el => {
+    el.addEventListener('click', () => {
+        active = { side: el.dataset.side, index: parseInt(el.dataset.index) };
+        renderPanel();
+        document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+});
+
+document.querySelectorAll('.tl-node').forEach(el => {
+    el.addEventListener('click', () => {
+        active = { side: el.dataset.side, index: parseInt(el.dataset.index) };
+        renderPanel();
+        document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll("section").forEach(section => {
-        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    document.querySelectorAll('section').forEach(section => {
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         section.style.opacity = 0;
-        section.style.transform = "translateY(40px)";
-
+        section.style.transform = 'translateY(40px)';
         const rect = section.getBoundingClientRect();
         if (rect.top < window.innerHeight) {
             section.style.opacity = 1;
-            section.style.transform = "translateY(0)";
+            section.style.transform = 'translateY(0)';
         }
-
         observer.observe(section);
     });
 
@@ -562,8 +678,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    const coreIdentity = document.querySelector('#core-identity');
-    if (coreIdentity) mbtiObserver.observe(coreIdentity);
+    const ci = document.querySelector('#core-identity');
+    if (ci) mbtiObserver.observe(ci);
+
+    renderPanel();
 });
 </script>
 </body>
