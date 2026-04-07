@@ -1,7 +1,10 @@
-!DOCTYPE html>
-<html>
+Index · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Tergel Otgonbaatar</title>
+<title>Tergel Otgonbaatar — Data Analytics</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
@@ -19,139 +22,84 @@ body {
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* ── Nav ── */
 .nav {
     position: sticky; top: 0;
     backdrop-filter: blur(12px);
     background: rgba(255,255,255,0.5);
     padding: 15px 30px;
     display: flex; justify-content: space-between; align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 .nav-brand { font-weight: 700; font-size: 1.1rem; }
-.nav-links a {
-    text-decoration: none; margin-left: 24px;
-    color: #334155; font-weight: 500; font-size: 0.95rem;
-    transition: color 0.2s;
-}
-.nav-links a:hover { color: #6366f1; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { text-decoration: none; padding: 6px 14px; border-radius: 999px; color: #334155; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; }
+.nav-links a:hover { color: #6366f1; background: rgba(99,102,241,0.07); }
+.nav-contact { background: #1e293b !important; color: white !important; font-weight: 600 !important; }
+.nav-contact:hover { background: #334155 !important; color: white !important; }
+/* ── Layout ── */
 .container { max-width: 1150px; margin: auto; padding: 80px 20px; }
-.hero-section {
-    display: grid; grid-template-columns: 1fr 340px;
-    gap: 60px; align-items: start; margin-top: 60px;
-}
+section { margin-top: 100px; }
+section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+.section-sub { color: #64748b; font-size: 0.95rem; margin-bottom: 32px; }
+/* ── Hero ── */
+.hero-section { display: grid; grid-template-columns: 1fr 320px; gap: 60px; align-items: start; margin-top: 60px; }
 .hero-left { display: flex; flex-direction: column; }
-.hero-label {
-    display: inline-block; background: rgba(255,255,255,0.65);
-    border: 1px solid rgba(255,255,255,0.7); border-radius: 999px;
-    padding: 6px 16px; font-size: 0.82rem; font-weight: 600;
-    letter-spacing: 0.05em; color: #6366f1; margin-bottom: 22px; width: fit-content;
-}
-.hero-left h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; color: #1e293b; margin-bottom: 28px; }
-.hero-left p { color: #475569; font-size: 1.05rem; line-height: 1.75; margin-bottom: 18px; max-width: 560px; }
-.hero-buttons { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.7); border-radius: 999px; padding: 6px 16px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; color: #6366f1; margin-bottom: 22px; width: fit-content; }
+.hero-label::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+.hero-left h1 { font-size: 2.9rem; font-weight: 800; line-height: 1.18; color: #1e293b; margin-bottom: 22px; }
+.hero-left h1 em { font-style: normal; color: #6366f1; }
+.hero-left p { color: #475569; font-size: 1.03rem; line-height: 1.8; margin-bottom: 28px; max-width: 540px; }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-buttons a { padding: 12px 26px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.25s ease; }
-.btn-primary { background: linear-gradient(135deg, #a5b4fc, #f9a8d4); color: white; }
-.btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+.btn-primary { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; box-shadow: 0 4px 14px rgba(99,102,241,0.35); }
+.btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
 .btn-secondary { background: rgba(255,255,255,0.65); color: #334155; border: 1px solid rgba(255,255,255,0.7); }
 .btn-secondary:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
-.hero-photo-card {
-    background: rgba(255,255,255,0.6); backdrop-filter: blur(14px);
-    border-radius: 24px; border: 1px solid rgba(255,255,255,0.7);
-    overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.07);
-}
-.hero-photo-card img { width: 100%; height: 320px; object-fit: cover; object-position: top; display: block; }
-.academic-snapshot { padding: 24px; }
-.academic-snapshot h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 4px; }
-.academic-snapshot > p { font-size: 0.85rem; color: #64748b; margin-bottom: 16px; line-height: 1.5; }
-.snapshot-divider { border: none; border-top: 1px solid #e2e8f0; margin: 4px 0 8px; }
-.snapshot-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+.hero-stats { display: flex; gap: 28px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.6); flex-wrap: wrap; }
+.hero-stat-num { font-size: 1.7rem; font-weight: 800; color: #1e293b; line-height: 1; }
+.hero-stat-label { font-size: 0.72rem; color: #94a3b8; margin-top: 4px; }
+.hero-photo-card { background: rgba(255,255,255,0.6); backdrop-filter: blur(14px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.7); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+.hero-photo-card img { width: 100%; height: 300px; object-fit: cover; object-position: top; display: block; }
+.academic-snapshot { padding: 20px 22px; }
+.snapshot-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
 .snapshot-row:last-child { border-bottom: none; }
-.snapshot-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; }
-.snapshot-value { font-size: 0.9rem; font-weight: 700; color: #1e293b; }
-section { margin-top: 100px; }
-section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.card {
-    background: rgba(255,255,255,0.55); backdrop-filter: blur(14px);
-    padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card strong { display: block; margin-bottom: 8px; }
-.card p { color: #475569; font-size: 0.92rem; line-height: 1.6; }
-.card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-#core-identity { margin-top: 120px; }
-.identity-wrapper {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-    background: rgba(255,255,255,0.55); backdrop-filter: blur(14px);
-    padding: 60px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.6);
-}
-.mbti-title { font-size: 3rem; font-weight: 700; margin-bottom: 6px; }
-.mbti-title span { color: #94a3b8; }
-.mbti-sub { margin-bottom: 20px; color: #64748b; font-size: 0.9rem; }
-.identity-left h3 { margin-bottom: 12px; font-size: 1.1rem; }
-.identity-left p { color: #475569; line-height: 1.7; font-size: 0.95rem; }
-.identity-tags { margin-top: 20px; }
-.identity-tags span {
-    display: inline-block; padding: 7px 15px; margin: 8px 8px 0 0;
-    border-radius: 999px; background: rgba(255,255,255,0.7);
-    font-size: 0.85rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.8);
-}
-.identity-right h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 24px; }
-.trait { margin-bottom: 22px; }
+.snapshot-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; }
+.snapshot-value { font-size: 0.88rem; font-weight: 700; color: #1e293b; }
+/* ── How I Work ── */
+#how-i-work { margin-top: 120px; }
+.hiw-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); padding: 56px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.6); }
+.hiw-left h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
+.hiw-left p { color: #475569; line-height: 1.78; font-size: 0.95rem; margin-bottom: 18px; }
+.hiw-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.hiw-tags span { display: inline-block; padding: 7px 15px; border-radius: 999px; background: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.8); color: #334155; }
+.hiw-right h4 { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 24px; }
+.trait { margin-bottom: 20px; }
 .trait label { font-size: 0.88rem; font-weight: 600; color: #334155; }
 .bar { height: 6px; background: #e2e8f0; border-radius: 6px; margin: 8px 0 4px; overflow: hidden; }
-.fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #ec4899); transition: width 1.5s ease; }
-.trait small { font-size: 0.8rem; color: #94a3b8; }
+.fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #a855f7); transition: width 1.5s ease; }
+.trait small { font-size: 0.78rem; color: #94a3b8; }
+/* ── Timeline ── */
 #timeline-section { margin-top: 120px; }
-.tl-header {
-    display: flex; justify-content: space-between;
-    align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 20px;
-}
-.tl-header-left span {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #94a3b8; display: block; margin-bottom: 8px;
-}
-.tl-header-left h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 10px; }
-.tl-header-left p { color: #64748b; font-size: 1rem; line-height: 1.65; max-width: 480px; }
-.resume-link {
-    padding: 12px 22px; border-radius: 999px;
-    background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.8);
-    text-decoration: none; font-weight: 600; font-size: 0.9rem; color: #1e293b;
-    white-space: nowrap; transition: all 0.2s ease; flex-shrink: 0; margin-top: 6px;
-}
+.tl-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 20px; }
+.tl-header-left span { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; display: block; margin-bottom: 8px; }
+.tl-header-left h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+.tl-header-left p { color: #64748b; font-size: 0.95rem; line-height: 1.65; max-width: 480px; }
+.resume-link { padding: 12px 22px; border-radius: 999px; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.8); text-decoration: none; font-weight: 600; font-size: 0.9rem; color: #1e293b; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
 .resume-link:hover { background: white; transform: translateY(-2px); }
 .tl-col-labels { display: grid; grid-template-columns: 1fr 90px 1fr; margin-bottom: 8px; }
 .tl-col-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6366f1; }
 .tl-col-label.right { text-align: right; }
-.tl-scroll {
-    max-height: 600px; overflow-y: auto;
-    scrollbar-width: thin; scrollbar-color: rgba(99,102,241,0.25) transparent;
-}
+.tl-scroll { max-height: 600px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(99,102,241,0.25) transparent; }
 .tl-scroll::-webkit-scrollbar { width: 3px; }
 .tl-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.25); border-radius: 4px; }
 .tl-body { display: grid; grid-template-columns: 1fr 90px 1fr; }
 .tl-spine { display: flex; flex-direction: column; align-items: center; position: relative; }
-.tl-spine::before {
-    content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 2px;
-    background: linear-gradient(to bottom, rgba(203,213,225,0) 0%, #cbd5e1 6%, #cbd5e1 94%, rgba(203,213,225,0) 100%);
-    z-index: 0;
-}
+.tl-spine::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; background: linear-gradient(to bottom, rgba(203,213,225,0) 0%, #cbd5e1 6%, #cbd5e1 94%, rgba(203,213,225,0) 100%); z-index: 0; }
 .spine-row { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; padding-bottom: 40px; }
 .spine-row:last-child { padding-bottom: 0; }
-.spine-year {
-    background: rgba(255,255,255,0.95); border: 1.5px solid #e2e8f0; border-radius: 999px;
-    padding: 4px 12px; font-size: 0.66rem; font-weight: 700; color: #64748b;
-    letter-spacing: 0.08em; white-space: nowrap; margin-bottom: 10px; position: relative; z-index: 2;
-}
-.spine-node {
-    width: 52px; height: 52px; border-radius: 50%;
-    background: rgba(255,255,255,0.95); border: 2px solid #e2e8f0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; cursor: pointer; position: relative; z-index: 2;
-    transition: all 0.25s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.07); flex-shrink: 0;
-}
+.spine-year { background: rgba(255,255,255,0.95); border: 1.5px solid #e2e8f0; border-radius: 999px; padding: 4px 12px; font-size: 0.66rem; font-weight: 700; color: #64748b; letter-spacing: 0.08em; white-space: nowrap; margin-bottom: 10px; position: relative; z-index: 2; }
+.spine-node { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.95); border: 2px solid #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; cursor: pointer; position: relative; z-index: 2; transition: all 0.25s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.07); flex-shrink: 0; }
 .spine-node:hover { border-color: #6366f1; box-shadow: 0 0 0 5px rgba(99,102,241,0.15); transform: scale(1.08); }
 .spine-node.active { border-color: #6366f1; background: white; box-shadow: 0 0 0 6px rgba(99,102,241,0.2); transform: scale(1.12); }
 .tl-left-col, .tl-right-col { display: flex; flex-direction: column; }
@@ -161,11 +109,7 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 .content-row:last-child { padding-bottom: 0; }
 .tl-left-col .content-row { justify-content: flex-end; }
 .tl-right-col .content-row { justify-content: flex-start; }
-.tl-entry {
-    background: rgba(255,255,255,0.62); backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(255,255,255,0.75); border-radius: 18px; padding: 18px 20px;
-    cursor: pointer; width: 100%; transition: all 0.25s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-}
+.tl-entry { background: rgba(255,255,255,0.62); backdrop-filter: blur(12px); border: 1.5px solid rgba(255,255,255,0.75); border-radius: 18px; padding: 18px 20px; cursor: pointer; width: 100%; transition: all 0.25s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
 .tl-entry:hover { border-color: rgba(99,102,241,0.3); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(99,102,241,0.1); }
 .tl-entry.active { border-color: rgba(99,102,241,0.45); background: rgba(255,255,255,0.9); box-shadow: 0 10px 32px rgba(99,102,241,0.15); }
 .entry-date { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px; }
@@ -174,255 +118,171 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
 .entry-now { display: inline-block; background: #1e293b; color: white; border-radius: 999px; padding: 2px 9px; font-size: 0.65rem; font-weight: 700; }
 .entry-now::before { content: '● '; color: #22c55e; }
 .tl-placeholder { width: 100%; }
-.detail-panel {
-    margin-top: 40px; background: rgba(255,255,255,0.65); backdrop-filter: blur(14px);
-    border-radius: 24px; border: 1px solid rgba(255,255,255,0.7);
-    padding: 40px; display: none; animation: fadeUp 0.35s ease;
-}
+.detail-panel { margin-top: 40px; background: rgba(255,255,255,0.65); backdrop-filter: blur(14px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.7); padding: 40px; display: none; animation: fadeUp 0.35s ease; }
 .detail-panel.visible { display: block; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 .dp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
-.dp-title-group h3 { font-size: 1.55rem; font-weight: 800; margin-bottom: 4px; }
+.dp-title-group h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 4px; }
 .dp-title-group p { color: #64748b; font-size: 0.95rem; }
 .dp-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .now-badge { background: #1e293b; color: white; border-radius: 999px; padding: 5px 14px; font-size: 0.75rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
 .now-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:#22c55e; display:inline-block; }
 .dp-nav { display: flex; gap: 10px; }
-.dp-nav button { padding: 10px 20px; border-radius: 999px; border: 1px solid #e2e8f0; background: rgba(255,255,255,0.7); font-weight: 600; font-size: 0.88rem; cursor: pointer; color: #334155; transition: all 0.2s ease; }
+.dp-nav button { padding: 10px 20px; border-radius: 999px; border: 1px solid #e2e8f0; background: rgba(255,255,255,0.7); font-weight: 600; font-size: 0.88rem; cursor: pointer; color: #334155; transition: all 0.2s; font-family: inherit; }
 .dp-nav button:hover:not(:disabled) { background: white; transform: translateY(-1px); }
 .dp-nav button:disabled { opacity: 0.3; cursor: default; }
 .dp-body { background: rgba(255,255,255,0.5); border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.6); }
 .dp-body-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 12px; }
-.dp-body p { color: #475569; line-height: 1.75; font-size: 0.97rem; }
-footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; font-size: 0.9rem; }
- 
-/* ── Card skills ── */
-.card-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(99,102,241,0.12); }
-.card-skills span { background: rgba(99,102,241,0.08); color: #6366f1; border: 1px solid rgba(99,102,241,0.2); border-radius: 999px; padding: 3px 11px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; }
- 
-/* ── Skills section ── */
-.skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.skill-group { background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 24px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.skill-group:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+.dp-body p { color: #475569; line-height: 1.78; font-size: 0.97rem; }
+/* ── Projects ── */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.project-card { background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.6); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.09); }
+.project-card-top { padding: 28px 28px 0; }
+.project-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6366f1; margin-bottom: 10px; }
+.project-card strong { display: block; font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
+.project-card .problem { font-size: 0.84rem; color: #64748b; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+.project-card .outcome { font-size: 0.88rem; color: #475569; line-height: 1.65; }
+.project-card-bottom { padding: 18px 28px 24px; margin-top: auto; }
+.project-expand-btn { width: 100%; background: none; border: none; cursor: pointer; color: #6366f1; font-size: 0.82rem; font-weight: 600; text-align: left; padding: 0; margin: 14px 0; font-family: inherit; transition: opacity 0.2s; }
+.project-expand-btn:hover { opacity: 0.7; }
+.project-details { display: none; font-size: 0.84rem; color: #475569; line-height: 1.72; padding: 14px; background: rgba(99,102,241,0.04); border-radius: 10px; margin-bottom: 14px; border: 1px solid rgba(99,102,241,0.1); }
+.project-details.open { display: block; }
+.card-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.card-skills span { background: rgba(99,102,241,0.08); color: #6366f1; border: 1px solid rgba(99,102,241,0.2); border-radius: 999px; padding: 3px 11px; font-size: 0.72rem; font-weight: 600; }
+/* ── Skills ── */
+.skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.skill-group { background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 24px; transition: transform 0.3s, box-shadow 0.3s; }
+.skill-group:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,0.07); }
 .skill-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.skill-icon { font-size: 1.4rem; }
-.skill-group-name { font-size: 0.95rem; font-weight: 700; color: #1e293b; }
+.skill-icon { font-size: 1.3rem; }
+.skill-group-name { font-size: 0.93rem; font-weight: 700; color: #1e293b; }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill { padding: 5px 13px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em; }
-.pill-purple { background: rgba(99,102,241,0.1);  color: #6366f1; border: 1px solid rgba(99,102,241,0.2); }
+.pill { padding: 5px 13px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+.pill-purple { background: rgba(99,102,241,0.1); color: #6366f1; border: 1px solid rgba(99,102,241,0.2); }
 .pill-blue   { background: rgba(59,130,246,0.1);  color: #3b82f6; border: 1px solid rgba(59,130,246,0.2); }
 .pill-green  { background: rgba(34,197,94,0.1);   color: #16a34a; border: 1px solid rgba(34,197,94,0.2); }
 .pill-pink   { background: rgba(236,72,153,0.1);  color: #db2777; border: 1px solid rgba(236,72,153,0.2); }
 .pill-slate  { background: rgba(100,116,139,0.1); color: #475569; border: 1px solid rgba(100,116,139,0.2); }
- 
-/* ── Life section ── */
-#life h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; }
- 
-.life-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 40px;
-    margin-bottom: 32px;
-    align-items: start;
-}
- 
-.life-intro p {
-    color: #475569;
-    font-size: 1rem;
-    line-height: 1.75;
-    margin-bottom: 14px;
-}
- 
-.life-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
- 
-.life-card {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 16px;
-    padding: 18px 14px;
-    cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
-}
- 
-.life-card:nth-child(4),
-.life-card:nth-child(5) {
-    grid-column: span 1;
-}
- 
-/* Center the last two cards */
-.life-grid::after {
-    content: '';
-    grid-column: span 1;
-}
-.life-card:nth-child(4) { grid-column: 1; }
-.life-card:nth-child(5) { grid-column: 2; }
- 
-.life-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(0,0,0,0.09);
-    border-color: rgba(99,102,241,0.3);
-}
- 
-.life-card.active {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 2px #6366f1;
-    background: rgba(255,255,255,0.9);
-}
- 
-.life-emoji { font-size: 26px; margin-bottom: 10px; }
-.life-label { font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
-.life-sub   { font-size: 0.75rem; color: #94a3b8; }
- 
-.travel-bar {
-    margin-top: 16px;
-    background: rgba(255,255,255,0.5);
-    border: 1px solid rgba(255,255,255,0.6);
-    border-radius: 14px;
-    padding: 14px 16px;
-}
- 
-.travel-bar-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #94a3b8;
-    margin-bottom: 10px;
-}
- 
-.travel-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
- 
-.travel-chips span {
-    font-size: 0.75rem;
-    background: rgba(255,255,255,0.7);
-    border: 1px solid rgba(255,255,255,0.8);
-    border-radius: 999px;
-    padding: 4px 11px;
-    color: #475569;
-}
- 
-/* ── Map panel ── */
-.map-panel {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    padding: 20px;
-    border: 1px solid rgba(255,255,255,0.6);
-}
- 
-.map-header { margin-bottom: 4px; }
-.map-header h3 { font-size: 1.1rem; font-weight: 700; margin-top: 6px; }
-.map-tag { font-size: 0.65rem; letter-spacing: 0.1em; color: #94a3b8; font-weight: 600; text-transform: uppercase; }
- 
-.map-tabs { display: flex; gap: 10px; margin: 14px 0; }
-.tab { padding: 6px 16px; border-radius: 999px; border: 1px solid #d0ccc4; background: transparent; cursor: pointer; font-size: 0.78rem; font-weight: 600; color: #666; font-family: inherit; transition: all 0.15s; }
-.tab.active { background: #6366f1; color: white; border-color: #6366f1; }
- 
-.map-box { position: relative; border-radius: 14px; overflow: hidden; background: #0d1117; }
-.map-box svg { display: block; width: 100%; height: auto; }
- 
-.map-footer { margin-top: 12px; font-size: 0.75rem; color: #64748b; }
- 
-.tooltip-tip {
-    position: absolute;
-    background: #fff;
-    border: 1px solid #e5e2dc;
-    border-radius: 8px;
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #111;
-    pointer-events: none;
-    display: none;
-    white-space: nowrap;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
- 
-@media (max-width: 768px) {
+/* ── Life ── */
+#life h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+.life-wrapper { display: grid !important; grid-template-columns: 360px 1fr !important; gap: 52px; align-items: start; }
+.life-intro p { color: #475569; font-size: 1rem; line-height: 1.8; margin-bottom: 16px; }
+.life-hobbies { display: flex; flex-direction: column; gap: 6px; }
+.life-hobby { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.65); border-radius: 14px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
+.life-hobby:hover { transform: translateX(6px); background: rgba(255,255,255,0.85); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+.life-hobby-icon { font-size: 26px; flex-shrink: 0; }
+.life-hobby-name { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+.life-hobby-sub  { font-size: 0.76rem; color: #94a3b8; }
+/* ── Contact ── */
+#contact { margin-top: 100px; background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border-radius: 28px; border: 1px solid rgba(255,255,255,0.6); padding: 60px; text-align: center; }
+#contact h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
+#contact > p { color: #64748b; font-size: 1rem; line-height: 1.7; margin-bottom: 34px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+.contact-link { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: all 0.22s; border: 1px solid rgba(255,255,255,0.7); }
+.contact-link-primary { background: #1e293b; color: white; border-color: #1e293b; }
+.contact-link-primary:hover { background: #334155; transform: translateY(-2px); }
+.contact-link-secondary { background: rgba(255,255,255,0.7); color: #334155; }
+.contact-link-secondary:hover { background: white; transform: translateY(-2px); }
+.contact-info { font-size: 0.83rem; color: #94a3b8; }
+.contact-info a { color: #6366f1; text-decoration: none; font-weight: 500; }
+footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82rem; margin-top: 20px; }
+/* ── Life scroll animations ── */
+@keyframes fadeSlideUp   { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(-22px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes lifeRowIn     { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+#life h2, #life .section-sub, #life .life-intro, #life .life-hobby { opacity: 0; }
+#life.life-visible h2         { animation: fadeSlideUp  0.5s ease 0.05s both; }
+#life.life-visible .section-sub { animation: fadeSlideUp 0.5s ease 0.13s both; }
+#life.life-visible .life-intro  { animation: fadeSlideLeft 0.5s ease 0.2s both; }
+#life.life-visible .life-hobby  { animation: lifeRowIn 0.42s ease both; }
+#life.life-visible .life-hobby:nth-child(1) { animation-delay: 0.30s; }
+#life.life-visible .life-hobby:nth-child(2) { animation-delay: 0.39s; }
+#life.life-visible .life-hobby:nth-child(3) { animation-delay: 0.48s; }
+#life.life-visible .life-hobby:nth-child(4) { animation-delay: 0.57s; }
+#life.life-visible .life-hobby:nth-child(5) { animation-delay: 0.66s; }
+/* ── Responsive ── */
+@media (max-width: 820px) {
     .hero-section { grid-template-columns: 1fr; }
     .hero-right { order: -1; }
-    .identity-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
+    .hiw-wrapper { grid-template-columns: 1fr; padding: 30px; gap: 36px; }
     .tl-body { grid-template-columns: 1fr 56px 1fr; }
     .tl-left-col { padding-right: 10px; }
     .tl-right-col { padding-left: 10px; }
     .spine-node { width: 38px; height: 38px; font-size: 1rem; }
-    .life-wrapper { grid-template-columns: 1fr; }
-    .life-grid { grid-template-columns: repeat(2, 1fr); }
-    .life-card:nth-child(4), .life-card:nth-child(5) { grid-column: auto; }
+    .life-wrapper { grid-template-columns: 1fr !important; gap: 32px; }
+    #contact { padding: 40px 24px; }
 }
 </style>
 </head>
 <body>
+ 
 <div class="nav">
     <div class="nav-brand">Tergel</div>
     <div class="nav-links">
-        <a href="#core-identity">About</a>
+        <a href="#how-i-work">About</a>
         <a href="#timeline-section">Timeline</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-contact">Contact →</a>
     </div>
 </div>
+ 
 <div class="container">
  
 <!-- HERO -->
 <section class="hero-section">
     <div class="hero-left">
-        <span class="hero-label">About Me</span>
-        <h1>I build systems that move forward.</h1>
-        <p>I'm Tergel Otgonbaatar, a Data Analytics undergraduate at Purdue University. I'm drawn to operational clarity, measurable improvement, and building structured systems that scale.</p>
-        <p>I didn't follow a traditional academic path. After leaving high school at 16, I rebuilt my education in a new country and language. That shift shaped my discipline, independence, and long-term drive.</p>
-        <p>I'm drawn to challenge — especially when it asks me to think clearly, move fast, and turn complexity into something useful. I improve through iteration, not comfort.</p>
+        <span class="hero-label">Open to Summer 2026 Internships</span>
+        <h1>I rebuilt my education<br>from scratch.<br><em>Now I build systems.</em></h1>
+        <p>At 12, I left Mongolia as an exchange student — new country, new language, no safety net. That experience taught me how to figure things out fast. Now I apply that same instinct to data analytics, operations, and building systems that actually work.</p>
         <div class="hero-buttons">
             <a href="Tergel Otgonbaatar Resume..pdf" class="btn-primary">View Resume →</a>
             <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="btn-secondary">LinkedIn</a>
+            <a href="#contact" class="btn-secondary">Contact</a>
+        </div>
+        <div class="hero-stats">
+            <div><div class="hero-stat-num">3.48</div><div class="hero-stat-label">GPA at Purdue</div></div>
+            <div><div class="hero-stat-num">54+</div><div class="hero-stat-label">Datasets cleaned</div></div>
+            <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Countries lived in</div></div>
+            <div><div class="hero-stat-num">4</div><div class="hero-stat-label">Languages spoken</div></div>
         </div>
     </div>
     <div class="hero-right">
         <div class="hero-photo-card">
             <img src="ChatGPT Image Mar 25, 2026, 11_09_08 AM.png" alt="Tergel">
             <div class="academic-snapshot">
-                <hr class="snapshot-divider">
+                <div class="snapshot-row"><span class="snapshot-label">University</span><span class="snapshot-value">Purdue</span></div>
                 <div class="snapshot-row"><span class="snapshot-label">Major</span><span class="snapshot-value">Data Analytics</span></div>
                 <div class="snapshot-row"><span class="snapshot-label">Focus</span><span class="snapshot-value">Operations & Systems</span></div>
-                <div class="snapshot-row"><span class="snapshot-label">GPA</span><span class="snapshot-value">3.48</span></div>
-                <div class="snapshot-row"><span class="snapshot-label">Expected</span><span class="snapshot-value">Dec 2026</span></div>
+                <div class="snapshot-row"><span class="snapshot-label">Graduating</span><span class="snapshot-value">Dec 2026</span></div>
             </div>
         </div>
     </div>
 </section>
  
-<!-- CORE IDENTITY -->
-<section id="core-identity">
-    <div class="identity-wrapper">
-        <div class="identity-left">
-            <h1 class="mbti-title">ESFP<span>/</span> ENTERTAINER</h1>
-            <p class="mbti-sub">Entertainer profile + professional lens →</p>
-            <h3>Dynamic, observant, and people-driven</h3>
-            <p>I thrive in fast-moving environments that require adaptability, awareness, and strong communication. I naturally read situations quickly and turn momentum into action.</p>
-            <div class="identity-tags">
-                <span>High-energy collaborator</span>
-                <span>Quick to adapt</span>
-                <span>Observant & responsive</span>
-                <span>Growth-driven mindset</span>
+<!-- HOW I WORK -->
+<section id="how-i-work">
+    <div class="hiw-wrapper">
+        <div class="hiw-left">
+            <h3>How I work</h3>
+            <p>I move fast in ambiguous situations — not recklessly, but because I've learned that clarity comes from doing, not waiting. I read people and rooms well, which makes me effective in cross-functional teams. I'm competitive with myself and I iterate until it's right.</p>
+            <p>I don't need a playbook. I need a problem.</p>
+            <div class="hiw-tags">
+                <span>Fast in ambiguous situations</span>
+                <span>Cross-functional communicator</span>
+                <span>Self-directed learner</span>
+                <span>Iterates until it's right</span>
+                <span>Reads people quickly</span>
             </div>
         </div>
-        <div class="identity-right">
-            <h4>Trait Read</h4>
-            <div class="trait"><label>Energy</label><div class="bar"><div class="fill" data-width="60%"></div></div><small>60% Extraverted</small></div>
-            <div class="trait"><label>Information</label><div class="bar"><div class="fill" data-width="54%"></div></div><small>54% Observant</small></div>
-            <div class="trait"><label>Decision Style</label><div class="bar"><div class="fill" data-width="58%"></div></div><small>58% Feeling</small></div>
-            <div class="trait"><label>Approach</label><div class="bar"><div class="fill" data-width="63%"></div></div><small>63% Prospecting</small></div>
-            <div class="trait"><label>Growth Lens</label><div class="bar"><div class="fill" data-width="72%"></div></div><small>72% Turbulent</small></div>
+        <div class="hiw-right">
+            <h4>Working style</h4>
+            <div class="trait"><label>Energy in teams</label><div class="bar"><div class="fill" data-width="78%"></div></div><small>High — I raise the pace of a room</small></div>
+            <div class="trait"><label>Detail orientation</label><div class="bar"><div class="fill" data-width="70%"></div></div><small>Strong — especially in data work</small></div>
+            <div class="trait"><label>Communication</label><div class="bar"><div class="fill" data-width="85%"></div></div><small>Direct and clear under pressure</small></div>
+            <div class="trait"><label>Adaptability</label><div class="bar"><div class="fill" data-width="90%"></div></div><small>Built from necessity, not preference</small></div>
+            <div class="trait"><label>Independent drive</label><div class="bar"><div class="fill" data-width="82%"></div></div><small>I don't wait to be told what's next</small></div>
         </div>
     </div>
 </section>
@@ -445,37 +305,11 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
     <div class="tl-scroll">
         <div class="tl-body">
             <div class="tl-left-col">
-                <div class="content-row">
-                    <div class="tl-entry" data-side="edu" data-index="0">
-                        <div class="entry-date">Sep 2021 – Dec 2023</div>
-                        <div class="entry-role">Associate of Applied Science</div>
-                        <div class="entry-org">Seattle Central Community College</div>
-                    </div>
-                </div>
-                <div class="content-row">
-                    <div class="tl-entry" data-side="edu" data-index="1">
-                        <div class="entry-date">2021 – 2023</div>
-                        <div class="entry-role">Phi Theta Kappa Honor Society</div>
-                        <div class="entry-org">Seattle Central · GPA 3.69</div>
-                    </div>
-                </div>
+                <div class="content-row"><div class="tl-entry" data-side="edu" data-index="0"><div class="entry-date">Sep 2021 – Dec 2023</div><div class="entry-role">Associate of Applied Science</div><div class="entry-org">Seattle Central Community College</div></div></div>
+                <div class="content-row"><div class="tl-entry" data-side="edu" data-index="1"><div class="entry-date">2021 – 2023</div><div class="entry-role">Phi Theta Kappa Honor Society</div><div class="entry-org">Seattle Central · GPA 3.69</div></div></div>
                 <div class="content-row"><div class="tl-placeholder"></div></div>
-                <div class="content-row">
-                    <div class="tl-entry" data-side="edu" data-index="2">
-                        <div class="entry-date">Aug 2024 – Dec 2026</div>
-                        <div class="entry-role">B.S. Data Analytics</div>
-                        <div class="entry-org">Purdue University</div>
-                        <span class="entry-now">Now</span>
-                    </div>
-                </div>
-                <div class="content-row">
-                    <div class="tl-entry" data-side="edu" data-index="3">
-                        <div class="entry-date">2024 – Present</div>
-                        <div class="entry-role">Dean's List</div>
-                        <div class="entry-org">Purdue University · GPA 3.48</div>
-                        <span class="entry-now">Now</span>
-                    </div>
-                </div>
+                <div class="content-row"><div class="tl-entry" data-side="edu" data-index="2"><div class="entry-date">Aug 2024 – Dec 2026</div><div class="entry-role">B.S. Data Analytics</div><div class="entry-org">Purdue University</div><span class="entry-now">Now</span></div></div>
+                <div class="content-row"><div class="tl-entry" data-side="edu" data-index="3"><div class="entry-date">2024 – Present</div><div class="entry-role">Dean's List</div><div class="entry-org">Purdue University · GPA 3.48</div><span class="entry-now">Now</span></div></div>
             </div>
             <div class="tl-spine">
                 <div class="spine-row"><div class="spine-year">2021</div><div class="spine-node" data-side="edu" data-index="0">🏫</div></div>
@@ -485,37 +319,11 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
                 <div class="spine-row"><div class="spine-year">Now</div><div class="spine-node" data-side="exp" data-index="3">🏠</div></div>
             </div>
             <div class="tl-right-col">
-                <div class="content-row">
-                    <div class="tl-entry" data-side="exp" data-index="0">
-                        <div class="entry-date">2021 – 2023</div>
-                        <div class="entry-role">Restaurant Manager</div>
-                        <div class="entry-org">Annapurna Restaurant · Seattle, WA</div>
-                    </div>
-                </div>
+                <div class="content-row"><div class="tl-entry" data-side="exp" data-index="0"><div class="entry-date">2021 – 2023</div><div class="entry-role">Restaurant Manager</div><div class="entry-org">Annapurna Restaurant · Seattle, WA</div></div></div>
                 <div class="content-row"><div class="tl-placeholder"></div></div>
-                <div class="content-row">
-                    <div class="tl-entry" data-side="exp" data-index="1">
-                        <div class="entry-date">Feb 2024 – Jun 2024</div>
-                        <div class="entry-role">ISE Intern</div>
-                        <div class="entry-org">KeelWorks</div>
-                    </div>
-                </div>
-                <div class="content-row">
-                    <div class="tl-entry active" data-side="exp" data-index="2">
-                        <div class="entry-date">Jan 2024 – Present</div>
-                        <div class="entry-role">Data Science Researcher</div>
-                        <div class="entry-org">The Data Mine · Purdue</div>
-                        <span class="entry-now">Now</span>
-                    </div>
-                </div>
-                <div class="content-row">
-                    <div class="tl-entry" data-side="exp" data-index="3">
-                        <div class="entry-date">Sep 2025 – Present</div>
-                        <div class="entry-role">Student Office Staff</div>
-                        <div class="entry-org">Purdue Housing & Residential Life</div>
-                        <span class="entry-now">Now</span>
-                    </div>
-                </div>
+                <div class="content-row"><div class="tl-entry" data-side="exp" data-index="1"><div class="entry-date">Feb 2024 – Jun 2024</div><div class="entry-role">ISE Intern</div><div class="entry-org">KeelWorks</div></div></div>
+                <div class="content-row"><div class="tl-entry active" data-side="exp" data-index="2"><div class="entry-date">Jan 2024 – Present</div><div class="entry-role">Data Science Researcher</div><div class="entry-org">The Data Mine · Purdue</div><span class="entry-now">Now</span></div></div>
+                <div class="content-row"><div class="tl-entry" data-side="exp" data-index="3"><div class="entry-date">Sep 2025 – Present</div><div class="entry-role">Student Office Staff</div><div class="entry-org">Purdue Housing & Residential Life</div><span class="entry-now">Now</span></div></div>
             </div>
         </div>
     </div>
@@ -535,7 +343,7 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
         </div>
         <div class="dp-body">
             <div class="dp-body-label" id="dpLabel">💼 Experience</div>
-            <p id="dpDesc">Analyzed operational datasets for Carnival Cruise Line, focusing on engine performance trends, baseline analysis, and KPI monitoring. Built Power BI dashboards and cleaned 54+ Excel datasets to support data-driven decisions across the fleet.</p>
+            <p id="dpDesc">Partnered with Carnival Cruise Line to analyze engine performance data across the fleet. Cleaned and standardized 54+ Excel datasets, built Power BI dashboards adopted by the operations team, and identified performance anomalies that informed maintenance scheduling decisions. This is applied research — not coursework.</p>
         </div>
     </div>
 </section>
@@ -543,57 +351,74 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
-    <div class="grid">
-        <div class="card">
-            <strong>Engine Analytics Dashboard</strong>
-            <p>Built Power BI dashboards to monitor engine performance across multiple ships. Processed and cleaned 54+ Excel datasets, resolving inconsistencies and enabling accurate baseline analysis.</p>
-            <div class="card-skills"><span>Power BI</span><span>Excel</span><span>Data Cleaning</span><span>KPI Design</span></div>
+    <p class="section-sub">Problems I chose to solve, decisions I made, and what came out of it.</p>
+    <div class="projects-grid">
+ 
+        <div class="project-card">
+            <div class="project-card-top">
+                <div class="project-tag">Data Engineering · Visualization</div>
+                <strong>Engine Analytics Dashboard</strong>
+                <p class="problem">Problem: Carnival Cruise Line's engine data lived in 54+ inconsistent Excel files with no unified view, making trend analysis nearly impossible.</p>
+                <p class="outcome">Built a Power BI dashboard that standardized and visualized engine KPIs across the fleet. Cleaned all 54 datasets, resolved schema conflicts, and delivered a single source of truth adopted by the ops team.</p>
+            </div>
+            <div class="project-card-bottom">
+                <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
+                <div class="project-details">Chose Power BI over Python dashboards because end users were operations staff, not analysts — adoption risk mattered more than technical flexibility. Normalized schemas manually before scripting, which surfaced data entry patterns a script alone wouldn't have caught.</div>
+                <div class="card-skills"><span>Power BI</span><span>Excel</span><span>Data Cleaning</span><span>KPI Design</span></div>
+            </div>
         </div>
-        <div class="card">
-            <strong>Virtualized Active Directory Infrastructure</strong>
-            <p>Designed and deployed a multi-site Active Directory environment using Windows Server. Implemented replication, domain services, and system automation to simulate enterprise-scale IT infrastructure.</p>
-            <div class="card-skills"><span>Windows Server</span><span>Networking</span><span>Systems Admin</span><span>Automation</span></div>
+ 
+        <div class="project-card">
+            <div class="project-card-top">
+                <div class="project-tag">Systems · Infrastructure</div>
+                <strong>Virtualized Active Directory Lab</strong>
+                <p class="problem">Problem: Needed to understand enterprise IT architecture without access to enterprise infrastructure.</p>
+                <p class="outcome">Designed and deployed a multi-site Active Directory environment on Windows Server — replication, domain services, group policies, and automation. Simulated real-world IT complexity on local hardware.</p>
+            </div>
+            <div class="project-card-bottom">
+                <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
+                <div class="project-details">Built multi-site replication rather than a single domain because real enterprise environments almost always span locations. Wrote PowerShell automation after realizing manual provisioning wouldn't scale even in a lab context.</div>
+                <div class="card-skills"><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Networking</span></div>
+            </div>
         </div>
-        <div class="card">
-            <strong>Lean Six Sigma Process Optimization</strong>
-            <p>Applied DMAIC methodology to analyze multi-year ticket sales data and customer trends, identifying patterns and opportunities for demand optimization.</p>
-            <div class="card-skills"><span>Lean Six Sigma</span><span>DMAIC</span><span>SQL</span><span>Data Analysis</span></div>
+ 
+        <div class="project-card">
+            <div class="project-card-top">
+                <div class="project-tag">Process Improvement · Analytics</div>
+                <strong>Lean Six Sigma Demand Analysis</strong>
+                <p class="problem">Problem: Multi-year ticket sales data existed but no one had analyzed seasonal patterns or where waste was accumulating in the pipeline.</p>
+                <p class="outcome">Applied DMAIC to surface demand trends, identify inefficiencies, and quantify opportunity areas. Built the analysis in SQL with recommendations tied to specific process steps — not a generic report.</p>
+            </div>
+            <div class="project-card-bottom">
+                <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
+                <div class="project-details">Used DMAIC instead of ad-hoc analysis because stakeholders needed a repeatable process they could run next quarter themselves. Focused the Improve phase on two high-confidence changes rather than listing every possibility — kept it actionable.</div>
+                <div class="card-skills"><span>SQL</span><span>Lean Six Sigma</span><span>DMAIC</span><span>Data Analysis</span></div>
+            </div>
         </div>
+ 
     </div>
 </section>
  
 <!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
+    <p class="section-sub">Tools I've used in real projects, not just listed for the sake of it.</p>
     <div class="skills-wrapper">
         <div class="skill-group">
             <div class="skill-group-header"><span class="skill-icon">📊</span><span class="skill-group-name">Analytics & Tools</span></div>
-            <div class="skill-pills">
-                <span class="pill pill-purple">Python</span><span class="pill pill-purple">SQL</span><span class="pill pill-purple">Java</span>
-                <span class="pill pill-purple">Pandas</span><span class="pill pill-purple">NumPy</span>
-                <span class="pill pill-blue">Power BI</span><span class="pill pill-blue">Tableau</span><span class="pill pill-blue">GitHub</span>
-            </div>
+            <div class="skill-pills"><span class="pill pill-purple">Python</span><span class="pill pill-purple">SQL</span><span class="pill pill-purple">Java</span><span class="pill pill-purple">Pandas</span><span class="pill pill-purple">NumPy</span><span class="pill pill-blue">Power BI</span><span class="pill pill-blue">Tableau</span><span class="pill pill-blue">GitHub</span></div>
         </div>
         <div class="skill-group">
             <div class="skill-group-header"><span class="skill-icon">⚙️</span><span class="skill-group-name">Process & Operations</span></div>
-            <div class="skill-pills">
-                <span class="pill pill-pink">Lean</span><span class="pill pill-pink">Six Sigma Fundamentals</span>
-                <span class="pill pill-pink">KPI Tracking</span><span class="pill pill-pink">Process Improvement</span>
-            </div>
+            <div class="skill-pills"><span class="pill pill-pink">Lean</span><span class="pill pill-pink">Six Sigma</span><span class="pill pill-pink">KPI Tracking</span><span class="pill pill-pink">DMAIC</span><span class="pill pill-pink">Process Improvement</span></div>
         </div>
         <div class="skill-group">
             <div class="skill-group-header"><span class="skill-icon">🔧</span><span class="skill-group-name">Data Practices</span></div>
-            <div class="skill-pills">
-                <span class="pill pill-green">Data Cleaning</span><span class="pill pill-green">Data Validation</span>
-                <span class="pill pill-green">Deduplication</span><span class="pill pill-green">Baseline Analysis</span><span class="pill pill-green">Trend Analysis</span>
-            </div>
+            <div class="skill-pills"><span class="pill pill-green">Data Cleaning</span><span class="pill pill-green">Validation</span><span class="pill pill-green">Deduplication</span><span class="pill pill-green">Baseline Analysis</span><span class="pill pill-green">Trend Analysis</span></div>
         </div>
         <div class="skill-group">
             <div class="skill-group-header"><span class="skill-icon">🌐</span><span class="skill-group-name">Languages</span></div>
-            <div class="skill-pills">
-                <span class="pill pill-slate">English</span><span class="pill pill-slate">Russian</span>
-                <span class="pill pill-slate">Mongolian</span><span class="pill pill-slate">German</span>
-            </div>
+            <div class="skill-pills"><span class="pill pill-slate">English</span><span class="pill pill-slate">Russian</span><span class="pill pill-slate">Mongolian</span><span class="pill pill-slate">German</span></div>
         </div>
     </div>
 </section>
@@ -601,158 +426,53 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
 <!-- LIFE -->
 <section id="life">
     <h2>Life Beyond the Work</h2>
- 
+    <p class="section-sub">Where I come from shapes how I think.</p>
     <div class="life-wrapper">
         <div class="life-left">
             <div class="life-intro">
-                <p>I grew up in Mongolia, where I attended a Mongolian-Russian joint school. At 12, I became an exchange student — first living in Ulan-Ude, Russia for sixth grade, then Saint Petersburg at 13.</p>
-                <p>Since then I've lived across three countries and traveled through 17 cities on three continents. When I'm not building systems, I'm riding horses, painting, cooking, or honestly — just sleeping.</p>
+                <p>I grew up in Mongolia, attended a Mongolian-Russian joint school, and left at 12 as an exchange student — first Ulan-Ude, then Saint Petersburg at 13. I've since lived in three countries and visited 17 cities across three continents.</p>
+                <p>That background gave me something most people don't have at 22: I've had to operate in environments where nothing is familiar. That's still how I approach hard problems.</p>
             </div>
         </div>
- 
         <div class="life-right">
-            <div class="life-grid">
-                <div class="life-card" onclick="lifeCardClick(this)">
-                    <div class="life-emoji">🐎</div>
-                    <div class="life-label">Horseback Riding</div>
-                    <div class="life-sub">Rooted in Mongolian tradition</div>
-                </div>
-                <div class="life-card" onclick="lifeCardClick(this)">
-                    <div class="life-emoji">🎨</div>
-                    <div class="life-label">Painting</div>
-                    <div class="life-sub">How I decompress</div>
-                </div>
-                <div class="life-card" onclick="lifeCardClick(this)">
-                    <div class="life-emoji">🍳</div>
-                    <div class="life-label">Cooking</div>
-                    <div class="life-sub">Three cultures worth</div>
-                </div>
-                <div class="life-card" onclick="openLifeMap(this)">
-                    <div class="life-emoji">✈️</div>
-                    <div class="life-label">Traveling</div>
-                    <div class="life-sub">17 cities · 3 continents</div>
-                </div>
-                <div class="life-card" onclick="lifeCardClick(this)">
-                    <div class="life-emoji">😴</div>
-                    <div class="life-label">Sleeping</div>
-                    <div class="life-sub">Unironically a priority</div>
-                </div>
-            </div>
- 
-            <div class="travel-bar">
-                <div class="travel-bar-label">🌍 Cities I've been to</div>
-                <div class="travel-chips">
-                    <span>Ulan-Ude 🇷🇺</span><span>Saint Petersburg 🇷🇺</span><span>Beijing 🇨🇳</span>
-                    <span>Singapore 🇸🇬</span><span>Hong Kong 🇭🇰</span><span>Bali 🇮🇩</span>
-                    <span>Seoul 🇰🇷</span><span>Seattle, WA</span><span>Athens 🇬🇷</span>
-                    <span>Santorini 🇬🇷</span><span>Hamburg 🇩🇪</span><span>Istanbul 🇹🇷</span>
-                    <span>San Francisco, CA</span><span>Los Angeles, CA</span><span>Las Vegas, NV</span>
-                    <span>Dallas, TX</span><span>Chicago, IL</span><span>Indianapolis, IN</span>
-                    <span>Milwaukee, WI</span><span>New York City, NY</span>
-                </div>
+            <div class="life-hobbies">
+                <div class="life-hobby"><span class="life-hobby-icon">🐎</span><div><div class="life-hobby-name">Horseback Riding</div><div class="life-hobby-sub">Rooted in Mongolian tradition</div></div></div>
+                <div class="life-hobby"><span class="life-hobby-icon">🎨</span><div><div class="life-hobby-name">Painting</div><div class="life-hobby-sub">How I decompress</div></div></div>
+                <div class="life-hobby"><span class="life-hobby-icon">🍳</span><div><div class="life-hobby-name">Cooking</div><div class="life-hobby-sub">Three cultures worth of recipes</div></div></div>
+                <div class="life-hobby"><span class="life-hobby-icon">✈️</span><div><div class="life-hobby-name">Traveling</div><div class="life-hobby-sub">17 cities · 3 continents</div></div></div>
+                <div class="life-hobby"><span class="life-hobby-icon">😴</span><div><div class="life-hobby-name">Sleeping</div><div class="life-hobby-sub">Unironically a priority</div></div></div>
             </div>
         </div>
-    </div>
- 
-    <!-- MAP PANEL -->
-    <div class="map-panel" id="lifeMapPanel" style="display:none;">
-        <div class="map-header">
-            <span class="map-tag">PLACES</span>
-            <h3>Where I've been shapes how I think.</h3>
-        </div>
-        <div class="map-tabs">
-            <button class="tab active" id="tabVisited" onclick="switchMap('visited')">Visited</button>
-            <button class="tab" id="tabWishlist" onclick="switchMap('wishlist')">Want to go</button>
-        </div>
-        <div class="map-box" id="mapBox">
-          <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-            <rect width="1000" height="500" fill="#0d1117"/>
-            <!-- North America -->
-            <path d="M 80 60 L 200 50 L 240 80 L 260 130 L 270 180 L 250 220 L 230 250 L 200 270 L 180 290 L 160 310 L 140 340 L 130 310 L 110 290 L 90 260 L 80 230 L 70 200 L 60 170 L 60 130 L 70 90 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Greenland -->
-            <path d="M 230 20 L 290 15 L 310 35 L 300 55 L 270 60 L 240 50 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- South America -->
-            <path d="M 190 310 L 240 295 L 270 320 L 280 360 L 275 400 L 260 435 L 240 455 L 220 445 L 205 420 L 195 390 L 185 360 L 180 330 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Europe -->
-            <path d="M 430 55 L 480 50 L 510 60 L 520 80 L 510 100 L 530 110 L 520 130 L 500 140 L 480 145 L 460 140 L 440 130 L 420 120 L 415 100 L 420 80 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Scandinavia -->
-            <path d="M 450 45 L 470 40 L 490 45 L 485 60 L 465 62 L 448 58 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Africa -->
-            <path d="M 430 155 L 480 145 L 520 150 L 545 170 L 555 210 L 555 260 L 545 310 L 520 350 L 495 380 L 475 390 L 455 380 L 435 350 L 420 310 L 415 270 L 415 220 L 420 180 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Middle East -->
-            <path d="M 530 155 L 580 150 L 600 170 L 595 210 L 570 225 L 545 215 L 530 190 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Russia -->
-            <path d="M 510 40 L 650 30 L 780 35 L 820 50 L 840 70 L 820 90 L 800 100 L 760 105 L 720 110 L 680 115 L 640 120 L 600 125 L 560 130 L 530 125 L 510 110 L 505 85 L 508 60 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- South Asia -->
-            <path d="M 620 130 L 680 120 L 720 130 L 730 160 L 720 195 L 700 215 L 675 220 L 650 210 L 630 190 L 620 165 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- East Asia -->
-            <path d="M 720 80 L 820 70 L 860 80 L 880 100 L 870 135 L 840 155 L 800 165 L 760 165 L 730 155 L 710 135 L 710 110 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- SE Asia -->
-            <path d="M 760 165 L 830 160 L 850 180 L 840 210 L 810 220 L 780 215 L 760 200 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Japan -->
-            <path d="M 870 100 L 885 95 L 895 108 L 888 120 L 875 122 L 867 112 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Australia -->
-            <path d="M 800 310 L 870 295 L 920 305 L 940 330 L 935 365 L 910 385 L 875 390 L 840 380 L 815 360 L 800 335 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- Indonesia -->
-            <path d="M 790 225 L 850 220 L 870 232 L 860 245 L 820 248 L 793 240 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
-            <!-- UK -->
-            <path d="M 423 70 L 432 65 L 440 72 L 435 82 L 425 82 Z" fill="#1c2333" stroke="#30363d" stroke-width="0.5"/>
- 
-            <!-- Visited dots -->
-            <g id="visited-layer">
-              <circle cx="728" cy="120" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Ulan-Ude, Russia</title></circle>
-              <circle cx="488" cy="72"  r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Saint Petersburg, Russia</title></circle>
-              <circle cx="810" cy="120" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Beijing, China</title></circle>
-              <circle cx="790" cy="230" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Singapore</title></circle>
-              <circle cx="815" cy="185" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Hong Kong</title></circle>
-              <circle cx="820" cy="248" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Bali, Indonesia</title></circle>
-              <circle cx="848" cy="130" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Seoul, South Korea</title></circle>
-              <circle cx="90"  cy="105" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Seattle, WA</title></circle>
-              <circle cx="498" cy="128" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Athens, Greece</title></circle>
-              <circle cx="502" cy="133" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Santorini, Greece</title></circle>
-              <circle cx="454" cy="74"  r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Hamburg, Germany</title></circle>
-              <circle cx="516" cy="118" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Istanbul, Turkey</title></circle>
-              <circle cx="83"  cy="138" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>San Francisco, CA</title></circle>
-              <circle cx="92"  cy="155" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Los Angeles, CA</title></circle>
-              <circle cx="100" cy="148" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Las Vegas, NV</title></circle>
-              <circle cx="140" cy="160" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Dallas, TX</title></circle>
-              <circle cx="165" cy="138" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Chicago, IL</title></circle>
-              <circle cx="168" cy="143" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Indianapolis, IN</title></circle>
-              <circle cx="163" cy="134" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>Milwaukee, WI</title></circle>
-              <circle cx="193" cy="140" r="5" fill="#A78BFA" stroke="#7C3AED" stroke-width="1.2" class="map-dot"><title>New York City, NY</title></circle>
-            </g>
- 
-            <!-- Want to go dots -->
-            <g id="wishlist-layer" style="display:none">
-              <circle cx="870" cy="115" r="5" fill="#FB923C" stroke="#C2410C" stroke-width="1.2" class="map-dot"><title>Tokyo, Japan</title></circle>
-              <circle cx="860" cy="122" r="5" fill="#FB923C" stroke="#C2410C" stroke-width="1.2" class="map-dot"><title>Kyoto, Japan</title></circle>
-              <circle cx="395" cy="45"  r="5" fill="#FB923C" stroke="#C2410C" stroke-width="1.2" class="map-dot"><title>Reykjavik, Iceland</title></circle>
-              <circle cx="215" cy="440" r="5" fill="#FB923C" stroke="#C2410C" stroke-width="1.2" class="map-dot"><title>Patagonia, Argentina</title></circle>
-              <circle cx="462" cy="380" r="5" fill="#FB923C" stroke="#C2410C" stroke-width="1.2" class="map-dot"><title>Cape Town, South Africa</title></circle>
-            </g>
-          </svg>
-          <div class="tooltip-tip" id="mapTooltip"></div>
-        </div>
-        <div class="map-footer">🌍 Global perspective · Adaptability · Curiosity</div>
     </div>
 </section>
  
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Let's talk.</h2>
+    <p>I'm actively looking for Summer 2026 internships in data analytics, operations, or systems. If something here resonated — reach out directly.</p>
+    <div class="contact-links">
+        <a href="mailto:otgonbaatar@purdue.edu" class="contact-link contact-link-primary">✉️ Send an email</a>
+        <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="contact-link contact-link-secondary">LinkedIn →</a>
+        <a href="Tergel Otgonbaatar Resume..pdf" class="contact-link contact-link-secondary">Resume →</a>
+    </div>
+    <p class="contact-info">totgonb@purdue.edu &nbsp;·&nbsp; West Lafayette, IN</p>
+</section>
+ 
 </div>
-<footer>Summer 2026 Internship Ready · West Lafayette</footer>
+<footer>Tergel Otgonbaatar · Built from scratch, like everything else.</footer>
  
 <script>
-/* ── Timeline data ── */
 const eduData = [
-    { role: "Associate of Applied Science", org: "Seattle Central Community College · Seattle, WA", now: false, desc: "Completed an AAS in Computer & Information Sciences with a 3.69 GPA. Built a strong foundation in programming, systems, and data concepts while navigating a new country and language from scratch." },
-    { role: "Phi Theta Kappa Honor Society", org: "Seattle Central Community College", now: false, desc: "Inducted into Phi Theta Kappa, the international honor society for two-year colleges. Participated in academic events and community initiatives while maintaining dean's list standing throughout." },
-    { role: "B.S. Data Analytics, Technologies & Applications", org: "Purdue University · West Lafayette, IN", now: true, desc: "Currently pursuing a Bachelor of Science in Data Analytics at Purdue. Focus areas include operations research, systems thinking, and applied data engineering. Expected graduation: December 2026." },
-    { role: "Dean's List", org: "Purdue University · GPA 3.48 / 4.00", now: true, desc: "Recognized on the Dean's List for academic excellence at Purdue University. Balancing a rigorous course load alongside active research and professional work commitments." }
+    { role: "Associate of Applied Science", org: "Seattle Central Community College · Seattle, WA", now: false, desc: "Completed an AAS in Computer & Information Sciences with a 3.69 GPA. Built a foundation in programming, systems, and data while navigating a new country and language from scratch — while working full-time managing a restaurant." },
+    { role: "Phi Theta Kappa Honor Society", org: "Seattle Central Community College", now: false, desc: "Inducted into Phi Theta Kappa for academic excellence while balancing full-time work and coursework in a second language. Participated in academic and community initiatives throughout." },
+    { role: "B.S. Data Analytics, Technologies & Applications", org: "Purdue University · West Lafayette, IN", now: true, desc: "Pursuing a B.S. in Data Analytics at Purdue with focus on operations research and systems thinking. Coursework covers statistical modeling, data engineering, and applied analytics. Expected: December 2026." },
+    { role: "Dean's List", org: "Purdue University · GPA 3.48 / 4.00", now: true, desc: "Recognized on the Dean's List while running an active research role at The Data Mine and working residential staff. Consistent performance across a technically demanding program." }
 ];
 const expData = [
-    { role: "Restaurant Manager", org: "Annapurna Restaurant · Seattle, WA", now: false, desc: "Managed daily restaurant operations while attending Seattle Central full-time. Led staff, handled customer service, and maintained operational efficiency while balancing academics in a new country." },
-    { role: "Instructional Systems Engineer Intern", org: "KeelWorks", now: false, desc: "Analyzed system performance data and user feedback to identify workflow inefficiencies. Developed KPI dashboards to improve operational visibility and support better decision-making across the organization." },
-    { role: "Data Science Researcher", org: "The Data Mine · Purdue University", now: true, desc: "Analyzed operational datasets for Carnival Cruise Line, focusing on engine performance trends, baseline analysis, and KPI monitoring. Built Power BI dashboards and cleaned 54+ Excel datasets to support data-driven decisions across the fleet." },
-    { role: "Student Office Staff", org: "Purdue Housing & Residential Life", now: true, desc: "Managed front-line operations including access control, logistics, and issue resolution in a high-traffic residential environment. Coordinated with facilities and administrative teams to maintain smooth operations." }
+    { role: "Restaurant Manager", org: "Annapurna Restaurant · Seattle, WA", now: false, desc: "Managed full operations while attending Seattle Central full-time — hiring, scheduling, inventory, customer service, financials. Led a team of 6+ in a high-pressure environment. This is where I learned that operational clarity isn't optional: when it breaks down, everything breaks down." },
+    { role: "Instructional Systems Engineer Intern", org: "KeelWorks", now: false, desc: "Analyzed system performance data and user feedback to identify workflow inefficiencies across training pipelines. Built KPI dashboards to track gaps in instructional delivery. Worked directly with engineering and content teams to implement changes based on findings." },
+    { role: "Data Science Researcher", org: "The Data Mine · Purdue University", now: true, desc: "Partnered with Carnival Cruise Line to analyze engine performance data across the fleet. Cleaned and standardized 54+ Excel datasets, built Power BI dashboards adopted by the operations team, and identified performance anomalies that informed maintenance scheduling. Applied research — not coursework." },
+    { role: "Student Office Staff", org: "Purdue Housing & Residential Life", now: true, desc: "Manages front-line operations for a high-traffic residential building — access control, incident response, logistics, and coordination with facilities and administrative teams. Develops judgment under ambiguity every shift." }
 ];
 const flatList = [];
 const maxLen = Math.max(eduData.length, expData.length);
@@ -804,84 +524,40 @@ document.querySelectorAll('.spine-node').forEach(el => {
     });
 });
  
-/* ── Map ── */
-function switchMap(mode) {
-    const v = mode === 'visited';
-    document.getElementById('visited-layer').style.display = v ? '' : 'none';
-    document.getElementById('wishlist-layer').style.display = v ? 'none' : '';
-    document.getElementById('tabVisited').classList.toggle('active', v);
-    document.getElementById('tabWishlist').classList.toggle('active', !v);
+function toggleDetails(btn) {
+    const details = btn.nextElementSibling;
+    const isOpen = details.classList.contains('open');
+    details.classList.toggle('open');
+    btn.textContent = isOpen ? '+ What I decided along the way' : '− Hide details';
 }
  
-let activeLifeCard = null;
-function lifeCardClick(card) {
-    if (activeLifeCard && activeLifeCard !== card) activeLifeCard.classList.remove('active');
-    card.classList.toggle('active');
-    activeLifeCard = card.classList.contains('active') ? card : null;
-}
- 
-function openLifeMap(card) {
-    const panel = document.getElementById('lifeMapPanel');
-    const isOpen = panel.style.display !== 'none';
-    if (activeLifeCard && activeLifeCard !== card) activeLifeCard.classList.remove('active');
-    if (isOpen && activeLifeCard === card) {
-        panel.style.display = 'none';
-        card.classList.remove('active');
-        activeLifeCard = null;
-        return;
-    }
-    card.classList.add('active');
-    activeLifeCard = card;
-    panel.style.display = 'block';
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
-}
- 
-/* Map dot tooltips */
-const mapTooltip = document.getElementById('mapTooltip');
-const mapBox = document.getElementById('mapBox');
-document.querySelectorAll('.map-dot').forEach(dot => {
-    dot.style.cursor = 'pointer';
-    dot.addEventListener('mouseenter', () => {
-        mapTooltip.textContent = dot.querySelector('title').textContent;
-        mapTooltip.style.display = 'block';
-    });
-    dot.addEventListener('mousemove', e => {
-        const r = mapBox.getBoundingClientRect();
-        mapTooltip.style.left = (e.clientX - r.left + 12) + 'px';
-        mapTooltip.style.top  = (e.clientY - r.top  - 34) + 'px';
-    });
-    dot.addEventListener('mouseleave', () => { mapTooltip.style.display = 'none'; });
-});
- 
-/* ── Scroll animations ── */
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
+            if (entry.isIntersecting) { entry.target.style.opacity = 1; entry.target.style.transform = 'translateY(0)'; }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('section').forEach(section => {
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        section.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
         section.style.opacity = 0;
-        section.style.transform = 'translateY(40px)';
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight) { section.style.opacity = 1; section.style.transform = 'translateY(0)'; }
+        section.style.transform = 'translateY(36px)';
+        if (section.getBoundingClientRect().top < window.innerHeight) { section.style.opacity = 1; section.style.transform = 'translateY(0)'; }
         observer.observe(section);
     });
- 
-    const mbtiObserver = new IntersectionObserver(entries => {
+    const hiwObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.fill').forEach(bar => { bar.style.width = bar.dataset.width; });
-            }
+            if (entry.isIntersecting) entry.target.querySelectorAll('.fill').forEach(b => { b.style.width = b.dataset.width; });
         });
     }, { threshold: 0.1 });
-    const ci = document.querySelector('#core-identity');
-    if (ci) mbtiObserver.observe(ci);
- 
+    const hiw = document.querySelector('#how-i-work');
+    if (hiw) hiwObserver.observe(hiw);
+    const lifeSection = document.querySelector('#life');
+    if (lifeSection) {
+        const lo = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) { lifeSection.classList.add('life-visible'); lo.unobserve(lifeSection); } });
+        }, { threshold: 0.1 });
+        lo.observe(lifeSection);
+    }
     renderPanel();
 });
 </script>
