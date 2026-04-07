@@ -329,6 +329,57 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
     font-weight: 600;
     letter-spacing: 0.04em;
 }
+    .skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.skill-group {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 20px;
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-group:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.skill-group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.skill-icon { font-size: 1.4rem; }
+.skill-group-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.pill-purple { background: rgba(99,102,241,0.1);  color: #6366f1; border: 1px solid rgba(99,102,241,0.2); }
+.pill-blue   { background: rgba(59,130,246,0.1);  color: #3b82f6; border: 1px solid rgba(59,130,246,0.2); }
+.pill-green  { background: rgba(34,197,94,0.1);   color: #16a34a; border: 1px solid rgba(34,197,94,0.2); }
+.pill-pink   { background: rgba(236,72,153,0.1);  color: #db2777; border: 1px solid rgba(236,72,153,0.2); }
+.pill-slate  { background: rgba(100,116,139,0.1); color: #475569; border: 1px solid rgba(100,116,139,0.2); }
 </style>
 </head>
 <body>
@@ -574,14 +625,75 @@ footer { text-align: center; margin-top: 100px; padding: 40px; color: #64748b; f
 
     </div>
 </section>
+<!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
-    <div class="grid">
-        <div class="card"><strong>Programming</strong><p>Python • SQL • Java</p></div>
-        <div class="card"><strong>Analytics</strong><p>Power BI • Tableau • Excel</p></div>
-        <div class="card"><strong>Data Engineering</strong><p>Cleaning • Validation • Deduplication</p></div>
-        <div class="card"><strong>Operations</strong><p>KPI Systems • Lean Six Sigma</p></div>
-        <div class="card"><strong>Languages</strong><p>English, Russian, Mongolian, German</p></div>
+
+    <div class="skills-wrapper">
+
+        <div class="skill-group">
+            <div class="skill-group-header">
+                <span class="skill-icon">💻</span>
+                <span class="skill-group-name">Programming</span>
+            </div>
+            <div class="skill-pills">
+                <span class="pill pill-purple">Python</span>
+                <span class="pill pill-purple">SQL</span>
+                <span class="pill pill-purple">Java</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <div class="skill-group-header">
+                <span class="skill-icon">📊</span>
+                <span class="skill-group-name">Analytics & BI</span>
+            </div>
+            <div class="skill-pills">
+                <span class="pill pill-blue">Power BI</span>
+                <span class="pill pill-blue">Tableau</span>
+                <span class="pill pill-blue">Excel</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <div class="skill-group-header">
+                <span class="skill-icon">🔧</span>
+                <span class="skill-group-name">Data Engineering</span>
+            </div>
+            <div class="skill-pills">
+                <span class="pill pill-green">Cleaning</span>
+                <span class="pill pill-green">Validation</span>
+                <span class="pill pill-green">Deduplication</span>
+                <span class="pill pill-green">ETL Pipelines</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <div class="skill-group-header">
+                <span class="skill-icon">⚙️</span>
+                <span class="skill-group-name">Operations</span>
+            </div>
+            <div class="skill-pills">
+                <span class="pill pill-pink">KPI Systems</span>
+                <span class="pill pill-pink">Lean Six Sigma</span>
+                <span class="pill pill-pink">DMAIC</span>
+                <span class="pill pill-pink">Process Mapping</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <div class="skill-group-header">
+                <span class="skill-icon">🌐</span>
+                <span class="skill-group-name">Languages</span>
+            </div>
+            <div class="skill-pills">
+                <span class="pill pill-slate">English</span>
+                <span class="pill pill-slate">Russian</span>
+                <span class="pill pill-slate">Mongolian</span>
+                <span class="pill pill-slate">German</span>
+            </div>
+        </div>
+
     </div>
 </section>
 
