@@ -290,6 +290,15 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     .ps-grid { grid-template-columns: 1fr; }
     .hiw-card, .hiw-mbti-card, .hiw-sw-card { padding: 24px 20px; }
 }
+
+.project-github-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 14px; padding: 8px 18px; border-radius: 999px;
+    background: rgba(99,102,241,0.08); color: #6366f1;
+    border: 1px solid rgba(99,102,241,0.25); text-decoration: none;
+    font-size: 0.82rem; font-weight: 600; transition: all 0.2s;
+}
+.project-github-link:hover { background: rgba(99,102,241,0.15); transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -524,6 +533,21 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
                 <div class="card-skills"><span>SQL</span><span>Lean Six Sigma</span><span>DMAIC</span><span>Data Analysis</span></div>
             </div>
         </div>
+
+        <div class="project-card">
+            <div class="project-card-top">
+                <div class="project-tag">Python · Data Analysis · Visualization</div>
+                <strong>International Travel Cost Optimization</strong>
+                <p class="problem">Problem: A group of 7 people needed to decide between three international trip options from Mongolia to the U.S. — no one had modeled the actual costs.</p>
+                <p class="outcome">Built a Python analysis comparing total cost, cost per person, and cost per day across three itinerary options. Visualized all scenarios with bar charts and identified the optimal route programmatically — turning a group debate into a data-backed decision.</p>
+            </div>
+            <div class="project-card-bottom">
+                <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
+                <div class="project-details">Added cost-per-day as a metric because total cost alone was misleading — a longer trip costs more but might actually be cheaper per day. Used pandas to structure the comparison so anyone in the group could read the output without knowing Python. This was a real decision for real people, not a classroom exercise.</div>
+                <div class="card-skills"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Cost Modeling</span></div>
+                <a href="https://github.com/TergelO/travel-cost-analysis" target="_blank" class="project-github-link">View on GitHub →</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -659,17 +683,17 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     <h2>Let's talk.</h2>
     <p>I'm actively looking for Summer 2026 internships in data analytics, operations, or systems. If something here resonated — reach out directly.</p>
     <div class="contact-links">
-        <a href="mailto:ttergel717@gmail.com" class="contact-link contact-link-primary">✉️ Send an email</a>
+        <a href="/cdn-cgi/l/email-protection#cfbbbbaabda8aaa3f8fef88fa8a2aea6a3e1aca0a2" class="contact-link contact-link-primary">✉️ Send an email</a>
         <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="contact-link contact-link-secondary">LinkedIn →</a>
         <a href="Tergel Otgonbaatar Resume..pdf" class="contact-link contact-link-secondary">Resume →</a>
     </div>
-    <p class="contact-info">ttergel717@gmail.com &nbsp;·&nbsp; West Lafayette, IN</p>
+    <p class="contact-info"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c6868796e7b79702b2d2b5c7b717d7570327f7371">[email&#160;protected]</a> &nbsp;·&nbsp; West Lafayette, IN</p>
 </section>
 
 </div>
 <footer>Tergel Otgonbaatar · Built from scratch, like everything else.</footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Timeline ── */
 const eduData=[{role:"Associate of Applied Science",org:"Seattle Central Community College · Seattle, WA",now:false,desc:"Completed an AAS in Computer & Information Sciences with a 3.69 GPA. Built a foundation in programming, systems, and data while navigating a new country and language from scratch — while working full-time managing a restaurant."},{role:"Phi Theta Kappa Honor Society",org:"Seattle Central Community College",now:false,desc:"Inducted into Phi Theta Kappa for academic excellence while balancing full-time work and coursework in a second language."},{role:"B.S. Data Analytics, Technologies & Applications",org:"Purdue University · West Lafayette, IN",now:true,desc:"Pursuing a B.S. in Data Analytics at Purdue with focus on operations research and systems thinking. Expected: December 2026."},{role:"Dean's List",org:"Purdue University · GPA 3.48 / 4.00",now:true,desc:"Recognized on the Dean's List while running an active research role at The Data Mine and working residential staff."}];
 const expData=[{role:"Restaurant Manager",org:"Annapurna Restaurant · Seattle, WA",now:false,desc:"Managed full operations while attending Seattle Central full-time — hiring, scheduling, inventory, customer service, financials. Led a team of 6+ in a high-pressure environment."},{role:"Instructional Systems Engineer Intern",org:"KeelWorks",now:false,desc:"Analyzed system performance data and user feedback to identify workflow inefficiencies. Built KPI dashboards to track gaps in instructional delivery."},{role:"Data Science Researcher",org:"The Data Mine · Purdue University",now:true,desc:"Partnered with Carnival Cruise Line to analyze engine performance data across the fleet. Cleaned and standardized 54+ Excel datasets, built Power BI dashboards adopted by the operations team."},{role:"Student Office Staff",org:"Purdue Housing & Residential Life",now:true,desc:"Manages front-line operations for a high-traffic residential building — access control, incident response, logistics, and coordination with facilities and administrative teams."}];
@@ -704,10 +728,4 @@ var travelOpen=false;window.psToggleTravel=function(){travelOpen=!travelOpen;doc
 document.addEventListener('DOMContentLoaded',()=>{
     const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='translateY(0)';}});},{threshold:0.08});
     document.querySelectorAll('section').forEach(s=>{s.style.transition='opacity 0.65s ease, transform 0.65s ease';s.style.opacity=0;s.style.transform='translateY(36px)';if(s.getBoundingClientRect().top<window.innerHeight){s.style.opacity=1;s.style.transform='translateY(0)';}obs.observe(s);});
-    const hiwObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(b=>{b.style.width=b.dataset.width;});e.target.querySelectorAll('.mbti-fill').forEach(b=>{b.style.width=b.dataset.width;});}});},{threshold:0.1});
-    const hiw=document.querySelector('#how-i-work');if(hiw)hiwObs.observe(hiw);
-    renderPanel();
-});
-</script>
-</body>
-</html>
+    const hiwObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(b
