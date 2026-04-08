@@ -28,109 +28,6 @@ body {
     display: flex; justify-content: space-between; align-items: center;
     z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.4);
 }
-    /* highlight traveling */
-.life-hobby.highlight {
-    border: 1px solid rgba(99,102,241,0.4);
-    background: rgba(99,102,241,0.08);
-}
-/* HEADER */
-.life-header {
-    max-width: 620px;
-    margin-bottom: 50px;
-}
-
-.life-tag {
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    color: #94a3b8;
-}
-
-.life-header h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin: 10px 0 14px;
-}
-
-.life-header p {
-    color: #64748b;
-    line-height: 1.7;
-}
-
-/* GRID */
-.life-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-}
-
-/* TILE */
-.life-tile {
-    position: relative;
-    padding: 20px;
-    border-radius: 22px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.7);
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.life-tile:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-}
-
-/* glow */
-.life-tile::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 22px;
-    background: linear-gradient(120deg, #a5b4fc, #f9a8d4, #67e8f9);
-    opacity: 0;
-    transition: 0.4s;
-}
-
-.life-tile:hover::before {
-    opacity: 0.08;
-}
-
-/* TOP VISUAL */
-.tile-top {
-    height: 90px;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    background: linear-gradient(135deg, #e0f2fe, #fce7f3, #ede9fe);
-}
-
-/* CATEGORY COLORS */
-.life-tile.travel .tile-top {
-    background: linear-gradient(135deg, #60a5fa, #a5b4fc);
-}
-
-.life-tile.creative .tile-top {
-    background: linear-gradient(135deg, #f9a8d4, #fbcfe8);
-}
-
-.life-tile.culture .tile-top {
-    background: linear-gradient(135deg, #34d399, #a7f3d0);
-}
-
-.life-tile.thinking .tile-top {
-    background: linear-gradient(135deg, #c4b5fd, #e9d5ff);
-}
-
-/* TEXT */
-.life-tile h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.life-tile p {
-    font-size: 0.85rem;
-    color: #64748b;
-}
 .nav-brand { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a { text-decoration: none; padding: 6px 14px; border-radius: 999px; color: #334155; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; }
@@ -264,16 +161,156 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
 .pill-green  { background: rgba(34,197,94,0.1);   color: #16a34a; border: 1px solid rgba(34,197,94,0.2); }
 .pill-pink   { background: rgba(236,72,153,0.1);  color: #db2777; border: 1px solid rgba(236,72,153,0.2); }
 .pill-slate  { background: rgba(100,116,139,0.1); color: #475569; border: 1px solid rgba(100,116,139,0.2); }
-/* ── Life ── */
-#life h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
-.life-wrapper { display: grid !important; grid-template-columns: 360px 1fr !important; gap: 52px; align-items: start; }
-.life-intro p { color: #475569; font-size: 1rem; line-height: 1.8; margin-bottom: 16px; }
-.life-hobbies { display: flex; flex-direction: column; gap: 6px; }
-.life-hobby { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.65); border-radius: 14px; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
-.life-hobby:hover { transform: translateX(6px); background: rgba(255,255,255,0.85); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-.life-hobby-icon { font-size: 26px; flex-shrink: 0; }
-.life-hobby-name { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
-.life-hobby-sub  { font-size: 0.76rem; color: #94a3b8; }
+
+/* ── Personal Signals (Life) ── */
+#life { margin-top: 100px; }
+
+.life-header { max-width: 620px; margin-bottom: 40px; }
+.life-tag { font-size: 0.7rem; letter-spacing: 0.14em; color: #94a3b8; text-transform: uppercase; }
+.life-header h2 { font-size: 2rem; font-weight: 800; margin: 10px 0 12px; color: #1e293b; }
+.life-header p { color: #64748b; line-height: 1.7; font-size: 0.95rem; }
+
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ps-card {
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.72);
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: default;
+}
+.ps-card--travel { cursor: pointer; }
+.ps-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.09); }
+.ps-card--travel.ps-active { box-shadow: 0 0 0 2.5px #6366f1, 0 16px 48px rgba(99,102,241,0.15); transform: none; }
+
+.ps-thumb {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+.ps-thumb--travel { background: #dce8f6; }
+.ps-thumb--horse  { background: #d8ede3; }
+.ps-thumb--paint  { background: #f5dfe9; }
+.ps-thumb--cook   { background: #faeada; }
+
+.ps-thumb-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.85);
+  color: #1e293b;
+  position: relative;
+  z-index: 1;
+}
+
+.ps-body { padding: 18px 20px 20px; }
+.ps-body h3 { font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 5px; }
+.ps-body p  { font-size: .83rem; color: #64748b; line-height: 1.55; margin-bottom: 12px; }
+
+.ps-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.ps-pill { font-size: 11px; padding: 3px 10px; border-radius: 99px; font-weight: 600; }
+.ps-pill--blue  { background: #bdd5f0; color: #0c447c; }
+.ps-pill--green { background: #b0dcc4; color: #0f4d2e; }
+.ps-pill--pink  { background: #f0b8cf; color: #72243e; }
+.ps-pill--amber { background: #f5c98a; color: #633806; }
+
+/* Map panel */
+.ps-map-panel {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .55s cubic-bezier(.4,0,.2,1), opacity .4s ease;
+}
+.ps-map-panel.ps-open { max-height: 800px; opacity: 1; }
+
+.ps-map-wrap {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.72);
+  overflow: hidden;
+  margin-top: 4px;
+}
+.ps-map-header {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid rgba(241,245,249,0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ps-map-title { font-size: .95rem; font-weight: 800; color: #1e293b; }
+.ps-map-sub   { font-size: .78rem; color: #94a3b8; margin-top: 2px; }
+.ps-map-legend { display: flex; gap: 14px; }
+.ps-leg { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #475569; }
+.ps-leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+.ps-map-container {
+  position: relative;
+  height: 380px;
+  background: #c8dff0;
+  overflow: hidden;
+}
+.ps-map-svg { width: 100%; height: 100%; }
+
+.ps-tooltip {
+  position: absolute;
+  background: #1e293b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 13px;
+  border-radius: 10px;
+  pointer-events: none;
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+.ps-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1e293b;
+}
+
+.ps-chips { padding: 14px 22px 18px; display: flex; flex-wrap: wrap; gap: 7px; }
+.ps-chip {
+  font-size: 11px;
+  padding: 4px 11px;
+  border-radius: 99px;
+  font-weight: 600;
+}
+.ps-chip--lived   { background: #eef0fe; color: #4338ca; border: 1px solid #c7d2fe; }
+.ps-chip--visited { background: rgba(255,255,255,0.7); color: #334155; border: 1px solid rgba(255,255,255,0.8); }
+.ps-chip-label {
+  width: 100%;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+.ps-chip-label:first-child { margin-top: 0; }
+
 /* ── Contact ── */
 #contact { margin-top: 100px; background: rgba(255,255,255,0.55); backdrop-filter: blur(14px); border-radius: 28px; border: 1px solid rgba(255,255,255,0.6); padding: 60px; text-align: center; }
 #contact h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
@@ -287,20 +324,7 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
 .contact-info { font-size: 0.83rem; color: #94a3b8; }
 .contact-info a { color: #6366f1; text-decoration: none; font-weight: 500; }
 footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82rem; margin-top: 20px; }
-/* ── Life scroll animations ── */
-@keyframes fadeSlideUp   { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(-22px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes lifeRowIn     { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-#life h2, #life .section-sub, #life .life-intro, #life .life-hobby { opacity: 0; }
-#life.life-visible h2         { animation: fadeSlideUp  0.5s ease 0.05s both; }
-#life.life-visible .section-sub { animation: fadeSlideUp 0.5s ease 0.13s both; }
-#life.life-visible .life-intro  { animation: fadeSlideLeft 0.5s ease 0.2s both; }
-#life.life-visible .life-hobby  { animation: lifeRowIn 0.42s ease both; }
-#life.life-visible .life-hobby:nth-child(1) { animation-delay: 0.30s; }
-#life.life-visible .life-hobby:nth-child(2) { animation-delay: 0.39s; }
-#life.life-visible .life-hobby:nth-child(3) { animation-delay: 0.48s; }
-#life.life-visible .life-hobby:nth-child(4) { animation-delay: 0.57s; }
-#life.life-visible .life-hobby:nth-child(5) { animation-delay: 0.66s; }
+
 /* ── Responsive ── */
 @media (max-width: 820px) {
     .hero-section { grid-template-columns: 1fr; }
@@ -310,13 +334,13 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     .tl-left-col { padding-right: 10px; }
     .tl-right-col { padding-left: 10px; }
     .spine-node { width: 38px; height: 38px; font-size: 1rem; }
-    .life-wrapper { grid-template-columns: 1fr !important; gap: 32px; }
     #contact { padding: 40px 24px; }
+    .ps-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
- 
+
 <div class="nav">
     <div class="nav-brand">Tergel</div>
     <div class="nav-links">
@@ -327,15 +351,15 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         <a href="#contact" class="nav-contact">Contact →</a>
     </div>
 </div>
- 
+
 <div class="container">
- 
+
 <!-- HERO -->
 <section class="hero-section">
     <div class="hero-left">
         <span class="hero-label">Open to Summer 2026 Internships</span>
         <h1>I rebuilt my education<br>from scratch.<br><em>Now I build systems.</em></h1>
-        <p>At 12, I left Mongolia as an exchange student — new country, new language, no safety net. That experience taught me how to figure things out fast. Now I apply that same instinct to data analytics, operations, and building systems that actually work.</p>
+        <p>At 16, I left Mongolia — not as an exchange student, but on my own terms. I dropped out of high school because I knew it wasn't going to give me the life I wanted. New country, new language, no safety net. That decision taught me how to figure things out fast. Now I apply that same instinct to data analytics, operations, and building systems that actually work.</p>
         <div class="hero-buttons">
             <a href="Tergel Otgonbaatar Resume..pdf" class="btn-primary">View Resume →</a>
             <a href="https://linkedin.com/in/tergel-otgonbaatar-a81a35258/" target="_blank" class="btn-secondary">LinkedIn</a>
@@ -359,7 +383,7 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         </div>
     </div>
 </section>
- 
+
 <!-- HOW I WORK -->
 <section id="how-i-work">
     <div class="hiw-wrapper">
@@ -385,7 +409,7 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         </div>
     </div>
 </section>
- 
+
 <!-- TIMELINE -->
 <section id="timeline-section">
     <div class="tl-header">
@@ -446,13 +470,12 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         </div>
     </div>
 </section>
- 
+
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
     <p class="section-sub">Problems I chose to solve, decisions I made, and what came out of it.</p>
     <div class="projects-grid">
- 
         <div class="project-card">
             <div class="project-card-top">
                 <div class="project-tag">Data Engineering · Visualization</div>
@@ -466,7 +489,6 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
                 <div class="card-skills"><span>Power BI</span><span>Excel</span><span>Data Cleaning</span><span>KPI Design</span></div>
             </div>
         </div>
- 
         <div class="project-card">
             <div class="project-card-top">
                 <div class="project-tag">Systems · Infrastructure</div>
@@ -480,7 +502,6 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
                 <div class="card-skills"><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>Networking</span></div>
             </div>
         </div>
- 
         <div class="project-card">
             <div class="project-card-top">
                 <div class="project-tag">Process Improvement · Analytics</div>
@@ -494,10 +515,9 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
                 <div class="card-skills"><span>SQL</span><span>Lean Six Sigma</span><span>DMAIC</span><span>Data Analysis</span></div>
             </div>
         </div>
- 
     </div>
 </section>
- 
+
 <!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
@@ -521,47 +541,142 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         </div>
     </div>
 </section>
- 
+
+<!-- LIFE / PERSONAL SIGNALS -->
 <section id="life">
+  <div class="life-header">
+    <span class="life-tag">PERSONAL SIGNALS</span>
+    <h2>Pieces of how I think and live.</h2>
+    <p>
+      I grew up in Mongolia, did exchange stints in Russia at 12 and 13, then at 16 dropped out of high school and moved to Seattle alone — because I knew that school wasn't going to give me the life I wanted. These aren't hobbies. They're the patterns left over from a life built on figuring it out.
+    </p>
+  </div>
 
-    <div class="life-header">
-        <span class="life-tag">PERSONAL SIGNALS</span>
-        <h2>Pieces of how I think and live.</h2>
-        <p>
-            These aren’t hobbies for the sake of listing them — 
-            they’re patterns that shape how I reset, think, and operate.
-        </p>
+  <div class="ps-grid">
+
+    <!-- TRAVEL CARD -->
+    <div class="ps-card ps-card--travel" id="ps-card-travel" onclick="psToggleTravel()">
+      <div class="ps-thumb ps-thumb--travel">
+        <div style="width:130px;height:130px;background:#85b7eb;opacity:.25;top:-20px;right:-20px;border-radius:50%;position:absolute"></div>
+        <div style="width:70px;height:70px;background:#378add;opacity:.18;top:30px;left:30px;border-radius:50%;position:absolute"></div>
+        <svg style="position:absolute;right:24px;top:50%;transform:translateY(-50%);opacity:.5" width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <circle cx="36" cy="36" r="34" stroke="#185fa5" stroke-width="1" fill="none"/>
+          <ellipse cx="36" cy="36" rx="13" ry="34" stroke="#185fa5" stroke-width="1" fill="none"/>
+          <line x1="2" y1="36" x2="70" y2="36" stroke="#185fa5" stroke-width="1"/>
+          <line x1="2" y1="22" x2="70" y2="22" stroke="#185fa5" stroke-width=".6" stroke-dasharray="3 2"/>
+          <line x1="2" y1="50" x2="70" y2="50" stroke="#185fa5" stroke-width=".6" stroke-dasharray="3 2"/>
+          <circle cx="36" cy="36" r="5" fill="#185fa5" fill-opacity=".3"/>
+        </svg>
+        <span class="ps-thumb-label" id="ps-travel-label">Global movement — tap to explore ↓</span>
+      </div>
+      <div class="ps-body">
+        <h3>Global Movement</h3>
+        <p>Left home at 16 alone. Mongolia → Russia → Seattle → Europe → Asia → West Lafayette. 22 cities across 3 continents.</p>
+        <div class="ps-pills">
+          <span class="ps-pill ps-pill--blue">22 cities</span>
+          <span class="ps-pill ps-pill--blue">3 continents</span>
+          <span class="ps-pill ps-pill--blue">4 languages</span>
+        </div>
+      </div>
     </div>
 
-    <div class="life-grid">
-
-        <div class="life-tile travel">
-            <div class="tile-top"></div>
-            <h3>Global Movement</h3>
-            <p>17 cities · adapted across cultures and environments</p>
+    <!-- HORSE CARD -->
+    <div class="ps-card">
+      <div class="ps-thumb ps-thumb--horse">
+        <div style="width:110px;height:110px;background:#5dcaa5;opacity:.2;bottom:-20px;right:-10px;border-radius:50%;position:absolute"></div>
+        <svg style="position:absolute;right:20px;top:50%;transform:translateY(-50%);opacity:.6" width="68" height="68" viewBox="0 0 68 68" fill="none">
+          <rect x="1" y="1" width="66" height="66" rx="12" fill="#1d9e75" fill-opacity=".12" stroke="#1d9e75" stroke-width=".8"/>
+          <path d="M14 52 C14 38 24 26 34 26 C39 26 44 29 46 23 C48 17 46 11 41 11 L36 11 C33 11 31 14 31 17 L31 22 C26 22 20 28 18 36 L15 52Z" fill="#1d9e75" fill-opacity=".4" stroke="#0f6e56" stroke-width=".8"/>
+          <circle cx="43" cy="14" r="4" fill="#0f6e56" fill-opacity=".4"/>
+          <line x1="15" y1="52" x2="15" y2="64" stroke="#0f6e56" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22" y1="55" x2="22" y2="64" stroke="#0f6e56" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="ps-thumb-label">Mongolian tradition</span>
+      </div>
+      <div class="ps-body">
+        <h3>Horseback Riding</h3>
+        <p>Rooted in Mongolian tradition. One of the few things that stayed constant no matter what country I was in.</p>
+        <div class="ps-pills">
+          <span class="ps-pill ps-pill--green">Mongolia</span>
+          <span class="ps-pill ps-pill--green">Since childhood</span>
         </div>
-
-        <div class="life-tile culture">
-            <div class="tile-top"></div>
-            <h3>Horseback Riding</h3>
-            <p>Rooted in Mongolian tradition</p>
-        </div>
-
-        <div class="life-tile creative">
-            <div class="tile-top"></div>
-            <h3>Painting</h3>
-            <p>How I reset mentally</p>
-        </div>
-
-        <div class="life-tile culture">
-            <div class="tile-top"></div>
-            <h3>Cooking</h3>
-            <p>Blending 3 different cultures into something new</p>
-        </div>
+      </div>
     </div>
 
+    <!-- MAP PANEL -->
+    <div class="ps-map-panel" id="ps-map-panel">
+      <div class="ps-map-wrap">
+        <div class="ps-map-header">
+          <div>
+            <div class="ps-map-title">Every place I've been</div>
+            <div class="ps-map-sub">Hover a dot · purple line = the journey · purple = lived, blue = visited</div>
+          </div>
+          <div class="ps-map-legend">
+            <div class="ps-leg"><div class="ps-leg-dot" style="background:#6366f1"></div>Lived</div>
+            <div class="ps-leg"><div class="ps-leg-dot" style="background:#38bdf8"></div>Visited</div>
+          </div>
+        </div>
+        <div class="ps-map-container" id="ps-map-container">
+          <div class="ps-tooltip" id="ps-tooltip"></div>
+          <svg class="ps-map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" id="ps-map-svg"></svg>
+        </div>
+        <div class="ps-chips" id="ps-chips"></div>
+      </div>
+    </div>
+
+    <!-- PAINTING CARD -->
+    <div class="ps-card">
+      <div class="ps-thumb ps-thumb--paint">
+        <div style="width:90px;height:90px;background:#d4537e;opacity:.15;top:-10px;left:10px;border-radius:50%;position:absolute"></div>
+        <div style="width:60px;height:60px;background:#f4c0d1;opacity:.25;top:30px;right:30px;border-radius:50%;position:absolute"></div>
+        <div style="width:40px;height:40px;background:#993556;opacity:.15;bottom:10px;left:70px;border-radius:50%;position:absolute"></div>
+        <svg style="position:absolute;right:20px;top:50%;transform:translateY(-50%);opacity:.6" width="68" height="68" viewBox="0 0 68 68" fill="none">
+          <rect x="1" y="1" width="66" height="66" rx="33" fill="#d4537e" fill-opacity=".12" stroke="#d4537e" stroke-width=".8"/>
+          <circle cx="24" cy="24" r="8" fill="#d4537e" fill-opacity=".5"/>
+          <circle cx="44" cy="24" r="8" fill="#ed93b1" fill-opacity=".6"/>
+          <circle cx="24" cy="44" r="8" fill="#993556" fill-opacity=".4"/>
+          <circle cx="44" cy="44" r="8" fill="#f4c0d1" fill-opacity=".7"/>
+          <circle cx="34" cy="34" r="6" fill="#72243e" fill-opacity=".35"/>
+        </svg>
+        <span class="ps-thumb-label">Mental reset</span>
+      </div>
+      <div class="ps-body">
+        <h3>Painting</h3>
+        <p>How I reset mentally. Colour as language — silence as method.</p>
+        <div class="ps-pills">
+          <span class="ps-pill ps-pill--pink">Mental reset</span>
+          <span class="ps-pill ps-pill--pink">Abstract</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COOKING CARD -->
+    <div class="ps-card">
+      <div class="ps-thumb ps-thumb--cook">
+        <div style="width:120px;height:120px;border:14px solid #ef9f27;opacity:.2;top:-20px;right:-20px;background:none;border-radius:50%;position:absolute"></div>
+        <svg style="position:absolute;right:20px;top:50%;transform:translateY(-50%);opacity:.6" width="68" height="68" viewBox="0 0 68 68" fill="none">
+          <rect x="1" y="1" width="66" height="66" rx="12" fill="#ef9f27" fill-opacity=".12" stroke="#ba7517" stroke-width=".8"/>
+          <path d="M14 48 Q34 14 54 48" stroke="#ba7517" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <circle cx="34" cy="32" r="10" fill="#ef9f27" fill-opacity=".3" stroke="#854f0b" stroke-width=".8"/>
+          <line x1="34" y1="46" x2="34" y2="58" stroke="#ba7517" stroke-width="2" stroke-linecap="round"/>
+          <line x1="26" y1="58" x2="42" y2="58" stroke="#ba7517" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="ps-thumb-label">3 cultures, 1 dish</span>
+      </div>
+      <div class="ps-body">
+        <h3>Cooking</h3>
+        <p>Mongolian, Russian, American — all on one plate. Blending 3 cultures into something new.</p>
+        <div class="ps-pills">
+          <span class="ps-pill ps-pill--amber">3 cultures</span>
+          <span class="ps-pill ps-pill--amber">Fusion</span>
+          <span class="ps-pill ps-pill--amber">Daily ritual</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section id="contact">
     <h2>Let's talk.</h2>
@@ -573,11 +688,12 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
     </div>
     <p class="contact-info">ttergel717@gmail.com &nbsp;·&nbsp; West Lafayette, IN</p>
 </section>
- 
+
 </div>
 <footer>Tergel Otgonbaatar · Built from scratch, like everything else.</footer>
- 
+
 <script>
+/* ── Timeline ── */
 const eduData = [
     { role: "Associate of Applied Science", org: "Seattle Central Community College · Seattle, WA", now: false, desc: "Completed an AAS in Computer & Information Sciences with a 3.69 GPA. Built a foundation in programming, systems, and data while navigating a new country and language from scratch — while working full-time managing a restaurant." },
     { role: "Phi Theta Kappa Honor Society", org: "Seattle Central Community College", now: false, desc: "Inducted into Phi Theta Kappa for academic excellence while balancing full-time work and coursework in a second language. Participated in academic and community initiatives throughout." },
@@ -639,25 +755,209 @@ document.querySelectorAll('.spine-node').forEach(el => {
         document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 });
- 
+
 function toggleDetails(btn) {
     const details = btn.nextElementSibling;
     const isOpen = details.classList.contains('open');
     details.classList.toggle('open');
     btn.textContent = isOpen ? '+ What I decided along the way' : '− Hide details';
 }
- 
+
+/* ── Travel Map ── */
+(function() {
+  var cities = [
+    {name:"Ulaanbaatar 🇲🇳",      lat:47.9,  lng:106.9,  type:"lived",   note:"Home"},
+    {name:"Ulan-Ude 🇷🇺",          lat:51.8,  lng:107.6,  type:"lived",   note:"Age 12 — exchange student"},
+    {name:"Saint Petersburg 🇷🇺",  lat:59.9,  lng:30.3,   type:"lived",   note:"Age 13 — exchange student"},
+    {name:"Seattle, WA 🇺🇸",       lat:47.6,  lng:-122.3, type:"lived",   note:"Age 16 — dropped out, moved alone"},
+    {name:"West Lafayette, IN 🇺🇸", lat:40.4, lng:-86.9,  type:"lived",   note:"Purdue University"},
+    {name:"Hamburg 🇩🇪",            lat:53.6,  lng:10.0,   type:"visited"},
+    {name:"Athens 🇬🇷",             lat:37.9,  lng:23.7,   type:"visited"},
+    {name:"Santorini 🇬🇷",          lat:36.4,  lng:25.4,   type:"visited"},
+    {name:"Istanbul 🇹🇷",           lat:41.0,  lng:28.9,   type:"visited"},
+    {name:"Beijing 🇨🇳",            lat:39.9,  lng:116.4,  type:"visited"},
+    {name:"Seoul 🇰🇷",              lat:37.6,  lng:126.9,  type:"visited"},
+    {name:"Hong Kong 🇭🇰",          lat:22.3,  lng:114.2,  type:"visited"},
+    {name:"Singapore 🇸🇬",          lat:1.3,   lng:103.8,  type:"visited"},
+    {name:"Bali 🇮🇩",               lat:-8.3,  lng:115.1,  type:"visited"},
+    {name:"San Francisco, CA",     lat:37.8,  lng:-122.4, type:"visited"},
+    {name:"Los Angeles, CA",       lat:34.1,  lng:-118.2, type:"visited"},
+    {name:"Las Vegas, NV",         lat:36.2,  lng:-115.1, type:"visited"},
+    {name:"Dallas, TX",            lat:32.8,  lng:-96.8,  type:"visited"},
+    {name:"Chicago, IL",           lat:41.9,  lng:-87.6,  type:"visited"},
+    {name:"Indianapolis, IN",      lat:39.8,  lng:-86.2,  type:"visited"},
+    {name:"Milwaukee, WI",         lat:43.0,  lng:-87.9,  type:"visited"},
+    {name:"New York City, NY",     lat:40.7,  lng:-74.0,  type:"visited"},
+  ];
+
+  function proj(lat, lng) {
+    return { x: (lng + 180) / 360 * 1000, y: (90 - lat) / 180 * 500 };
+  }
+
+  function buildMap() {
+    var svg = document.getElementById('ps-map-svg');
+    if (!svg || svg.dataset.built) return;
+    svg.dataset.built = '1';
+    var ns = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      var e = document.createElementNS(ns, tag);
+      Object.keys(attrs).forEach(function(k){ e.setAttribute(k, attrs[k]); });
+      return e;
+    }
+
+    svg.appendChild(el('rect', {width:'1000',height:'500',fill:'#c8dff0'}));
+
+    var lands = [
+      "M72,140 L95,118 L130,105 L165,108 L190,118 L205,130 L215,125 L228,112 L248,110 L268,118 L282,132 L295,125 L310,112 L325,116 L340,128 L355,120 L368,128 L375,145 L372,165 L360,178 L345,185 L330,180 L315,188 L300,195 L285,188 L270,195 L255,188 L240,198 L225,190 L210,200 L195,192 L180,202 L165,195 L150,205 L135,198 L118,208 L102,198 L88,210 L75,200 L65,185 L60,168 L65,152 Z",
+      "M60,225 L75,215 L90,220 L100,235 L108,250 L112,268 L108,285 L98,295 L82,298 L68,290 L58,275 L55,258 L58,240 Z",
+      "M210,315 L228,305 L248,308 L265,318 L278,330 L282,348 L278,365 L265,378 L248,382 L230,375 L215,362 L208,345 L210,328 Z",
+      "M432,82 L460,70 L498,72 L538,78 L578,82 L618,85 L655,80 L688,72 L718,75 L742,82 L758,95 L765,112 L760,130 L748,145 L732,155 L715,160 L698,155 L680,162 L660,168 L640,162 L618,170 L595,162 L572,170 L548,162 L522,168 L498,158 L475,165 L452,155 L435,142 L425,125 L425,105 Z",
+      "M770,82 L795,72 L822,75 L845,85 L860,100 L865,118 L858,135 L845,148 L828,155 L810,150 L795,158 L780,148 L768,135 L762,118 L765,100 Z",
+      "M860,95 L880,85 L902,88 L922,98 L938,112 L942,130 L935,148 L920,158 L902,162 L882,155 L865,142 L858,125 L858,108 Z",
+      "M432,175 L448,165 L468,168 L485,178 L495,192 L498,210 L492,228 L478,238 L460,242 L442,235 L428,222 L422,205 L425,188 Z",
+      "M500,192 L518,182 L538,185 L555,195 L565,210 L568,228 L562,245 L548,255 L530,258 L512,250 L498,238 L492,222 L495,205 Z",
+      "M555,182 L575,172 L598,175 L618,185 L628,200 L630,218 L622,235 L608,245 L588,248 L568,240 L555,228 L550,210 L552,195 Z",
+      "M618,172 L640,162 L662,165 L680,178 L690,195 L692,212 L685,230 L670,240 L650,245 L630,238 L618,225 L612,208 L615,190 Z",
+      "M678,162 L700,152 L722,155 L740,168 L750,185 L752,202 L745,220 L730,230 L710,235 L690,228 L678,215 L672,198 L675,180 Z",
+      "M738,152 L760,142 L782,145 L800,158 L810,175 L812,192 L805,210 L790,220 L770,225 L750,218 L738,205 L732,188 L735,170 Z",
+      "M796,142 L818,132 L840,135 L858,148 L868,165 L870,182 L862,200 L848,210 L828,215 L808,208 L796,195 L790,178 L792,160 Z",
+      "M540,258 L558,248 L578,252 L595,265 L602,282 L600,300 L588,312 L572,318 L552,312 L538,298 L532,280 L535,265 Z",
+      "M440,345 L460,332 L482,335 L500,348 L510,365 L510,382 L500,398 L482,405 L462,400 L445,388 L435,372 L435,355 Z",
+      "M500,338 L520,328 L542,332 L560,345 L568,362 L568,380 L558,395 L540,402 L520,398 L505,385 L495,368 L496,352 Z",
+      "M558,325 L578,315 L600,318 L618,332 L625,348 L625,365 L615,380 L598,388 L578,385 L562,372 L552,355 L555,340 Z",
+      "M610,315 L632,305 L655,308 L672,322 L680,338 L680,355 L668,370 L650,378 L630,375 L615,362 L605,345 L608,328 Z",
+      "M670,305 L692,295 L715,298 L732,312 L740,328 L740,345 L728,360 L710,368 L690,365 L675,352 L665,335 L668,318 Z",
+      "M725,295 L748,285 L772,288 L790,302 L798,318 L798,335 L786,350 L768,358 L748,355 L732,342 L722,325 L724,308 Z",
+      "M778,285 L802,275 L826,278 L844,292 L852,308 L852,325 L840,340 L822,348 L802,345 L786,332 L776,315 L778,298 Z",
+      "M828,278 L852,268 L876,272 L894,286 L902,302 L902,320 L890,335 L872,342 L852,338 L836,325 L826,308 L828,290 Z",
+      "M875,272 L900,262 L925,265 L942,280 L950,296 L950,314 L938,328 L920,335 L900,332 L884,318 L874,302 L876,285 Z",
+      "M620,408 L640,398 L662,402 L678,415 L685,430 L682,448 L668,458 L648,460 L630,452 L618,438 L612,422 L615,410 Z"
+    ];
+    var landG = el('g', {});
+    lands.forEach(function(d){
+      landG.appendChild(el('path',{d:d,fill:'#d6e8d4',stroke:'#b8d4b4','stroke-width':'0.8'}));
+    });
+    svg.appendChild(landG);
+
+    var gridG = el('g', {});
+    for (var lat = -60; lat <= 75; lat += 30) {
+      var y = (90 - lat) / 180 * 500;
+      gridG.appendChild(el('line',{x1:'0',x2:'1000',y1:y,y2:y,stroke:'#b0c8dc','stroke-width':'0.4','stroke-dasharray':'4 4'}));
+    }
+    for (var lng = -150; lng <= 180; lng += 30) {
+      var x = (lng + 180) / 360 * 1000;
+      gridG.appendChild(el('line',{x1:x,x2:x,y1:'0',y2:'500',stroke:'#b0c8dc','stroke-width':'0.4','stroke-dasharray':'4 4'}));
+    }
+    svg.appendChild(gridG);
+
+    var connG = el('g', {});
+    var lived = cities.filter(function(c){ return c.type === 'lived'; });
+    for (var i = 0; i < lived.length - 1; i++) {
+      var a = proj(lived[i].lat, lived[i].lng);
+      var b = proj(lived[i+1].lat, lived[i+1].lng);
+      var mx = (a.x + b.x) / 2, my = Math.min(a.y, b.y) - 50;
+      connG.appendChild(el('path',{
+        d:'M'+a.x+','+a.y+' Q'+mx+','+my+' '+b.x+','+b.y,
+        fill:'none', stroke:'#6366f1', 'stroke-width':'1.5',
+        'stroke-dasharray':'6 4', opacity:'0.45'
+      }));
+      var t = 0.85;
+      var ax = Math.pow(1-t,2)*a.x + 2*(1-t)*t*mx + Math.pow(t,2)*b.x;
+      var ay = Math.pow(1-t,2)*a.y + 2*(1-t)*t*my + Math.pow(t,2)*b.y;
+      var dx = 2*(1-t)*(mx-a.x) + 2*t*(b.x-mx);
+      var dy = 2*(1-t)*(my-a.y) + 2*t*(b.y-my);
+      var angle = Math.atan2(dy, dx) * 180 / Math.PI;
+      connG.appendChild(el('polygon',{
+        points:'0,-3 6,0 0,3', fill:'#6366f1', 'fill-opacity':'0.55',
+        transform:'translate('+ax+','+ay+') rotate('+angle+')'
+      }));
+    }
+    svg.appendChild(connG);
+
+    var tooltip = document.getElementById('ps-tooltip');
+    var container = document.getElementById('ps-map-container');
+
+    cities.forEach(function(city) {
+      var p = proj(city.lat, city.lng);
+      var g = el('g', {});
+      g.style.cursor = 'pointer';
+      if (city.type === 'lived') {
+        g.appendChild(el('circle',{cx:p.x,cy:p.y,r:'12',fill:'#6366f1','fill-opacity':'0.12'}));
+      }
+      var dot = el('circle',{
+        cx:p.x, cy:p.y,
+        r: city.type === 'lived' ? '6' : '4',
+        fill: city.type === 'lived' ? '#6366f1' : '#38bdf8',
+        stroke:'#fff', 'stroke-width':'1.8'
+      });
+      g.appendChild(dot);
+      g.addEventListener('mouseenter', function(){
+        dot.setAttribute('r', city.type === 'lived' ? '8' : '6');
+        tooltip.textContent = city.note ? city.name + ' · ' + city.note : city.name;
+        tooltip.style.display = 'block';
+      });
+      g.addEventListener('mousemove', function(e){
+        var rect = container.getBoundingClientRect();
+        tooltip.style.left = (e.clientX - rect.left) + 'px';
+        tooltip.style.top  = (e.clientY - rect.top - 46) + 'px';
+      });
+      g.addEventListener('mouseleave', function(){
+        dot.setAttribute('r', city.type === 'lived' ? '6' : '4');
+        tooltip.style.display = 'none';
+      });
+      svg.appendChild(g);
+    });
+
+    var chips = document.getElementById('ps-chips');
+    var livedC   = cities.filter(function(c){ return c.type === 'lived'; });
+    var visitedC = cities.filter(function(c){ return c.type === 'visited'; });
+
+    function makeLabel(txt) {
+      var d = document.createElement('div');
+      d.className = 'ps-chip-label'; d.textContent = txt; return d;
+    }
+    function makeChip(city, cls) {
+      var d = document.createElement('div');
+      d.className = 'ps-chip ' + cls;
+      d.textContent = city.note ? city.name + ' (' + city.note + ')' : city.name;
+      return d;
+    }
+    chips.appendChild(makeLabel('Lived in'));
+    livedC.forEach(function(c){ chips.appendChild(makeChip(c, 'ps-chip--lived')); });
+    chips.appendChild(makeLabel('Visited'));
+    visitedC.forEach(function(c){ chips.appendChild(makeChip(c, 'ps-chip--visited')); });
+  }
+
+  var travelOpen = false;
+  window.psToggleTravel = function() {
+    travelOpen = !travelOpen;
+    document.getElementById('ps-map-panel').classList.toggle('ps-open', travelOpen);
+    document.getElementById('ps-card-travel').classList.toggle('ps-active', travelOpen);
+    document.getElementById('ps-travel-label').textContent = travelOpen
+      ? 'Global movement — close ↑'
+      : 'Global movement — tap to explore ↓';
+    if (travelOpen) buildMap();
+  };
+})();
+
+/* ── Scroll animations ── */
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) { entry.target.style.opacity = 1; entry.target.style.transform = 'translateY(0)'; }
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
     }, { threshold: 0.08 });
     document.querySelectorAll('section').forEach(section => {
         section.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
         section.style.opacity = 0;
         section.style.transform = 'translateY(36px)';
-        if (section.getBoundingClientRect().top < window.innerHeight) { section.style.opacity = 1; section.style.transform = 'translateY(0)'; }
+        if (section.getBoundingClientRect().top < window.innerHeight) {
+            section.style.opacity = 1;
+            section.style.transform = 'translateY(0)';
+        }
         observer.observe(section);
     });
     const hiwObserver = new IntersectionObserver(entries => {
@@ -667,13 +967,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     const hiw = document.querySelector('#how-i-work');
     if (hiw) hiwObserver.observe(hiw);
-    const lifeSection = document.querySelector('#life');
-    if (lifeSection) {
-        const lo = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) { lifeSection.classList.add('life-visible'); lo.unobserve(lifeSection); } });
-        }, { threshold: 0.1 });
-        lo.observe(lifeSection);
-    }
     renderPanel();
 });
 </script>
