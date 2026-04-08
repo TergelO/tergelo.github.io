@@ -93,7 +93,7 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
 .trait { margin-bottom: 20px; }
 .trait label { font-size: 0.88rem; font-weight: 600; color: #334155; }
 .bar { height: 6px; background: #e2e8f0; border-radius: 6px; margin: 8px 0 4px; overflow: hidden; }
-.fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #a855f7); transition: width 1.5s ease; }
+.fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #6366f1, #a855f7); }
 .trait small { font-size: 0.78rem; color: #94a3b8; }
 
 /* MBTI sliders */
@@ -107,7 +107,7 @@ section > h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
 .mbti-pct { font-size: 0.9rem; font-weight: 700; }
 .mbti-name { font-size: 0.9rem; font-weight: 700; color: #1e293b; }
 .mbti-bar { height: 8px; background: rgba(0,0,0,0.07); border-radius: 99px; overflow: hidden; margin-bottom: 5px; }
-.mbti-fill { height: 100%; border-radius: 99px; width: 0; transition: width 1.4s ease; }
+.mbti-fill { height: 100%; border-radius: 99px; }
 .mbti-ends { display: flex; justify-content: space-between; font-size: 0.72rem; color: #94a3b8; font-weight: 500; }
 .mbti-fill--teal   { background: #33bfbf; } .mbti-pct--teal   { color: #33bfbf; }
 .mbti-fill--amber  { background: #e8a020; } .mbti-pct--amber  { color: #e8a020; }
@@ -369,11 +369,11 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         </div>
         <div class="hiw-card">
             <p class="section-eyebrow">Working style</p>
-            <div class="trait"><label>Energy in teams</label><div class="bar"><div class="fill" data-width="78%"></div></div><small>High — I raise the pace of a room</small></div>
-            <div class="trait"><label>Detail orientation</label><div class="bar"><div class="fill" data-width="70%"></div></div><small>Strong — especially in data work</small></div>
-            <div class="trait"><label>Communication</label><div class="bar"><div class="fill" data-width="85%"></div></div><small>Direct and clear under pressure</small></div>
-            <div class="trait"><label>Adaptability</label><div class="bar"><div class="fill" data-width="90%"></div></div><small>Built from necessity, not preference</small></div>
-            <div class="trait"><label>Independent drive</label><div class="bar"><div class="fill" data-width="82%"></div></div><small>I don't wait to be told what's next</small></div>
+            <div class="trait"><label>Energy in teams</label><div class="bar"><div class="fill" style="width:78%"></div></div><small>High — I raise the pace of a room</small></div>
+            <div class="trait"><label>Detail orientation</label><div class="bar"><div class="fill" style="width:70%"></div></div><small>Strong — especially in data work</small></div>
+            <div class="trait"><label>Communication</label><div class="bar"><div class="fill" style="width:85%"></div></div><small>Direct and clear under pressure</small></div>
+            <div class="trait"><label>Adaptability</label><div class="bar"><div class="fill" style="width:90%"></div></div><small>Built from necessity, not preference</small></div>
+            <div class="trait"><label>Independent drive</label><div class="bar"><div class="fill" style="width:82%"></div></div><small>I don't wait to be told what's next</small></div>
         </div>
     </div>
 
@@ -382,27 +382,27 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         <div class="mbti-grid">
             <div>
                 <div class="mbti-label-row"><span class="mbti-pct mbti-pct--teal">60%</span><span class="mbti-name">Extraverted</span></div>
-                <div class="mbti-bar"><div class="mbti-fill mbti-fill--teal" data-width="60%"></div></div>
+                <div class="mbti-bar"><div class="mbti-fill mbti-fill--teal" style="width:60%"></div></div>
                 <div class="mbti-ends"><span>Extraverted</span><span>Introverted</span></div>
             </div>
             <div>
                 <div class="mbti-label-row"><span class="mbti-pct mbti-pct--amber">54%</span><span class="mbti-name">Observant</span></div>
-                <div class="mbti-bar"><div class="mbti-fill mbti-fill--amber" data-width="54%"></div></div>
+                <div class="mbti-bar"><div class="mbti-fill mbti-fill--amber" style="width:54%"></div></div>
                 <div class="mbti-ends"><span>Intuitive</span><span>Observant</span></div>
             </div>
             <div>
                 <div class="mbti-label-row"><span class="mbti-pct mbti-pct--green">58%</span><span class="mbti-name">Feeling</span></div>
-                <div class="mbti-bar"><div class="mbti-fill mbti-fill--green" data-width="58%"></div></div>
+                <div class="mbti-bar"><div class="mbti-fill mbti-fill--green" style="width:58%"></div></div>
                 <div class="mbti-ends"><span>Thinking</span><span>Feeling</span></div>
             </div>
             <div>
                 <div class="mbti-label-row"><span class="mbti-pct mbti-pct--purple">63%</span><span class="mbti-name">Prospecting</span></div>
-                <div class="mbti-bar"><div class="mbti-fill mbti-fill--purple" data-width="63%"></div></div>
+                <div class="mbti-bar"><div class="mbti-fill mbti-fill--purple" style="width:63%"></div></div>
                 <div class="mbti-ends"><span>Judging</span><span>Prospecting</span></div>
             </div>
             <div>
                 <div class="mbti-label-row"><span class="mbti-pct mbti-pct--red">72%</span><span class="mbti-name">Turbulent</span></div>
-                <div class="mbti-bar"><div class="mbti-fill mbti-fill--red" data-width="72%"></div></div>
+                <div class="mbti-bar"><div class="mbti-fill mbti-fill--red" style="width:72%"></div></div>
                 <div class="mbti-ends"><span>Assertive</span><span>Turbulent</span></div>
             </div>
         </div>
@@ -725,7 +725,56 @@ chips.appendChild(mkL('Lived in'));cities.filter(function(c){return c.type==='li
 var travelOpen=false;window.psToggleTravel=function(){travelOpen=!travelOpen;document.getElementById('ps-map-panel').classList.toggle('ps-open',travelOpen);document.getElementById('ps-card-travel').classList.toggle('ps-active',travelOpen);document.getElementById('ps-travel-label').textContent=travelOpen?'Global movement — close ↑':'Global movement — tap to explore ↓';if(travelOpen)buildMap();};})();
 
 /* ── Scroll + bar animations ── */
-document.addEventListener('DOMContentLoaded',()=>{
-    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='translateY(0)';}});},{threshold:0.08});
-    document.querySelectorAll('section').forEach(s=>{s.style.transition='opacity 0.65s ease, transform 0.65s ease';s.style.opacity=0;s.style.transform='translateY(36px)';if(s.getBoundingClientRect().top<window.innerHeight){s.style.opacity=1;s.style.transform='translateY(0)';}obs.observe(s);});
-    const hiwObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(b
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ── Section fade-in ── */
+    const fadeObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.opacity = 1;
+                e.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('section').forEach(s => {
+        s.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+        s.style.opacity = 0;
+        s.style.transform = 'translateY(36px)';
+        const rect = s.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            s.style.opacity = 1;
+            s.style.transform = 'translateY(0)';
+        }
+        fadeObs.observe(s);
+    });
+
+    /* ── Bar fill animation — bulletproof version ── */
+    function runBars() {
+        document.querySelectorAll('.fill[data-width]').forEach(b => {
+            b.style.width = b.dataset.width;
+        });
+        document.querySelectorAll('.mbti-fill[data-width]').forEach(b => {
+            b.style.width = b.dataset.width;
+        });
+    }
+
+    /* Use a single scroll-triggered observer on each bar itself */
+    const barObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.width = e.target.dataset.width;
+                barObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fill[data-width], .mbti-fill[data-width]').forEach(b => {
+        barObs.observe(b);
+    });
+
+    /* Fallback: run after 800ms no matter what */
+    setTimeout(runBars, 800);
+
+    renderPanel();
+});
