@@ -545,18 +545,19 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
         <a href="https://tergels-career-tracker.netlify.app/" target="_blank" class="project-github-link">View live app →</a>
     </div>
 </div>
-        <div class="project-card">
+<div class="project-card">
             <div class="project-card-top">
-                <div class="project-tag">Python · Data Analysis · Visualization</div>
+                <div class="project-tag">Python · Tableau · Data Analysis</div>
                 <strong>International Travel Cost Optimization</strong>
                 <p class="problem">Problem: A group of 7 people needed to decide between three international trip options from Mongolia to the U.S. — no one had modeled the actual costs.</p>
-                <p class="outcome">Built a Python analysis comparing total cost, cost per person, and cost per day across three itinerary options. Visualized all scenarios with bar charts and identified the optimal route programmatically — turning a group debate into a data-backed decision.</p>
+                <p class="outcome">Cleaned and analyzed 30 years of US domestic flight fare data (4,500+ rows) using Python and Pandas. Identified Chicago → Orlando as the cheapest route at $2,154 for 7 people round-trip, and Q3 as the optimal booking window. Built an interactive Tableau dashboard published online.</p>
             </div>
             <div class="project-card-bottom">
                 <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
-                <div class="project-details">Added cost-per-day as a metric because total cost alone was misleading — a longer trip costs more but might actually be cheaper per day. Used pandas to structure the comparison so anyone in the group could read the output without knowing Python. This was a real decision for real people, not a classroom exercise.</div>
-                <div class="card-skills"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Cost Modeling</span></div>
+                <div class="project-details">Started with 3 hardcoded rows — expanded it into a real analysis using a Kaggle dataset of 245,000+ flight records from 1993–2024. Added cost-per-day and group total as metrics because raw fare prices alone were misleading. Built the Tableau dashboard to make the findings interactive and shareable, not just a static chart.</div>
+                <div class="card-skills"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Tableau</span><span>Data Cleaning</span></div>
                 <a href="https://github.com/TergelO/travel-cost-analysis" target="_blank" class="project-github-link">View on GitHub →</a>
+                <a href="https://public.tableau.com/app/profile/tergel.otgonbaatar/viz/ChicagoTravelCostAnalysis/ChicagoGroupTravelCostAnalysis19932024" target="_blank" class="project-github-link">View Dashboard →</a>
             </div>
         </div>
     </div>
