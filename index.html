@@ -524,7 +524,27 @@ footer { text-align: center; padding: 36px 20px; color: #94a3b8; font-size: 0.82
                 <div class="card-skills"><span>SQL</span><span>Lean Six Sigma</span><span>DMAIC</span><span>Data Analysis</span></div>
             </div>
         </div>
-
+ 
+<div class="project-card">
+    <div class="project-card-top">
+        <div class="project-tag">AI · Full-Stack · Product</div>
+        <strong>Career Tracker — AI Job Application Dashboard</strong>
+        <p class="problem">Problem: I had 90+ job applications across different stages with no system to track them, generate tailored documents, or practice interviews — so I built one in 5 days.</p>
+        <p class="outcome">Built and deployed a full-stack web app with a kanban board, AI cover letter & email generator, resume bullet tailorer, mock interview chat, and application analytics. Live and in active use.</p>
+    </div>
+    <div class="project-card-bottom">
+        <button class="project-expand-btn" onclick="toggleDetails(this)">+ What I decided along the way</button>
+        <div class="project-details">Chose a serverless function architecture to keep the Anthropic API key secure — the key lives on Netlify's servers, never exposed in the frontend. Built without any JS frameworks deliberately, to prove the product doesn't need React to feel polished. Iterated daily based on my own usage: added search, sort, dark mode, export/import, and mock interviews after seeing what I actually needed. The mock interview feature uses full conversation history so Claude remembers your previous answers within a session.</div>
+        <div class="card-skills">
+            <span>HTML/CSS/JS</span>
+            <span>Anthropic Claude API</span>
+            <span>Netlify Serverless</span>
+            <span>AI Integration</span>
+            <span>Product Design</span>
+        </div>
+        <a href="https://tergels-career-tracker.netlify.app/" target="_blank" class="project-github-link">View live app →</a>
+    </div>
+</div>
         <div class="project-card">
             <div class="project-card-top">
                 <div class="project-tag">Python · Data Analysis · Visualization</div>
